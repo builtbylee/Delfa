@@ -2,6 +2,10 @@
 
 Delfa is a relationship-first dating app designed to replace swipe fatigue with one high-quality match at a time.
 
+[![Delfa interactive deck preview](docs/presentations/assets/delfa-deck-hero.svg)](https://builtbylee.github.io/Delfa/presentations/delfa-explainer-deck.html)
+
+[Open Interactive Deck](https://builtbylee.github.io/Delfa/presentations/delfa-explainer-deck.html)
+
 ## Core Product Principles
 
 - One active match at a time
@@ -45,6 +49,7 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `docs/product/profiler-user-flows-v1.md`: implementation-ready profiler UX flows
 - `docs/product/match-experience-v1.md`: core match-stage differentiators and interaction design direction
 - `docs/presentations/delfa-explainer-deck-v1.md`: explainer deck source covering Delfa's product direction and architecture
+- [`docs/presentations/delfa-explainer-deck.html`](docs/presentations/delfa-explainer-deck.html): GitHub Pages-ready interactive explainer deck
 - `docs/research/market-and-relationship-research.md`: evidence base for product and profiler decisions
 - `docs/research/dating-app-strengths.md`: verified strengths from current dating apps worth adapting for Delfa
 - `CHANGELOG.md`: chronological project changes

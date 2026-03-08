@@ -27,3 +27,4 @@ All notable changes to Delfa will be documented in this file.
 - Added the first shared TypeScript profiler implementation layer with question definitions, domain types, and API contracts
 - Added core match-stage differentiator docs covering discovery journeys, confidence by dimension, slow reveal profile depth, readiness check-ins, mutual ready-to-meet, pre-date protocol, and graceful disconnect with growth
 - Added an explainer deck source summarizing Delfa's agreed product direction, feature set, and architecture
+- Added a GitHub Pages-ready HTML explainer deck and README hero preview

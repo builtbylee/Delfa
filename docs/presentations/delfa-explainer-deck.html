@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delfa — Explainer Deck</title>
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #09090b;
+    --surface: rgba(255,255,255,0.03);
+    --surface-hover: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.14);
+    --text-primary: #fafafa;
+    --text-secondary: rgba(255,255,255,0.55);
+    --text-muted: rgba(255,255,255,0.30);
+    --accent: #d4a574;
+    --accent-dim: rgba(212,165,116,0.15);
+    --accent-glow: rgba(212,165,116,0.08);
+    --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .slide {
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--noise);
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .slide > * { position: relative; z-index: 2; }
+
+  .slide-number {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-muted);
+    z-index: 3;
+  }
+
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--text-primary);
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--text-primary);
+  }
+
+  h3 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text-primary);
+  }
+
+  .subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 640px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .card-accent {
+    border-color: rgba(212,165,116,0.2);
+    background: linear-gradient(135deg, rgba(212,165,116,0.04), transparent);
+  }
+
+  .stat-number {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .split-left-heavy {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .split-right-heavy {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 60px 0;
+  }
+
+  .glow-tl {
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .glow-br {
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .glow-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(212,165,116,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(212,165,116,0.2);
+    border-radius: 6px;
+    padding: 4px 10px;
+  }
+
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .bullet-list li {
+    padding: 10px 0;
+    padding-left: 24px;
+    position: relative;
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .negative-list li::before {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .quote {
+    font-size: 26px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.4;
+    border-left: 3px solid var(--accent);
+    padding-left: 28px;
+    margin: 24px 0;
+  }
+
+  .quote-source {
+    font-size: 14px;
+    font-style: normal;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  /* Confidence meter */
+  .meter-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+  }
+
+  .meter-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    width: 140px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .meter-bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .meter-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--accent);
+    transition: width 0.6s ease;
+  }
+
+  .meter-fill.low { opacity: 0.3; }
+  .meter-fill.med { opacity: 0.6; }
+  .meter-fill.high { opacity: 1; }
+
+  .meter-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    width: 40px;
+    flex-shrink: 0;
+  }
+
+  /* Flow diagram */
+  .flow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  .flow-node {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: center;
+    min-width: 220px;
+    backdrop-filter: blur(20px);
+  }
+
+  .flow-node-accent {
+    border-color: rgba(212,165,116,0.25);
+    background: linear-gradient(135deg, rgba(212,165,116,0.06), transparent);
+  }
+
+  .flow-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flow-line {
+    width: 2px;
+    height: 28px;
+    background: rgba(255,255,255,0.18);
+  }
+
+  .flow-arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid rgba(255,255,255,0.18);
+  }
+
+  /* Guardrail items */
+  .guardrail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .guardrail:last-child { border-bottom: none; }
+
+  .guardrail-x {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.2);
+    width: 32px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .guardrail-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  /* Layer cards */
+  .layer-card {
+    position: relative;
+    padding: 24px 28px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+  }
+
+  .layer-1 {
+    background: rgba(212,165,116,0.08);
+    border: 1px solid rgba(212,165,116,0.2);
+  }
+
+  .layer-2 {
+    background: rgba(212,165,116,0.05);
+    border: 1px solid rgba(212,165,116,0.12);
+    margin-left: 20px;
+  }
+
+  .layer-3 {
+    background: rgba(212,165,116,0.02);
+    border: 1px solid rgba(212,165,116,0.06);
+    margin-left: 40px;
+  }
+
+  .layer-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .nudge-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.5;
+    position: relative;
+  }
+
+  .nudge-card .nudge-icon {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    font-size: 18px;
+    font-style: normal;
+    color: var(--accent);
+    background: var(--bg);
+    padding: 0 4px;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-strong);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 16px 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 22px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+
+  .timeline-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .slide { padding: 60px 48px; }
+    h1 { font-size: 52px; }
+    h2 { font-size: 38px; }
+    .split, .split-left-heavy, .split-right-heavy { grid-template-columns: 1fr; gap: 40px; }
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .stat-number { font-size: 42px; }
+  }
+
+  /* Navigation dots */
+  .nav-dots {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+  }
+
+  .nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+  }
+
+  .nav-dot:hover { background: rgba(255,255,255,0.3); }
+  .nav-dot.active { background: var(--accent); transform: scale(1.3); }
+</style>
+</head>
+<body>
+
+<!-- Navigation dots -->
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<section class="slide" id="slide-1">
+  <div class="glow-center"></div>
+  <div class="glow-br"></div>
+  <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <div class="label" style="margin-bottom: 24px;">Introducing</div>
+    <h1 style="font-size: 96px; letter-spacing: -0.04em; margin-bottom: 24px;">Delfa</h1>
+    <p style="font-size: 24px; color: var(--text-secondary); font-weight: 400; margin-bottom: 16px;">A relationship-first dating app</p>
+    <div style="width: 60px; height: 2px; background: var(--accent); margin: 28px auto;"></div>
+    <p style="font-size: 17px; color: var(--text-muted); line-height: 1.6; max-width: 560px; margin: 0 auto;">
+      One meaningful match at a time.<br>
+      Built to replace swipe fatigue with depth, honesty, and follow-through.
+    </p>
+  </div>
+  <div class="slide-number">01 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 2: THE PROBLEM ==================== -->
+<section class="slide" id="slide-2">
+  <div class="glow-tl"></div>
+  <div class="label">The Problem</div>
+  <h2 style="margin-bottom: 48px;">Dating apps are broken</h2>
+  <div class="grid-4" style="margin-bottom: 56px;">
+    <div class="card">
+      <div class="stat-number">78%</div>
+      <div class="stat-label">report dating app burnout</div>
+      <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Forbes Health 2025</div>
+    </div>
+    <div class="card">
+      <div class="stat-number">71%</div>
+      <div class="stat-label">say lying on profiles is "very common"</div>
+      <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Pew Research 2020</div>
+    </div>
+    <div class="card">
+      <div class="stat-number">41%</div>
+      <div class="stat-label">have been ghosted by a match</div>
+      <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Forbes Health 2025</div>
+    </div>
+    <div class="card">
+      <div class="stat-number">9/10</div>
+      <div class="stat-label">feel disappointed by people they see on apps</div>
+      <div style="font-size: 11px; color: var(--text-muted); margin-top: 6px;">Pew Research 2023</div>
+    </div>
+  </div>
+  <div class="split">
+    <div>
+      <h3 style="color: var(--text-muted); font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">What apps optimize for</h3>
+      <ul class="bullet-list negative-list">
+        <li>Endless browsing and addictive loops</li>
+        <li>Superficial, photo-first evaluation</li>
+        <li>Monetizing loneliness and FOMO</li>
+        <li>Engagement volume over outcomes</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color: var(--accent); font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">What users actually want</h3>
+      <ul class="bullet-list">
+        <li>Intentional, focused dating</li>
+        <li>Trust and verified authenticity</li>
+        <li>Genuine compatibility signals</li>
+        <li>Clear intent — less burnout</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">02 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 3: WHY NOW ==================== -->
+<section class="slide" id="slide-3">
+  <div class="glow-br"></div>
+  <div class="split-left-heavy">
+    <div>
+      <div class="label">Why Now</div>
+      <h2 style="margin-bottom: 32px;">The science gap</h2>
+      <div class="quote">
+        "There is no strong evidence that dating app algorithms can predict relationship success."
+        <div class="quote-source">— Finkel et al. meta-analysis, Psychological Science in the Public Interest</div>
+      </div>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-top: 32px;">
+        The strongest predictors of lasting relationships — communication patterns, conflict repair, responsiveness, attachment security — <strong style="color: var(--text-primary);">can't be measured by a profile</strong>. They emerge through interaction.
+      </p>
+    </div>
+    <div>
+      <div class="card card-accent" style="padding: 40px;">
+        <div class="label" style="margin-bottom: 20px;">Delfa's insight</div>
+        <h3 style="font-size: 24px; line-height: 1.3; margin-bottom: 16px;">Don't just match better.</h3>
+        <p style="font-size: 20px; color: var(--accent); font-weight: 600; line-height: 1.4;">
+          Create better conditions for discovering compatibility.
+        </p>
+        <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border);">
+          <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+            Pre-meeting algorithms have a ceiling. Delfa's advantage is in the interaction stage — guiding how matched people communicate and discover chemistry.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">03 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 4: CORE MODEL ==================== -->
+<section class="slide" id="slide-4">
+  <div class="glow-center"></div>
+  <div style="text-align: center; margin-bottom: 48px;">
+    <div class="label">How Delfa Works</div>
+    <h2>The core model</h2>
+  </div>
+
+  <!-- Flow diagram using HTML/CSS -->
+  <div class="flow-container">
+    <div class="flow-node flow-node-accent">Sign Up → Complete Basics <span style="color: var(--text-muted); font-weight: 400;">(3-5 min)</span></div>
+
+    <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrow"></div></div>
+
+    <div class="flow-node" style="border-color: rgba(212,165,116,0.3);">
+      <span style="color: var(--accent); font-weight: 600;">One active match</span> surfaced
+    </div>
+
+    <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrow"></div></div>
+
+    <div class="flow-node" style="min-width: 300px;">
+      Guided Compatibility Discovery Journey
+    </div>
+
+    <div class="flow-connector"><div class="flow-line" style="height: 20px;"></div></div>
+
+    <!-- Branch point -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; max-width: 700px; position: relative;">
+      <!-- Horizontal bar -->
+      <div style="position: absolute; top: -1px; left: 25%; right: 25%; height: 2px; background: rgba(255,255,255,0.18);"></div>
+      <!-- Left drop -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="flow-connector"><div class="flow-line" style="height: 16px;"></div><div class="flow-arrow"></div></div>
+        <div class="flow-node flow-node-accent" style="min-width: 240px;">
+          <div style="font-size: 13px; color: var(--accent); margin-bottom: 4px;">Progress together</div>
+          Mutual Ready-to-Meet
+        </div>
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrow"></div></div>
+        <div class="flow-node" style="min-width: 240px;">Before We Meet Protocol</div>
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrow"></div></div>
+        <div class="flow-node flow-node-accent" style="font-weight: 700; font-size: 17px;">
+          Date ✓
+        </div>
+      </div>
+      <!-- Right drop -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="flow-connector"><div class="flow-line" style="height: 16px;"></div><div class="flow-arrow"></div></div>
+        <div class="flow-node" style="min-width: 240px;">
+          <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">Not the right fit</div>
+          Graceful Disconnect
+        </div>
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrow"></div></div>
+        <div class="flow-node" style="min-width: 240px;">Private Growth Insights</div>
+        <div class="flow-connector"><div class="flow-line"></div><div class="flow-arrow"></div></div>
+        <div class="flow-node flow-node-accent" style="font-weight: 700; font-size: 17px;">
+          Better Next Match ↺
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 36px; text-align: center;">
+      <div class="tag">Every path generates signal that improves future matching</div>
+    </div>
+  </div>
+
+  <div class="slide-number">04 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 5: PROGRESSIVE PROFILER ==================== -->
+<section class="slide" id="slide-5">
+  <div class="glow-tl"></div>
+  <div class="split">
+    <div>
+      <div class="label">The Profiler</div>
+      <h2 style="margin-bottom: 12px;">Designed for honesty,<br>not performance</h2>
+      <p class="subtitle" style="margin-bottom: 32px;">No "rate yourself 1-10." No virtue-signaling prompts. The profiler uses scenarios, forced tradeoffs, rankings, and behavioral recall to capture honest signal.</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;">
+        <div class="tag">Scenarios</div>
+        <div class="tag">Forced tradeoffs</div>
+        <div class="tag">Rankings</div>
+        <div class="tag">Behavioral recall</div>
+        <div class="tag">Pairwise calibration</div>
+      </div>
+
+      <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+        Compatibility confidence is shown by dimension — never a single misleading percentage.
+      </p>
+    </div>
+    <div>
+      <!-- Profiler tiers visual -->
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="card card-accent" style="padding: 24px 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 700; font-size: 17px;">Basics</div>
+              <div style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Enough signal to start matching</div>
+            </div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent);">3-5 min</div>
+          </div>
+        </div>
+        <div class="card" style="padding: 20px 28px; opacity: 0.85;">
+          <div style="font-weight: 600; font-size: 15px;">Life Direction</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Goals, family, structure, pace</div>
+        </div>
+        <div class="card" style="padding: 20px 28px; opacity: 0.7;">
+          <div style="font-weight: 600; font-size: 15px;">Communication & Repair</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Conflict patterns, responsiveness</div>
+        </div>
+        <div class="card" style="padding: 20px 28px; opacity: 0.55;">
+          <div style="font-weight: 600; font-size: 15px;">Emotional Style & Security</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Attachment, self-regulation</div>
+        </div>
+        <div class="card" style="padding: 20px 28px; opacity: 0.4;">
+          <div style="font-weight: 600; font-size: 15px;">Lifestyle, Intimacy & Chemistry</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Physical fit, intimacy values</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 12px;">
+        <span style="font-size: 12px; color: var(--text-muted);">▲ completed over time, in any order</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">05 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 6: COMPATIBILITY CONFIDENCE ==================== -->
+<section class="slide" id="slide-6">
+  <div class="glow-br"></div>
+  <div style="text-align: center; margin-bottom: 56px;">
+    <div class="label">Compatibility</div>
+    <h2 style="margin-bottom: 12px;">Confidence, not a score</h2>
+    <p style="font-size: 17px; color: var(--text-secondary); max-width: 560px; margin: 0 auto;">
+      Instead of "87% match," Delfa shows what it knows — and what it doesn't yet.
+    </p>
+  </div>
+
+  <div class="split">
+    <div class="card" style="padding: 36px 40px;">
+      <div style="margin-bottom: 24px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Compatibility Dimensions</span>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Intent</div>
+        <div class="meter-bar"><div class="meter-fill high" style="width: 92%;"></div></div>
+        <div class="meter-value">high</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Life Direction</div>
+        <div class="meter-bar"><div class="meter-fill high" style="width: 85%;"></div></div>
+        <div class="meter-value">high</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Pace</div>
+        <div class="meter-bar"><div class="meter-fill med" style="width: 60%;"></div></div>
+        <div class="meter-value">med</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Responsiveness</div>
+        <div class="meter-bar"><div class="meter-fill med" style="width: 55%;"></div></div>
+        <div class="meter-value">med</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Attachment</div>
+        <div class="meter-bar"><div class="meter-fill low" style="width: 25%;"></div></div>
+        <div class="meter-value">low</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Lifestyle</div>
+        <div class="meter-bar"><div class="meter-fill high" style="width: 78%;"></div></div>
+        <div class="meter-value">high</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Chemistry</div>
+        <div class="meter-bar"><div class="meter-fill med" style="width: 50%;"></div></div>
+        <div class="meter-value">med</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Conflict & Repair</div>
+        <div class="meter-bar"><div class="meter-fill low" style="width: 18%;"></div></div>
+        <div class="meter-value">low</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Intimacy</div>
+        <div class="meter-bar"><div class="meter-fill low" style="width: 20%;"></div></div>
+        <div class="meter-value">low</div>
+      </div>
+      <div class="meter-row">
+        <div class="meter-label">Stress & Finance</div>
+        <div class="meter-bar"><div class="meter-fill med" style="width: 65%;"></div></div>
+        <div class="meter-value">med</div>
+      </div>
+    </div>
+    <div>
+      <div class="card card-accent" style="padding: 28px; margin-bottom: 20px;">
+        <div style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 8px;">Improve your confidence</div>
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.5;">
+          Conflict & Repair: <span style="color: var(--text-muted);">low confidence</span><br>
+          <span style="color: var(--text-primary); font-weight: 500;">Complete "Communication & Repair" →</span>
+        </p>
+      </div>
+      <div class="card" style="padding: 24px;">
+        <div class="quote" style="font-size: 16px; border-left-width: 2px; padding-left: 20px;">
+          Transparency builds trust. Trust improves outcomes.
+          <div class="quote-source">How compatibility is framed can shape user behavior as much as the underlying model.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">06 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 7: DISCOVERY JOURNEY ==================== -->
+<section class="slide" id="slide-7">
+  <div class="glow-tl"></div>
+  <div class="split-right-heavy">
+    <div>
+      <div class="label">Match Stage</div>
+      <h2 style="margin-bottom: 16px;">Discovery Journey</h2>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px;">
+        Compatibility should be <em>experienced</em>, not declared by a score. Each match moves through 3-5 shared micro-activities that surface values, humor, and decision-making.
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px;">
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div class="tag" style="font-size: 11px;">15-30s</div>
+          <span style="font-size: 14px; color: var(--text-muted);">per prompt</span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div class="tag" style="font-size: 11px;">24h</div>
+          <span style="font-size: 14px; color: var(--text-muted);">to respond — async</span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div class="tag" style="font-size: 11px;">mutual</div>
+          <span style="font-size: 14px; color: var(--text-muted);">revealed only after both answer</span>
+        </div>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+        Grounded in Finkel's finding: interaction dynamics predict relationship success better than any pre-meeting algorithm.
+      </p>
+    </div>
+    <div>
+      <div class="card card-accent" style="padding: 36px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">Example Discovery Prompt</div>
+        <p style="font-size: 20px; font-weight: 600; color: var(--text-primary); line-height: 1.4; margin-bottom: 24px;">
+          You're both planning a friend's surprise birthday. You have £200 and 3 hours.
+        </p>
+        <p style="font-size: 17px; color: var(--accent); font-weight: 500;">
+          What do you prioritize?
+        </p>
+        <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border);">
+          <div style="display: flex; gap: 12px;">
+            <div style="flex: 1; background: rgba(255,255,255,0.04); border-radius: 8px; padding: 14px; text-align: center;">
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">You</div>
+              <div style="font-size: 14px; color: var(--text-secondary);">Waiting...</div>
+            </div>
+            <div style="flex: 1; background: rgba(255,255,255,0.04); border-radius: 8px; padding: 14px; text-align: center;">
+              <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Them</div>
+              <div style="font-size: 14px; color: var(--text-secondary);">Waiting...</div>
+            </div>
+          </div>
+          <p style="font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 12px;">Both answers reveal simultaneously</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">07 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 8: SLOW REVEAL ==================== -->
+<section class="slide" id="slide-8">
+  <div class="glow-br"></div>
+  <div class="split-left-heavy">
+    <div>
+      <div class="label">Profile Design</div>
+      <h2 style="margin-bottom: 16px;">Slow reveal</h2>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 36px;">
+        Depth is earned through mutual effort. Profile layers unlock as both users invest in the discovery process.
+      </p>
+
+      <div class="layer-card layer-1">
+        <div class="layer-tag">Layer 1 — immediate</div>
+        <p style="font-size: 15px; color: var(--text-primary);">Photos, relationship intent, lifestyle, voice prompts</p>
+      </div>
+      <div class="layer-card layer-2">
+        <div class="layer-tag">Layer 2 — after discovery</div>
+        <p style="font-size: 15px; color: var(--text-secondary);">Deeper profile signal unlocked after both engage</p>
+      </div>
+      <div class="layer-card layer-3">
+        <div class="layer-tag">Layer 3 — sustained effort</div>
+        <p style="font-size: 15px; color: var(--text-muted);">Richer compatibility explanations</p>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="padding: 32px; margin-bottom: 20px;">
+        <h3 style="font-size: 20px; margin-bottom: 12px;">Discovery, not withholding</h3>
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.6;">
+          This should feel like learning about someone, not like information is being held hostage. The pacing mirrors how real relationships reveal depth.
+        </p>
+      </div>
+      <div class="card card-accent" style="padding: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <i class="ph ph-microphone" style="font-size: 22px; color: var(--accent);"></i>
+          <span style="font-weight: 600; font-size: 16px;">Voice prompts</span>
+        </div>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+          Audio adds warmth that text can't and can make the transition to meeting feel more natural.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">08 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 9: CONVERSATION GUIDANCE ==================== -->
+<section class="slide" id="slide-9">
+  <div class="glow-center"></div>
+  <div class="split">
+    <div>
+      <div class="label">In-Match</div>
+      <h2 style="margin-bottom: 16px;">Conversation<br>guidance</h2>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px;">
+        Private, non-judgmental nudges that help users have better conversations. Like a thoughtful friend, not a coach with a clipboard.
+      </p>
+      <div class="card" style="padding: 24px; margin-bottom: 16px;">
+        <div style="font-weight: 600; font-size: 15px; color: var(--accent); margin-bottom: 8px;">Private conversation nudges</div>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+          Uses light interaction signals to trigger helpful prompts when they can improve clarity, reciprocity, or follow-through. Never a score, never a judgment.
+        </p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <div class="tag" style="background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--text-muted);">No score</div>
+        <div class="tag" style="background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--text-muted);">No leaderboard</div>
+        <div class="tag" style="background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--text-muted);">No streaks</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <div class="nudge-card">
+        <i class="ph ph-chat-circle-dots nudge-icon"></i>
+        "They mentioned a trip to Portugal — you might want to ask about it."
+      </div>
+      <div class="nudge-card" style="margin-left: 20px;">
+        <i class="ph ph-compass nudge-icon"></i>
+        "You've been chatting for a while. Want to clarify what you're both looking for?"
+      </div>
+      <div class="nudge-card" style="margin-left: 40px;">
+        <i class="ph ph-heart-half nudge-icon"></i>
+        "It's okay to close this match respectfully if it doesn't feel right."
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">09 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 10: GRACEFUL DISCONNECT ==================== -->
+<section class="slide" id="slide-10">
+  <div class="glow-tl"></div>
+  <div style="text-align: center; max-width: 800px; margin: 0 auto; margin-bottom: 48px;">
+    <div class="label">Signature Feature</div>
+    <h2 style="margin-bottom: 16px;">Graceful disconnect<br>with growth</h2>
+    <p style="font-size: 17px; color: var(--text-secondary); max-width: 560px; margin: 0 auto;">
+      Instead of ghosting, one-tap respectful closure. Every ending becomes data that makes the next match better.
+    </p>
+  </div>
+
+  <div class="grid-3">
+    <div class="card" style="text-align: center; padding: 32px;">
+      <div style="margin-bottom: 16px;"><i class="ph ph-handshake" style="font-size: 32px; color: var(--accent);"></i></div>
+      <h3 style="font-size: 17px; margin-bottom: 8px;">Respectful closure</h3>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+        Close the match in one step. Curated feedback options — never freeform, preventing abuse.
+      </p>
+    </div>
+    <div class="card card-accent" style="text-align: center; padding: 32px;">
+      <div style="margin-bottom: 16px;"><i class="ph ph-chart-line-up" style="font-size: 32px; color: var(--accent);"></i></div>
+      <h3 style="font-size: 17px; margin-bottom: 8px;">Private patterns</h3>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+        Over time, Delfa surfaces private insights: "Your strongest matches progress when the pace is steady."
+      </p>
+    </div>
+    <div class="card" style="text-align: center; padding: 32px;">
+      <div style="margin-bottom: 16px;"><i class="ph ph-plant" style="font-size: 32px; color: var(--accent);"></i></div>
+      <h3 style="font-size: 17px; margin-bottom: 8px;">Respectful closure norm</h3>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+        Delfa should make respectful closure simpler and safer than disappearing, without forcing users into rigid scripts or punitive mechanics.
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; text-align: center;">
+    <div class="card" style="display: inline-block; padding: 16px 28px;">
+      <span style="font-size: 14px; color: var(--text-muted);">Grounded in:</span>
+      <span style="font-size: 14px; color: var(--text-secondary);"> 41% ghosting rate • self-awareness and responsiveness = top relationship predictors</span>
+    </div>
+  </div>
+
+  <div class="slide-number">10 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 11: READY TO MEET ==================== -->
+<section class="slide" id="slide-11">
+  <div class="glow-br"></div>
+  <div class="split">
+    <div>
+      <div class="label">Transition to IRL</div>
+      <h2 style="margin-bottom: 16px;">Mutual ready-to-meet</h2>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px;">
+        Both users privately indicate when they feel ready to meet. Only when both have signaled does Delfa reveal it — simultaneously.
+      </p>
+      <div class="card card-accent" style="padding: 24px; margin-bottom: 20px;">
+        <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 16px;">
+          <div style="text-align: center;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-dim); border: 2px solid rgba(212,165,116,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+              <span style="color: var(--accent); font-weight: 700;">✓</span>
+            </div>
+            <div style="font-size: 13px; color: var(--text-secondary);">You</div>
+          </div>
+          <div style="display: flex; align-items: center; color: var(--accent); font-size: 24px;">⟷</div>
+          <div style="text-align: center;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-dim); border: 2px solid rgba(212,165,116,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+              <span style="color: var(--accent); font-weight: 700;">✓</span>
+            </div>
+            <div style="font-size: 13px; color: var(--text-secondary);">Them</div>
+          </div>
+        </div>
+        <p style="font-size: 15px; color: var(--accent); text-align: center; font-weight: 600;">You're both ready to meet!</p>
+      </div>
+      <p style="font-size: 14px; color: var(--text-muted);">
+        Removes the ask-out vulnerability asymmetry. No one has to go first.
+      </p>
+    </div>
+    <div>
+      <div class="label">Before We Meet Protocol</div>
+      <h3 style="margin-bottom: 20px; font-size: 22px;">Where current apps stop helping.<br>Delfa keeps going.</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div class="card" style="padding: 20px 24px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="ph ph-crosshair" style="font-size: 20px; color: var(--accent);"></i>
+            <div>
+              <div style="font-weight: 600; font-size: 15px;">Mutual expectations check</div>
+              <div style="font-size: 13px; color: var(--text-muted);">Both select what they're hoping for — see each other's answers</div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding: 20px 24px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="ph ph-shield-check" style="font-size: 20px; color: var(--accent);"></i>
+            <div>
+              <div style="font-weight: 600; font-size: 15px;">Safety setup</div>
+              <div style="font-size: 13px; color: var(--text-muted);">Timer check-in, location sharing, venue suggestions</div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding: 20px 24px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="ph ph-chat-teardrop-text" style="font-size: 20px; color: var(--accent);"></i>
+            <div>
+              <div style="font-weight: 600; font-size: 15px;">Conversation seed</div>
+              <div style="font-size: 13px; color: var(--text-muted);">One final shared prompt for the first 5 minutes IRL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">11 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 12: RELATIONSHIP OPERATING MANUAL ==================== -->
+<section class="slide" id="slide-12">
+  <div class="glow-center"></div>
+  <div class="split-right-heavy">
+    <div>
+      <div class="label">Long-Term Value</div>
+      <h2 style="margin-bottom: 16px;">Relationship<br>operating manual</h2>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px;">
+        As profiler and interaction data grow, Delfa generates a private self-knowledge document. Later, a match-safe shareable version can be unlocked.
+      </p>
+      <div class="card" style="padding: 24px;">
+        <div style="font-weight: 600; font-size: 15px; margin-bottom: 12px;">Private pattern summary</div>
+        <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+          A lightweight private summary of recurring strengths and mismatches across matches, used to improve self-awareness and future matching.
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="card card-accent" style="padding: 36px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px;">Your Operating Manual</div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+            <div style="font-size: 13px; color: var(--accent); margin-bottom: 6px;">What helps me feel safe</div>
+            <p style="font-size: 15px; color: var(--text-primary);">Consistent communication, planned dates over spontaneous ones, knowing their intentions early</p>
+          </div>
+          <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+            <div style="font-size: 13px; color: var(--accent); margin-bottom: 6px;">What I need after tension</div>
+            <p style="font-size: 15px; color: var(--text-primary);">Space first, then reconnection — not immediate resolution</p>
+          </div>
+          <div style="border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+            <div style="font-size: 13px; color: var(--accent); margin-bottom: 6px;">What pace works best</div>
+            <p style="font-size: 15px; color: var(--text-primary);">Steady progression before meeting, not abrupt intensity</p>
+          </div>
+          <div>
+            <div style="font-size: 13px; color: var(--accent); margin-bottom: 6px;">What strengthens chemistry</div>
+            <p style="font-size: 15px; color: var(--text-primary);">Humor, shared vulnerability, voice notes over text</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">12 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 13: TRUST & SAFETY ==================== -->
+<section class="slide" id="slide-13">
+  <div class="glow-tl"></div>
+  <div class="label">Core Pillar</div>
+  <h2 style="margin-bottom: 12px;">Trust & safety</h2>
+  <p style="font-size: 17px; color: var(--text-secondary); margin-bottom: 40px; max-width: 560px;">
+    A product pillar, not a moderation afterthought. Safety is part of the product, not just the policy layer.
+  </p>
+
+  <div class="grid-3" style="margin-bottom: 40px;">
+    <div class="card" style="padding: 28px;">
+      <div style="font-weight: 700; font-size: 16px; margin-bottom: 12px;">Identity verification</div>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+        Progressive verification and authenticity checks, applied in stages to increase trust without adding unnecessary onboarding friction.
+      </p>
+      <div style="font-size: 12px; color: var(--text-muted);">Verification should be strong, but the exact gating model still needs product definition.</div>
+    </div>
+    <div class="card" style="padding: 28px;">
+      <div style="font-weight: 700; font-size: 16px; margin-bottom: 12px;">Pre-send AI nudges</div>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+        Detect potentially offensive content before it's sent. Change behavior upstream.
+      </p>
+      <div style="font-size: 12px; color: var(--text-muted);">Useful as a safety mechanic; exact vendor metrics should not be treated as Delfa assumptions.</div>
+    </div>
+    <div class="card" style="padding: 28px;">
+      <div style="font-weight: 700; font-size: 16px; margin-bottom: 12px;">Image protection</div>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+        AI detection and blurring of unsolicited explicit images. User chooses to view or block.
+      </p>
+      <div style="font-size: 12px; color: var(--text-muted);">Useful as a safety mechanic; exact vendor metrics should not be treated as Delfa assumptions.</div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card" style="padding: 28px;">
+      <div style="font-weight: 700; font-size: 16px; margin-bottom: 12px;">Date safety</div>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+        Timer-based auto-alerts (better than panic buttons), location sharing, venue suggestions.
+      </p>
+    </div>
+    <div class="card" style="padding: 28px;">
+      <div style="font-weight: 700; font-size: 16px; margin-bottom: 12px;">LGBTQ+ protection</div>
+      <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">
+        Discreet mode, location obfuscation in hostile jurisdictions, minimal data sharing with third parties.
+      </p>
+    </div>
+    <div class="card card-accent" style="padding: 28px;">
+      <div class="stat-number" style="font-size: 40px;">High</div>
+      <div style="font-size: 14px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">
+        Safety remains one of the strongest unmet needs in the category and should be treated as a core product advantage.
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-number">13 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 14: GUARDRAILS ==================== -->
+<section class="slide" id="slide-14">
+  <div style="max-width: 680px; margin: 0 auto;">
+    <div class="label" style="text-align: center;">Product Guardrails</div>
+    <h2 style="text-align: center; margin-bottom: 48px;">What Delfa<br>will never be</h2>
+
+    <div class="card" style="padding: 40px 48px;">
+      <div class="guardrail">
+        <div class="guardrail-x">✗</div>
+        <div class="guardrail-text">A swipe casino</div>
+      </div>
+      <div class="guardrail">
+        <div class="guardrail-x">✗</div>
+        <div class="guardrail-text">A dating entertainment feed</div>
+      </div>
+      <div class="guardrail">
+        <div class="guardrail-x">✗</div>
+        <div class="guardrail-text">A pay-for-attention marketplace</div>
+      </div>
+      <div class="guardrail">
+        <div class="guardrail-x">✗</div>
+        <div class="guardrail-text">A black-box compatibility scam</div>
+      </div>
+      <div class="guardrail">
+        <div class="guardrail-x">✗</div>
+        <div class="guardrail-text">A rejection-scoring machine</div>
+      </div>
+      <div class="guardrail">
+        <div class="guardrail-x">✗</div>
+        <div class="guardrail-text">A social events product</div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <div class="quote" style="display: inline-block; text-align: left; font-size: 18px; max-width: 520px;">
+        If a feature increases engagement but reduces honesty, clarity, or trust — reject it.
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">14 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 15: EVIDENCE BASE ==================== -->
+<section class="slide" id="slide-15">
+  <div class="glow-br"></div>
+  <div class="split-left-heavy">
+    <div>
+      <div class="label">Research Foundation</div>
+      <h2 style="margin-bottom: 16px;">Every decision<br>backed by evidence</h2>
+      <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px;">
+        Delfa's product decisions are grounded in a 1,100+ line research brief synthesizing peer-reviewed relationship science, large-scale surveys, and regulatory data.
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <div class="tag" style="font-size: 10px; flex-shrink: 0;">PNAS 2020</div>
+          <span style="font-size: 14px; color: var(--text-secondary);">43 longitudinal couples studies</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <div class="tag" style="font-size: 10px; flex-shrink: 0;">Finkel</div>
+          <span style="font-size: 14px; color: var(--text-secondary);">Definitive meta-analysis on dating algorithms</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <div class="tag" style="font-size: 10px; flex-shrink: 0;">Pew</div>
+          <span style="font-size: 14px; color: var(--text-secondary);">2020, 2023 U.S. online dating reports</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <div class="tag" style="font-size: 10px; flex-shrink: 0;">Forbes</div>
+          <span style="font-size: 14px; color: var(--text-secondary);">1,000-person burnout survey, 2025</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: baseline;">
+          <div class="tag" style="font-size: 10px; flex-shrink: 0;">FTC</div>
+          <span style="font-size: 14px; color: var(--text-secondary);">Enforcement data on dating app practices</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="padding: 32px; margin-bottom: 20px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Profiler Science Basis</div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: var(--accent);"></div>
+            <span style="font-size: 14px; color: var(--text-secondary);">Commitment & relationship intent</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: var(--accent);"></div>
+            <span style="font-size: 14px; color: var(--text-secondary);">Attachment security</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: var(--accent);"></div>
+            <span style="font-size: 14px; color: var(--text-secondary);">Conflict repair capacity</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: var(--accent);"></div>
+            <span style="font-size: 14px; color: var(--text-secondary);">Partner responsiveness</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: var(--accent);"></div>
+            <span style="font-size: 14px; color: var(--text-secondary);">Emotional stability</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: var(--accent);"></div>
+            <span style="font-size: 14px; color: var(--text-secondary);">Values & life-goal alignment</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 4px; height: 4px; border-radius: 50%; background: var(--accent);"></div>
+            <span style="font-size: 14px; color: var(--text-secondary);">Stress & financial coping</span>
+          </div>
+        </div>
+      </div>
+      <div class="card card-accent" style="padding: 24px;">
+        <p style="font-size: 15px; color: var(--text-secondary); line-height: 1.5;">
+          Products that emphasize better dates and better outcomes suggest the market can reward a more intentional dating model.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">15 / 16</div>
+</section>
+
+<!-- ==================== SLIDE 16: WHAT COMES NEXT ==================== -->
+<section class="slide" id="slide-16">
+  <div class="glow-center"></div>
+  <div style="max-width: 760px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <div class="label">Roadmap</div>
+      <h2>What comes next</h2>
+    </div>
+
+    <div class="timeline" style="margin-bottom: 48px;">
+      <div class="timeline-item">
+        <div class="timeline-title">Match lifecycle spec & discovery journey schema</div>
+        <div class="timeline-desc">Define match states, transitions, and discovery prompt structure</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-title">Confidence model contract</div>
+        <div class="timeline-desc">Wire profiler sections to dimensional confidence scoring</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-title">Graceful disconnect taxonomy</div>
+        <div class="timeline-desc">Curated closure reasons, calibration signals, pattern engine</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-title">Ready-to-meet & before-we-meet contracts</div>
+        <div class="timeline-desc">Mutual readiness detection, pre-date protocol flows</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-title">API and mobile implementation</div>
+        <div class="timeline-desc">Wire shared contracts into apps/api and apps/mobile</div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div style="width: 60px; height: 2px; background: var(--accent); margin: 0 auto 28px;"></div>
+      <p style="font-size: 22px; font-weight: 600; color: var(--text-primary); line-height: 1.4; max-width: 580px; margin: 0 auto;">
+        Delfa's advantage is not just better matching.<br>
+        It is a better structure for how real relationships begin.
+      </p>
+    </div>
+
+    <div style="text-align: center;">
+      <div class="tag">Shared profiler code already implemented in packages/shared/</div>
+    </div>
+  </div>
+  <div class="slide-number">16 / 16</div>
+</section>
+
+<script>
+  // Navigation dots
+  const slides = document.querySelectorAll('.slide');
+  const navDots = document.getElementById('navDots');
+
+  slides.forEach((slide, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    dot.title = `Slide ${i + 1}`;
+    dot.addEventListener('click', () => {
+      slide.scrollIntoView({ behavior: 'smooth' });
+    });
+    navDots.appendChild(dot);
+  });
+
+  // Active dot tracking
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = Array.from(slides).indexOf(entry.target);
+        document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(slide => observer.observe(slide));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const current = Array.from(slides).findIndex(slide => {
+      const rect = slide.getBoundingClientRect();
+      return rect.top >= -100 && rect.top < window.innerHeight / 2;
+    });
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') {
+      e.preventDefault();
+      const next = Math.min(current + 1, slides.length - 1);
+      slides[next].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const prev = Math.max(current - 1, 0);
+      slides[prev].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+
+</body>
+</html>
