@@ -2,7 +2,7 @@
 
 Delfa is a relationship-first dating app designed to replace swipe fatigue with one high-quality match at a time.
 
-[![Delfa interactive deck preview](docs/presentations/assets/delfa-deck-hero.svg)](https://builtbylee.github.io/Delfa/presentations/delfa-explainer-deck.html)
+[![Delfa interactive deck preview](docs/presentations/assets/delfa-deck-hero-v2.svg)](https://builtbylee.github.io/Delfa/presentations/delfa-explainer-deck.html)
 
 [Open Interactive Deck](https://builtbylee.github.io/Delfa/presentations/delfa-explainer-deck.html)
 
