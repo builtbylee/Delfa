@@ -111,6 +111,8 @@ The profiler should be modular:
 - Phase 3: attachment, conflict, stress, and intimacy
 - Phase 4: ongoing calibration through behavior and reflection
 
+Current working profiler structure and question design live in `docs/product/profiler-v1.md`.
+
 ### 5.3 Sensitive Preference Handling
 
 Delfa should not expose blunt exclusion filters for protected characteristics such as race or ethnicity.
@@ -261,3 +263,4 @@ This section is directional and may be refined once implementation begins.
 - Added a research brief covering dating app market pain points and data-backed relationship predictors
 - Expanded the research brief with a verification pass covering monetization, privacy, AI deception, regulation, and inclusion risks
 - Expanded the relationship research with verified findings on positive-event responsiveness, humor/playfulness, and live interaction signals
+- Added the first structured profiler spec and a research brief on current dating apps' strongest reusable mechanics

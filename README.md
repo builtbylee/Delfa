@@ -21,6 +21,7 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 │   ├── api/
 │   └── mobile/
 ├── docs/
+│   ├── product/
 │   └── research/
 ├── packages/
 │   └── shared/
@@ -36,7 +37,9 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 
 - `README.md`: repo overview and working conventions
 - `TECHNICAL_MANUAL.md`: product and architecture blueprint
+- `docs/product/profiler-v1.md`: first structured profiler spec and question architecture
 - `docs/research/market-and-relationship-research.md`: evidence base for product and profiler decisions
+- `docs/research/dating-app-strengths.md`: verified strengths from current dating apps worth adapting for Delfa
 - `CHANGELOG.md`: chronological project changes
 - `ISSUES.md`: current product and engineering backlog
 - `RELEASE_MANIFEST.md`: release scope and version tracking

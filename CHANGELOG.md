@@ -19,3 +19,5 @@ All notable changes to Delfa will be documented in this file.
 - Added verified findings on monetization, privacy, AI deception, accessibility, regulation, and market trust decline
 - Excluded weakly sourced or unverified market claims from Delfa's evidence base
 - Added verified relationship findings on positive-event responsiveness, shared humor/playfulness, and interaction-stage signal capture for profiler design
+- Added the first structured profiler spec with Basics plus four deeper sections
+- Added research on current dating apps' strongest mechanics and mapped which should be adapted or rejected for Delfa
