@@ -243,6 +243,7 @@ Implementation-ready profiler design artifacts live in:
 - `docs/product/profiler-scoring-v1.md`
 - `docs/product/profiler-user-flows-v1.md`
 - `docs/product/match-experience-v1.md`
+- `docs/presentations/delfa-explainer-deck-v1.md`
 
 The first live profiler implementation layer now lives in:
 

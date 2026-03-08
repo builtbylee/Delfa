@@ -19,6 +19,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Added the canonical profiler question bank with exact wording and answer inventory
 - Added the first shared profiler implementation module with types, question definitions, and API contracts
 - Added the first match-experience direction doc covering Delfa's strongest differentiators beyond the profiler
+- Added an explainer deck source summarizing Delfa's product, profiler, match experience, and architecture
 
 ## Working Conventions
 
