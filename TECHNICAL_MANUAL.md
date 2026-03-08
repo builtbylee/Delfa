@@ -85,6 +85,8 @@ The profiler and matching logic should prioritize:
 
 These factors should carry greater weight than surface preferences or hobby overlap.
 
+Detailed supporting evidence is documented in `docs/research/market-and-relationship-research.md`.
+
 ## 5. Profiler Design Principles
 
 ### 5.1 Input Design
@@ -256,4 +258,4 @@ This section is directional and may be refined once implementation begins.
 - Created initial architectural blueprint for Delfa
 - Documented product principles, profiler design rules, and matching model
 - Established initial technical structure and release baseline
-
+- Added a research brief covering dating app market pain points and data-backed relationship predictors

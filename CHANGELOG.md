@@ -11,4 +11,4 @@ All notable changes to Delfa will be documented in this file.
 - Technical architecture blueprint
 - Product backlog and release manifest
 - GitHub issue and pull request templates
-
+- Research brief documenting dating app pain points and long-term relationship predictors

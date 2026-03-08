@@ -9,6 +9,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Established initial repository structure for Delfa
 - Added foundational project documentation
 - Created first-pass technical blueprint and release baseline
+- Added a research brief grounding Delfa's product and profiler decisions in market and relationship-science evidence
 
 ## Working Conventions
 
@@ -23,10 +24,10 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - No swipe-first infinite browsing model
 - No pay-to-win boosts or visibility sales
 - Matching should prioritize long-term compatibility signals
+- Product decisions should be validated against `docs/research/market-and-relationship-research.md`
 
 ## Open Questions
 
 - Exact mobile and backend framework choices
 - Final profiler schema and question bank
 - Sensitive-preference calibration rules and fairness constraints
-
