@@ -25,3 +25,4 @@ All notable changes to Delfa will be documented in this file.
 - Expanded the dating-app-strengths brief with additional mechanics including voice, nudges, safety infrastructure, accessibility, and ethical success metrics
 - Added the canonical profiler question bank with exact question wording, answer options, and conditional display rules
 - Added the first shared TypeScript profiler implementation layer with question definitions, domain types, and API contracts
+- Added core match-stage differentiator docs covering discovery journeys, confidence by dimension, slow reveal profile depth, readiness check-ins, mutual ready-to-meet, pre-date protocol, and graceful disconnect with growth

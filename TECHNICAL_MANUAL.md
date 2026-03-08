@@ -18,7 +18,11 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 
 - One meaningful match at a time
 - Progressive profiler that grows over time
+- Compatibility discovery through interaction, not a headline match score
 - Graceful disconnects with structured feedback
+- Mutual ready-to-meet and a guided pre-date protocol
+- Compatibility confidence tied to profiler depth
+- Slow reveal profile depth inside the match experience
 - Compatibility modeled on data-backed relationship factors
 - In-app experience only; no events or meetup layer
 
@@ -40,6 +44,7 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 - Learn from user behavior and graceful disconnects
 - Make relationship intent and life goals core inputs
 - Reward consistency, responsiveness, and seriousness
+- Help users discover compatibility through guided interaction rather than relying on static profiles alone
 
 ## 3. Product Architecture
 
@@ -54,6 +59,7 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
    - graceful disconnect
    - timeout/inactivity resolution
 6. Feedback updates future ranking and profiler calibration.
+7. If both users are ready, Delfa guides the transition to an in-person date.
 
 ### 3.2 Core Product Modules
 
@@ -113,7 +119,21 @@ The profiler should be modular:
 
 Current working profiler structure and question design live in `docs/product/profiler-v1.md`.
 
-### 5.3 Sensitive Preference Handling
+### 5.3 Confidence and Progressive Signal
+
+Delfa should not show a simplistic match percentage.
+
+Instead, it should expose confidence by dimension, tied directly to completed profiler sections and interaction data.
+
+Example:
+
+- life direction confidence
+- communication and repair confidence
+- intimacy confidence
+
+The product should explicitly tell users which section completion would improve low-confidence dimensions.
+
+### 5.4 Sensitive Preference Handling
 
 Delfa should not expose blunt exclusion filters for protected characteristics such as race or ethnicity.
 
@@ -142,8 +162,19 @@ Recommended approach:
 - Match unlock cadence controlled by lifecycle completion
 - No infinite feed or swipe stack in the core experience
 - Premium should improve insight quality, not volume
+- Each match should include a compatibility discovery journey with shared prompts
+- Profile depth should reveal progressively during the active match
 
-### 6.3 Feedback Loop
+### 6.3 Match Experience Differentiators
+
+- private readiness check-ins
+- private conversation nudges
+- mutual ready-to-meet signal
+- before-we-meet protocol
+- relationship operating manual
+- graceful disconnect with growth
+
+### 6.4 Feedback Loop
 
 Each completed match should produce structured signals:
 
@@ -159,6 +190,8 @@ Feedback should be split into:
 
 - user-visible closure reasons
 - private ranking/calibration signals
+
+Detailed match-stage direction lives in `docs/product/match-experience-v1.md`.
 
 ## 7. Monetization
 
@@ -209,6 +242,7 @@ Implementation-ready profiler design artifacts live in:
 - `docs/product/profiler-data-model-v1.md`
 - `docs/product/profiler-scoring-v1.md`
 - `docs/product/profiler-user-flows-v1.md`
+- `docs/product/match-experience-v1.md`
 
 The first live profiler implementation layer now lives in:
 

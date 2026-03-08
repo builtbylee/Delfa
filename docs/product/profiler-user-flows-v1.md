@@ -84,6 +84,7 @@ At the end of each section, show:
 - a short "what this improves" summary
 - one or two compatibility dimensions strengthened
 - prompt to return to matching or continue profiling
+- if relevant, a confidence callout showing which compatibility area improved
 
 Example:
 
@@ -103,7 +104,18 @@ Recommended UI:
 - `Used privately for better matching`
 - `Private and never shown`
 
-## 8. Flow 7: Match-Stage Calibration
+## 8. Flow 7: Compatibility Confidence
+
+Once Basics is complete, Delfa should show confidence by dimension.
+
+Rules:
+
+- no headline percentage
+- show high, medium, or low confidence per dimension
+- explain what data source the confidence comes from
+- recommend the next profiler section when a dimension is low-confidence
+
+## 9. Flow 8: Match-Stage Calibration
 
 After a match is live, Delfa should continue gathering signal:
 
@@ -115,17 +127,36 @@ After a match is live, Delfa should continue gathering signal:
 
 This should feed calibration without forcing obvious "rate this person" forms too early.
 
-## 9. Flow 8: Answer Editing
+## 10. Flow 9: Match Discovery Journey
+
+Each active match should move through a lightweight discovery path.
+
+Rules:
+
+- prompt sets should be asynchronous
+- both users answer privately first
+- responses reveal only after both have answered
+- profile depth should unlock progressively through participation
+
+## 11. Flow 10: Answer Editing
 
 Rules:
 
 - users can edit answers any time
 - editing a major compatibility answer should trigger:
   - recompute notice
-  - explanation if it affects future matches
+- explanation if it affects future matches
 - some changes may not affect an already active match until that match ends
 
-## 10. Key Screen List
+## 12. Flow 11: Ready-to-Meet Transition
+
+Once both users privately indicate readiness to meet, Delfa should:
+
+- reveal that readiness is mutual
+- offer the before-we-meet protocol
+- support planning the first date
+
+## 13. Key Screen List
 
 Minimum screens for MVP:
 
@@ -133,22 +164,26 @@ Minimum screens for MVP:
 - Basics question screens
 - Basics completion screen
 - deeper-section hub
+- compatibility confidence view
 - section question screens
 - section completion screens
 - privacy explanation screen
 - profile preview screen
+- discovery journey screens
+- ready-to-meet state and before-we-meet screens
 
-## 11. UX Constraints
+## 14. UX Constraints
 
 - no long scroll forms
 - no giant matrix questionnaires
 - no clinical language
 - no moralizing answer labels
 - no hidden save behavior
+- no single headline match score
+- no conversation score that feels like judgment
 
-## 12. Open Questions
+## 15. Open Questions
 
 - Should Basics completion show a compatibility radar immediately or wait until first matches?
 - Should deeper sections be recommended adaptively based on weak-confidence dimensions?
 - Should the attraction calibration exercise appear in Basics or immediately after Basics as a near-required follow-up?
-

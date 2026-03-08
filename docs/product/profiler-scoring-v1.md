@@ -72,12 +72,24 @@ Match confidence should depend on:
 - how many sections both users completed
 - whether key dimensions are directly answered or inferred
 - whether behavioral calibration confirms or contradicts stated answers
+- whether interaction-stage data from the active match has been gathered
 
 ### Suggested output bands
 
 - `low_confidence`
 - `medium_confidence`
 - `high_confidence`
+
+### Product rule
+
+Confidence should be shown by dimension, not as a single headline compatibility score.
+
+The UI should also map low-confidence dimensions to the profiler section that would improve them.
+
+Example:
+
+- `communication_repair` confidence is low
+- prompt user to complete `Communication and Repair`
 
 ## 5. Behavioral Calibration Rules
 
@@ -133,4 +145,3 @@ Recompute compatibility when:
 - Should confidence be shown to users directly or only via explanation quality?
 - At what threshold should a changed answer invalidate an active future match queue?
 - How strongly should graceful disconnect reasons alter future ranking?
-
