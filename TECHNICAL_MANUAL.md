@@ -260,3 +260,4 @@ This section is directional and may be refined once implementation begins.
 - Established initial technical structure and release baseline
 - Added a research brief covering dating app market pain points and data-backed relationship predictors
 - Expanded the research brief with a verification pass covering monetization, privacy, AI deception, regulation, and inclusion risks
+- Expanded the relationship research with verified findings on positive-event responsiveness, humor/playfulness, and live interaction signals

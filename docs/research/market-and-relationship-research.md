@@ -507,19 +507,27 @@ Conflict itself is not the only issue; how conflict is handled matters. Repair a
 - The PNAS study ranked appreciation as one of the top relationship-specific predictors.
 - The same PNAS study also found perceived partner responsiveness among the most successful recurring constructs across datasets.
 - A longitudinal study of new parents found lower perceived provision and receipt of responsiveness predicted declines in relationship satisfaction; under lower stress, higher responsiveness forecasted increases in satisfaction.
+- Research on `capitalization` found that perceived partner responses to positive events were strongly associated with relationship well-being, over and above support during negative events.
+- A `2025` meta-analysis of `39` studies covering `15,177` participants found that shared relational humor was strongly associated with relationship satisfaction, commitment, and closeness, with relational humor showing the strongest effects.
 
 ### Interpretation
 
-Feeling understood, validated, and cared for is a core process variable in healthy long-term relationships.
+Feeling understood, validated, and cared for is a core process variable in healthy long-term relationships. Claude's research surfaced an important extension that holds up: healthy bonds are not only built through support during stress, but also through how partners respond to each other's good news and shared playfulness.
 
 ### Delfa implication
 
 - The profiler should assess responsiveness tendencies, empathy, and attunement.
+- The profiler should also assess:
+  - how someone responds to a partner's excitement or success
+  - whether they amplify, minimize, or redirect attention away from the other person
+  - comfort with playfulness, teasing style, and shared levity
 - The app should capture responsiveness behaviorally:
   - reply quality
   - consistency
   - acknowledgment of prompts
   - supportiveness under difficult or vulnerable exchanges
+  - enthusiasm toward positive disclosures
+  - ease of creating shared humor
 
 ## 5.5 Emotional stability / low neuroticism
 
@@ -621,6 +629,15 @@ Inference from the evidence:
 
 What matters most is not generic profile richness, but the quality of signal around relationship process, intent, stress behavior, and mutual fit.
 
+Some of the strongest signals are `interactional`, not static:
+
+- responsiveness to good news
+- repair attempts during tension
+- shared humor and playfulness
+- consistency over repeated interactions
+
+That means Delfa should treat the profiler as necessary but incomplete, then use match-stage interaction data to refine fit.
+
 ## 7. Profiler Architecture Recommended for Delfa
 
 ## 7.1 Highest-Priority Profiler Domains
@@ -652,6 +669,8 @@ Prefer:
 - recent-behavior questions
 - rankings and pairwise choices
 - consistency checks over time
+- positive-event response scenarios
+- humor and playfulness calibration
 - calibration from behavior and graceful disconnects
 
 ## 7.3 Example Topic-to-Question Mapping
@@ -664,6 +683,10 @@ Prefer:
   - "If someone you are dating becomes less communicative for two days, what is your default interpretation?"
 - Responsiveness:
   - "When someone shares something vulnerable, what do you tend to do next?"
+- Positive-event responsiveness:
+  - "If someone you are dating shares exciting news, what do you naturally do first?"
+- Humor / playfulness:
+  - "Which feels most connecting to you in a relationship: playful teasing, warm silliness, deep conversation, or calm steadiness?"
 - Stress / finances:
   - "When money becomes tight, what tends to happen to your mood and communication?"
 - Values / life goals:
@@ -690,6 +713,9 @@ Prefer:
 
 - `Behavioral learning`
   - justified by the fact that relationship-quality change is not well predicted from static baseline self-report alone
+
+- `Guided interaction prompts`
+  - justified by the fact that some of the strongest relationship signals emerge through live interaction rather than intake-only profiling
 
 ## 8.2 Features that would undermine the evidence base
 
@@ -772,6 +798,8 @@ Use the evidence above as the default decision framework:
 - Journal of Marital and Family Therapy / PMC, 2021: [Satisfying and stable couple relationships: Attachment similarity across partners can partially buffer the negative effects of attachment insecurity](https://pmc.ncbi.nlm.nih.gov/articles/PMC8359179/)
 - Systematic review, 2019: [Protective factors of marital stability in long-term marriage globally](https://pmc.ncbi.nlm.nih.gov/articles/PMC6702121/)
 - Personality and marital satisfaction meta-analysis, 2020: [The relationship between personality traits and marital satisfaction: a systematic review and meta-analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC7006385/)
+- Journal of Personality and Social Psychology, 2004: [What do you do when things go right? The intrapersonal and interpersonal benefits of sharing positive events](https://pubmed.ncbi.nlm.nih.gov/15535797/)
+- Current Psychology, 2025: [Humour and relationship quality in romantic couples: A meta-analysis](https://link.springer.com/article/10.1007/s12144-025-08026-3)
 - Journal of Family Psychology PDF, 2021: [Responsiveness and relationship satisfaction across the transition to parenthood](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/2021-08/Smallen%20et%20al.%2C%202021%20%28JFP%29.pdf)
 - PMC, 2013: [Financial Strain and Stressful Events Predict Newlyweds' Negative Communication Independent of Relationship Satisfaction](https://pmc.ncbi.nlm.nih.gov/articles/PMC3667200/)
 - PMC, 2016: [Longitudinal Associations among Relationship Satisfaction, Sexual Satisfaction, and Frequency of Sex in Early Marriage](https://pmc.ncbi.nlm.nih.gov/articles/PMC4472635/)
