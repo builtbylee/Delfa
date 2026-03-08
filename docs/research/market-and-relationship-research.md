@@ -20,6 +20,10 @@ On the market side, the strongest recurring app failures are:
 - deception and profile distrust
 - safety problems including harassment, scams, and stalking
 - ambiguity around relationship intent
+- predatory monetization and opaque pricing
+- privacy and data-handling concerns
+- rising AI-enabled authenticity problems
+- accessibility and inclusion failures for some user groups
 - app mechanics that reward engagement volume over relationship outcomes
 
 On the relationship-science side, the most defensible predictors of durable relationship quality are:
@@ -54,6 +58,8 @@ Priority was given to:
 
 - Pew Research Center
 - FTC
+- regulatory and government sources
+- company earnings and investor materials where relevant
 - peer-reviewed journals and open-access full text
 
 ### 2.2 Relationship Predictor Research
@@ -70,6 +76,25 @@ Priority was given to:
 - peer-reviewed research
 - large-N or multi-study work
 - designs with longitudinal or dyadic evidence
+
+### 2.3 Verification Standard for External Claims
+
+Because many dating-app narratives circulate through blogs, creator threads, and advocacy summaries, a second-pass verification standard was applied to externally sourced claims before they were incorporated into this brief.
+
+Claims were included only when they were supported by at least one of the following:
+
+- a primary source
+- a peer-reviewed source
+- a reputable research organization
+- a government or regulator source
+- a directly attributable company or market disclosure
+
+Claims were excluded or explicitly qualified when they relied mainly on:
+
+- anonymous forum posts
+- unsourced app-review summaries
+- advocacy framing without primary evidence
+- exact operational allegations that cannot be independently verified
 
 ## 3. Topic A: Main Complaints and Drawbacks of Current Dating Apps
 
@@ -247,6 +272,108 @@ Even when not stated directly in survey wording, the pattern is clear: users exp
 - Monetization must not depend on volume.
 - Subscription value should come from insight, trust, and quality, not more swipes or visibility boosts.
 
+## 3.9 Predatory monetization and opaque pricing
+
+### Evidence
+
+- Tinder launched `Tinder Select` in `September 2023` at `$499` per month, explicitly tying premium spend to more access and visibility.
+- In `August 2025`, the FTC announced that Match Group agreed to pay `$14 million` and stop deceptive advertising, cancellation, and billing practices relating to Match.com.
+- Mozilla Foundation and Consumers International found that Tinder Plus pricing could vary by as much as `5x` for the same service, with up to `31` price points within a single country and older users often paying more.
+- As of `2026`, Tinder is subject to a California class settlement of `$60.5 million` over alleged age-based pricing discrimination.
+- Hinge's official help center says free users can send only a `select number of likes per day`; multiple secondary sources consistently place that figure around `8 per day`, not `7 per week`.
+
+### Interpretation
+
+The monetization problem is real and evidence-backed. However, some stronger claims made in public discourse require caution:
+
+- there is evidence of opaque pricing and deceptive subscription practices
+- there is not strong public evidence that apps are deliberately withholding each user's best matches behind paywalls
+- "shadowbanning to force payment" remains an allegation, not a verified fact
+
+### Delfa implication
+
+- Delfa should adopt an explicit anti-manipulation monetization policy.
+- No boosts, pay-for-visibility, or opaque scarcity mechanics.
+- Premium value should come from insight, clarity, and support, not ranked access to people.
+
+## 3.10 Privacy, data exploitation, and regulatory pressure
+
+### Evidence
+
+- Mozilla's 2024 review of `25` dating apps found that `22` received its `*Privacy Not Included` warning label.
+- In Norway, the Grindr GDPR case resulted in a `NOK 65 million` fine, and the Court of Appeal upheld that fine on `2025-10-21`.
+- Australia introduced an online dating industry code of conduct that took effect on `2024-10-01`, after government pressure following evidence of widespread harm on platforms.
+- In California, `SB 957`, the `Online Dating Safety and Transparency Act`, was introduced on `2026-02-19` to strengthen safety, transparency, and accountability for dating platforms.
+
+### Interpretation
+
+Dating-app problems are no longer just UX complaints. Privacy, moderation, identity handling, and safety transparency are becoming regulatory issues.
+
+### Delfa implication
+
+- Separate public profile data from sensitive ranking data.
+- Be explicit about moderation, review, and account-state decisions.
+- Design for auditability and clean user-facing privacy controls from the start.
+
+## 3.11 AI-enabled deception and the authenticity crisis
+
+### Evidence
+
+- Scientific American reported in `2025` that Match and the Kinsey Institute found `26%` of U.S. singles said they use AI to enhance dating, a `333%` jump from the previous year.
+- The same Scientific American piece cites Norton research indicating that `6 in 10` people who use dating apps believe they have encountered at least one AI-written conversation.
+- A `2026` UK survey commissioned by Sumsub found `84%` of respondents said AI content had made it harder to trust matches or date successfully.
+- Australian Federal Police guidance in `2025` explicitly warned that scammers now use AI during video chats to mimic another person's face and voice.
+
+### Interpretation
+
+The older fake-profile problem has evolved into an authenticity problem:
+
+- synthetic profile content
+- AI-assisted messaging
+- deepfakes
+- identity-layer fraud
+
+### Delfa implication
+
+- Authenticity must be a product layer, not a badge.
+- Delfa should treat profile verification, liveness, suspicious behavior detection, and conversation-integrity signals as ongoing controls.
+
+## 3.12 Accessibility, inclusion, and high-risk user groups
+
+### Evidence
+
+- AudioEye's accessibility survey found that among disabled respondents who had used dating apps, `75%` said the apps were not accessible, `78%` said they faced challenges using them, and `100%` said dating apps were not designed to be accessible for people with disabilities.
+- Human Rights Watch documented severe digital targeting risks for LGBT people in the Middle East and North Africa, showing how identity-revealing platforms can create outsized harm in hostile environments.
+- Tinder's `Traveler Alert` feature was designed around `69` countries where being openly LGBTQ+ can create legal or physical risk.
+- Ofcom reported in `2025` that online dating in the UK was significantly more popular among men than women (`65%` vs `35%`), with Hinge a notable exception at `53%` women in the measured period.
+
+### Interpretation
+
+Mainstream dating apps do not fail users evenly. Disabled users, LGBTQ+ users in hostile jurisdictions, and users subject to strong marketplace imbalance face distinct harms.
+
+### Delfa implication
+
+- Accessibility should be a design requirement, not an afterthought.
+- Sensitive identity data should be treated as high-risk.
+- Trust and safety features should account for context-specific risks, not assume one global user experience.
+
+## 3.13 Market contraction and trust decline
+
+### Evidence
+
+- Ofcom reported in `2025` that fewer people in the UK were swiping to find love, with Tinder down `600,000` users, Bumble down `300,000+`, Hinge down `131,000`, and Grindr down `11,000` versus the prior year.
+- Ofcom also reported roughly `4.9 million` UK adults used an online dating service in `2024`, or about `1 in 10` adults.
+- Bumble's official `Q3 2025` results showed total paying users down `16%` year over year to `3.6 million`, alongside a `10%` revenue decline.
+
+### Interpretation
+
+The category is not disappearing, but user trust is clearly under pressure. This matters because Delfa does not need to create dating demand from scratch; it needs to offer a more credible alternative to a fatigued market.
+
+### Delfa implication
+
+- Position Delfa as a trust-restoring product, not just a feature variant.
+- Outcome quality should be visible in the product and measurable internally.
+
 ## 4. Topic A Synthesis: Priority Complaint Clusters for Delfa
 
 The strongest complaint clusters, ranked by strategic relevance to Delfa, are:
@@ -256,9 +383,11 @@ The strongest complaint clusters, ranked by strategic relevance to Delfa, are:
 3. `Dishonesty and low trust`
 4. `Safety failures: harassment, scams, stalking`
 5. `Ambiguous relationship intent`
-6. `Mechanics that reward browsing rather than commitment`
+6. `Predatory monetization and opaque pricing`
+7. `Privacy, authenticity, and identity-handling failures`
+8. `Mechanics that reward browsing rather than commitment`
 
-These six areas justify Delfa's proposed core features:
+These priorities justify Delfa's proposed core features:
 
 - one active match
 - progressive profiling
@@ -266,6 +395,39 @@ These six areas justify Delfa's proposed core features:
 - intent clarity
 - behavioral calibration
 - no swipe-first mechanic
+
+## 4.1 Second-pass verification of external market claims
+
+This section captures how the broader external claims set was treated after a stricter verification pass.
+
+### Verified and incorporated
+
+- Dating-app burnout is widespread and quantifiable.
+- Harassment, scams, stalking, and unwanted contact are material category problems.
+- Opaque pricing and manipulative subscription practices are real risks in the market.
+- Tinder's `$499/month` premium tier is real.
+- Match Group's `$14 million` FTC settlement is real.
+- Tinder's `$60.5 million` California age-pricing settlement is real.
+- AI-assisted deception and deepfake-driven trust erosion are real and growing.
+- Privacy and data-sharing concerns are materially substantiated.
+- Accessibility and marginalized-user risk deserve explicit treatment.
+- UK usage decline and Bumble's `Q3 2025` paying-user decline are real and relevant.
+
+### Partially verified or directionally supported
+
+- The claim that dating-app incentives are structurally misaligned with user outcomes is strongly supported as an inference, but internal optimization goals are not fully transparent.
+- The claim that Hinge sharply reduced free likes is directionally true, but the specific figure cited elsewhere (`7 per week`) is not verified; the best supported public figure is roughly `8 per day`.
+- International and cultural mismatch is clearly real, but the supporting evidence is uneven by region and varies in quality.
+- Claims that newer entrants such as Thursday or personality-led apps failed for specific reasons are directionally interesting, but case-by-case causal explanations are often weakly sourced.
+
+### Not incorporated due to insufficient verification
+
+- shadowbanning claims presented as established fact
+- exact match-rate tables such as `0.6%` vs `10%` without primary sourcing
+- the claim that the median man must swipe `~30,000` profiles to get one relationship
+- exact retention tables such as `65-69%` deleting within the first month, `5-7%` day-30 retention, and `3.3%` twelve-month retention without strong primary evidence
+- broad fake-profile claims such as `95% fake profiles` on specific apps without defensible sourcing
+- overly specific niche-app postmortems that rely mainly on app-store anecdotes or commentary
 
 ## 5. Topic B: Data-Backed Predictors of Healthy and Lasting Relationships
 
@@ -582,7 +744,27 @@ Use the evidence above as the default decision framework:
 - International Journal of Mental Health and Addiction, 2021: [Online Dating and Problematic Use: A Systematic Review](https://link.springer.com/article/10.1007/s11469-020-00318-9)
 - Current Opinion in Psychology / PubMed, 2023: [Dating Apps: A New Emerging Platform for Sexual Harassment? A Scoping Review](https://pubmed.ncbi.nlm.nih.gov/37036157/)
 - FTC, 2023: [New FTC Data Reveals Top Lies Told by Romance Scammers](https://www.ftc.gov/news-events/news/press-releases/2023/02/new-ftc-data-reveals-top-lies-told-romance-scammers)
+- FTC, 2025: [Match Group Agrees to Pay $14 Million, Permanently Stop Deceptive Advertising, Cancellation, and Billing Practices to Resolve FTC Charges](https://www.ftc.gov/news-events/news/press-releases/2025/08/match-group-agrees-pay-14-million-permanently-stop-deceptive-advertising-cancellation-billing)
+- FTC, 2019: [FTC Sues Owner of Online Dating Service Match.com for Using Fake Love Interest Ads To Trick Consumers into Paying](https://www.ftc.gov/news-events/news/press-releases/2019/09/ftc-sues-owner-online-dating-service-matchcom-using-fake-love-interest-ads-trick-consumers-paying)
+- Mozilla Foundation / Consumers International, 2022: [New Research: Tinder’s Opaque, Unfair Pricing Algorithm Can Charge Users Up to Five-Times More For Same Service](https://www.mozillafoundation.org/en/blog/new-research-tinders-opaque-unfair-pricing-algorithm-can-charge-users-up-to-five-times-more-for-same-service/?form=eoy-banner-HL1)
+- Consumers International, 2022: [A Consumer Investigation Into Personalised Pricing](https://www.consumersinternational.org/media/369078/personalised_pricing_15_02_2022.pdf)
+- Mozilla Foundation, 2024: [Data-Hungry Dating Apps Are Worse Than Ever for Your Privacy](https://www.mozillafoundation.org/en/privacynotincluded/articles/data-hungry-dating-apps-are-worse-than-ever-for-your-privacy/)
+- Datatilsynet, 2025: [The Court of Appeal upholds the fine against Grindr](https://www.datatilsynet.no/en/news/news-2025/the-court-of-appeal-upholds-the-fine-against-grindr/)
+- Scientific American, 2025: [The Rise of AI ‘Chatfishing’ in Online Dating Poses a Modern Turing Test](https://www.scientificamerican.com/article/the-rise-of-ai-chatfishing-in-online-dating-poses-a-modern-turing-test/)
+- Global Dating Insights / Sumsub survey, 2026: [Deepfakes Drive UK Dating App Mistrust for 84% of Singles](https://www.globaldatinginsights.com/featured/deepfakes-drive-uk-dating-app-mistrust-for-84-of-singles/)
+- Australian Federal Police, 2026: [ClickFit: Romance scams](https://www.afp.gov.au/news-centre/feature/clickfit-romance-scams)
 - Kaspersky, 2024: [Nearly a quarter of online daters experience digital stalking](https://usa.kaspersky.com/about/press-releases/nearly-a-quarter-of-online-daters-experience-digital-stalking)
+- AudioEye, 2024: [Why “Swiping Right” Doesn’t Work for People with Disabilities](https://www.audioeye.com/post/swiping-right-doesnt-work/)
+- Human Rights Watch, 2024: [Questions and Answers: Facebook, Instagram, and Digital Targeting of LGBT People in MENA](https://www.hrw.org/news/2024/01/23/questions-and-answers-facebook-instagram-and-digital-targeting-lgbt-people-mena)
+- Time, 2019: [Tinder's Newest Feature Aims to Keep LGBTQ People Safer Across the World](https://time.com/5633974/tinder-lgbtq-safety-feature/)
+- Ofcom, 2025: [’Appy Valentine's Day: top online dating trends revealed](https://www.ofcom.org.uk/media-use-and-attitudes/online-habits/appy-valentines-day-top-online-dating-trends-revealed)
+- Ofcom, 2024: [Online Nation 2024 Report](https://www.ofcom.org.uk/siteassets/resources/documents/research-and-data/online-research/online-nation/2024/online-nation-2024-report.pdf?_bhlid=ca05028c9fe07a6f729c617cb5ce4e9f92181a60&v=386238)
+- Bumble Inc., 2025: [Bumble Inc. Announces Third Quarter 2025 Results](https://ir.bumble.com/news/news-details/2025/Bumble-Inc--Announces-Third-Quarter-2025-Results/default.aspx)
+- Hinge Help Center, 2026: [Is Hinge free?](https://help.hinge.co/hc/en-us/articles/360010947994-Is-Hinge-free)
+- Hinge Help Center, 2026: [Subscription and Purchase Benefits](https://help.hinge.co/hc/en-us/articles/38014282744595-Subscription-and-Purchase-Benefits)
+- California Tinder settlement site, 2026: [Candelore v. Tinder, Inc.](https://www.tindercalclassaction.com/)
+- Australian Government, 2024: [New industry code now operational to make online dating safer](https://www.infrastructure.gov.au/department/media/news/new-industry-code-now-operational-make-online-dating-safer)
+- California State Senate, 2026: [Senator Pérez introduces legislation to make online dating safer for millions of Californians](https://sd25.senate.ca.gov/news/senator-perez-introduces-legislation-make-online-dating-safer-millions-californians)
 
 ### Relationship science and lasting relationship predictors
 
@@ -593,4 +775,3 @@ Use the evidence above as the default decision framework:
 - Journal of Family Psychology PDF, 2021: [Responsiveness and relationship satisfaction across the transition to parenthood](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/2021-08/Smallen%20et%20al.%2C%202021%20%28JFP%29.pdf)
 - PMC, 2013: [Financial Strain and Stressful Events Predict Newlyweds' Negative Communication Independent of Relationship Satisfaction](https://pmc.ncbi.nlm.nih.gov/articles/PMC3667200/)
 - PMC, 2016: [Longitudinal Associations among Relationship Satisfaction, Sexual Satisfaction, and Frequency of Sex in Early Marriage](https://pmc.ncbi.nlm.nih.gov/articles/PMC4472635/)
-

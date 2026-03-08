@@ -12,3 +12,9 @@ All notable changes to Delfa will be documented in this file.
 - Product backlog and release manifest
 - GitHub issue and pull request templates
 - Research brief documenting dating app pain points and long-term relationship predictors
+
+### Changed
+
+- Expanded the research brief with a second-pass verification of external dating-app market claims
+- Added verified findings on monetization, privacy, AI deception, accessibility, regulation, and market trust decline
+- Excluded weakly sourced or unverified market claims from Delfa's evidence base

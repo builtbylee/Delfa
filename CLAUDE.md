@@ -10,6 +10,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Added foundational project documentation
 - Created first-pass technical blueprint and release baseline
 - Added a research brief grounding Delfa's product and profiler decisions in market and relationship-science evidence
+- Strengthened the market research brief with a verification pass that distinguishes verified, partial, and excluded external claims
 
 ## Working Conventions
 
@@ -17,6 +18,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Prefer data-backed compatibility over surface-level matching
 - Avoid dark patterns that monetize volume or user frustration
 - Treat sensitive identity and preference data with extra care
+- Do not treat blog-level dating-app claims as product facts without a stronger verification pass
 
 ## Known Product Rules
 
