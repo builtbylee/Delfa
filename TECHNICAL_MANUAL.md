@@ -61,6 +61,8 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 6. Feedback updates future ranking and profiler calibration.
 7. If both users are ready, Delfa guides the transition to an in-person date.
 
+The canonical lifecycle state machine lives in `docs/product/match-lifecycle-v1.md`.
+
 ### 3.2 Core Product Modules
 
 - Auth and account management
@@ -242,6 +244,7 @@ Implementation-ready profiler design artifacts live in:
 - `docs/product/profiler-data-model-v1.md`
 - `docs/product/profiler-scoring-v1.md`
 - `docs/product/profiler-user-flows-v1.md`
+- `docs/product/match-lifecycle-v1.md`
 - `docs/product/match-experience-v1.md`
 - `docs/presentations/delfa-explainer-deck.html`
 - `docs/presentations/delfa-explainer-deck-v1.md`

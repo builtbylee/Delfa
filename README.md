@@ -48,6 +48,7 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `docs/product/profiler-scoring-v1.md`: compatibility-scoring draft for V1
 - `docs/product/profiler-user-flows-v1.md`: implementation-ready profiler UX flows
 - `docs/product/match-experience-v1.md`: core match-stage differentiators and interaction design direction
+- `docs/product/match-lifecycle-v1.md`: canonical state machine for active matches, exits, timeouts, and next-match unlock rules
 - `docs/presentations/delfa-explainer-deck-v1.md`: explainer deck source covering Delfa's product direction and architecture
 - [`docs/presentations/delfa-explainer-deck.html`](docs/presentations/delfa-explainer-deck.html): GitHub Pages-ready interactive explainer deck
 - `docs/research/market-and-relationship-research.md`: evidence base for product and profiler decisions

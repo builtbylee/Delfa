@@ -19,6 +19,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Added the canonical profiler question bank with exact wording and answer inventory
 - Added the first shared profiler implementation module with types, question definitions, and API contracts
 - Added the first match-experience direction doc covering Delfa's strongest differentiators beyond the profiler
+- Added the canonical match lifecycle spec for Delfa's active-match state machine
 - Added an explainer deck source summarizing Delfa's product, profiler, match experience, and architecture
 - Added a Pages-ready HTML explainer deck plus README hero preview/link
 
@@ -44,6 +45,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Shared profiler code should stay config-driven from `packages/shared/src/profiler/question-bank.ts`
 - Delfa should prefer compatibility confidence by dimension over a single match percentage
 - Match-stage product design should prioritize guided discovery, slow reveal depth, mutual ready-to-meet, and graceful disconnect with growth
+- Lifecycle design should default to soft commitment, anti-limbo timeouts, and always-available immediate exits for user agency
 
 ## Open Questions
 
