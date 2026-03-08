@@ -34,6 +34,10 @@ The best ideas worth adapting for Delfa are:
 - civility nudges before harmful messages are sent
 - transparency tools that reveal whether someone actually engages
 - centralized privacy and safety controls
+- voice-based warmth without full video dependence
+- accessibility-first interaction patterns
+- ethical success metrics that optimize for dates and outcomes, not time-on-app
+- mutual-interest prediction and explainable compatibility logic
 
 ## 3. App-By-App Findings
 
@@ -185,7 +189,8 @@ Bumble is strongest where it lowers social friction and adds lightweight safety 
 - one opening question or response hook per profile
 - pre-send tone nudges for disrespectful or low-effort content
 - date-sharing safety tools
-- verification as an opt-in or graduated-trust layer
+- verification as a staged trust layer, with stronger gating before higher-risk interactions
+- unsolicited-image detection and blurring
 
 ### What Delfa should not copy
 
@@ -281,6 +286,34 @@ Users trust platforms more when safety controls are visible, legible, and easy t
 - plain-language privacy controls
 - contextual safety guidance without forcing users into legal or identity disclosure risks
 
+## 3.8 Additional high-value mechanics surfaced in broader research
+
+### What I initially missed and now recommend considering
+
+- `Voice prompts and voice notes`
+  Low-friction audio adds warmth and personality without the overhead of in-app video dates.
+- `Unsolicited image detection and blurring`
+  Strong fit with Delfa's safety-first positioning.
+- `Timer-based date safety check-ins`
+  More useful than panic-button-only tooling because they work even if a user cannot actively trigger an alert.
+- `AI-assisted photo selection`
+  Good use of AI when it reduces friction without speaking on behalf of the user.
+- `Ethical success metrics`
+  Hinge-style emphasis on dates or app deletion for the right reason is strategically aligned with Delfa.
+- `Mutual-interest prediction`
+  More useful than one-sided ranking because it predicts whether two people are likely to reciprocate.
+- `Accessibility-first interaction design`
+  Non-swipe interaction, alt text, screen-reader support, and lower-friction disclosure patterns improve the product for everyone.
+
+### Why these matter for Delfa
+
+These mechanics fit Delfa's strategy because they:
+
+- improve trust
+- improve clarity
+- reduce friction
+- avoid reintroducing swipe-economy incentives
+
 ## 4. Consolidated Mechanics For Delfa
 
 ## 4.1 Strong candidates to incorporate
@@ -338,12 +371,15 @@ Borrow from:
 - Hinge targeted likes and comments
 - Bumble Opening Moves
 - Coffee Meets Bagel icebreakers
+- Hinge voice prompts
+- Bumble audio notes
 
 Use in Delfa as:
 
 - structured conversation starters tied to match reasons
 - one chosen opening prompt or response hook
 - guidance that makes first contact more thoughtful
+- optional voice-based warmth where it improves authenticity
 
 ### E. Accountability and clarity
 
@@ -357,6 +393,39 @@ Use in Delfa as:
 - private reliability scoring
 - limited public effort signals
 - graceful disconnect with structured reasons
+
+### F. Safety and authenticity infrastructure
+
+Borrow from:
+
+- Tinder Face Check
+- Bumble ID verification
+- Bumble Private Detector
+- Tinder pre-send nudges
+- Tinder / Bumble date safety flows
+- Grindr safety hub
+
+Use in Delfa as:
+
+- staged verification before higher-trust milestones
+- unsolicited-image protection
+- pre-send civility nudges
+- date check-ins and trusted-contact tools
+- centralized safety and privacy controls
+
+### G. Ethical optimization and accessibility
+
+Borrow from:
+
+- Hinge's user-success KPI framing
+- accessibility improvements such as alt text and non-swipe interaction support
+- mutual-interest models such as Hinge's Most Compatible thesis
+
+Use in Delfa as:
+
+- success metrics tied to conversations completed, dates, and respectful closures
+- accessibility from day one
+- compatibility logic that values reciprocal fit and explainability
 
 ## 4.2 Mechanics to reject
 
@@ -407,4 +476,10 @@ it should not be imported into Delfa.
 - Match Group, 2025: [Tinder to Expand Facial Verification Feature Across the U.S.](https://ir.matchgroup.com/investor-relations/news-events/news-events/news-details/2025/Tinder-to-Expand-Facial-Verification-Feature-Across-the-U-S--Setting-a-New-Standard-for-Dating-Safety/default.aspx)
 - eHarmony, 2026: [What the eharmony Compatibility Score tells you](https://www.eharmony.com/tour/what-is-compatibility-system/)
 - Grindr, 2026: [Grindr's New Safety & Privacy Center](https://www.grindr.com/blog/were-making-privacy-simpler-explore-our-new-safety-privacy-center)
-
+- Tinder Pressroom, 2021: [Tinder Introduces Are You Sure?](https://www.tinderpressroom.com/2021-05-20-Tinder-Introduces-Are-You-Sure-,-an-Industry-First-Feature-That-is-Stopping-Harassment-Before-It-Starts)
+- Bumble, 2026: [Private Detector](https://bumble.com/en-us/the-buzz/privatedetector)
+- CNN, 2020: [Noonlight + Tinder panic button and safety tools](https://www.cnn.com/2020/01/23/tech/tinder-panic-button-safety-tools)
+- Hinge Newsroom, 2026: [Safer Internet Day 2026](https://hinge.co/newsroom/Safer-Internet-Day-2026)
+- TechCrunch, 2018: [Hinge employs new algorithm to find your Most Compatible match](https://techcrunch.com/2018/07/11/hinge-employs-new-algorithm-to-find-your-most-compatible-match-for-you/)
+- TechCrunch, 2024: [Tinder AI Photo Selection Feature Launches](https://techcrunch.com/2024/07/17/tinder-ai-photo-selection-feature-launches/)
+- The Drum, 2024: [Hinge CMO on unconventional KPI — dates so great people delete the app](https://www.thedrum.com/news/hinge-s-cmo-her-unconventional-kpi-dates-so-great-people-delete-the-app)

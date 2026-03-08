@@ -13,6 +13,9 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Strengthened the market research brief with a verification pass that distinguishes verified, partial, and excluded external claims
 - Strengthened the relationship-science brief with verified additions on capitalization, shared humor, and interaction-stage signal capture
 - Added the first structured profiler spec for Delfa and a dating-app-strengths brief covering reusable mechanics from current apps
+- Added profiler schema, data model, scoring, and user-flow drafts to move the profiler toward implementation
+- Expanded the app-strengths brief with additional reusable mechanics around safety, voice, accessibility, and explainable matching
+- Expanded research brief with Topic C: What Works Well in Current Dating Apps — evidence-backed safety features, UX/UI patterns, and matching algorithms from Tinder, Hinge, Bumble, CMB, OkCupid, and others
 
 ## Working Conventions
 
@@ -31,6 +34,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Product decisions should be validated against `docs/research/market-and-relationship-research.md`
 - Intake profiling alone is insufficient; Delfa should capture interaction-stage relationship signals as well
 - Borrow useful mechanics from current apps only when they improve trust, honesty, focus, or clarity without reintroducing swipe-economy incentives
+- Profiler implementation should stay config-driven, versioned, privacy-tiered, and explainable
 
 ## Open Questions
 

@@ -202,6 +202,13 @@ This section is directional and may be refined once implementation begins.
 - File storage: cloud object storage for media
 - Payments: Stripe or equivalent
 
+Implementation-ready profiler design artifacts live in:
+
+- `docs/product/profiler-schema-v1.md`
+- `docs/product/profiler-data-model-v1.md`
+- `docs/product/profiler-scoring-v1.md`
+- `docs/product/profiler-user-flows-v1.md`
+
 ## 9. Initial Data Model Domains
 
 - User
@@ -264,3 +271,4 @@ This section is directional and may be refined once implementation begins.
 - Expanded the research brief with a verification pass covering monetization, privacy, AI deception, regulation, and inclusion risks
 - Expanded the relationship research with verified findings on positive-event responsiveness, humor/playfulness, and live interaction signals
 - Added the first structured profiler spec and a research brief on current dating apps' strongest reusable mechanics
+- Added canonical profiler schema, data model, scoring, and UI-flow drafts to move the profiler toward implementation
