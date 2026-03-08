@@ -747,7 +747,277 @@ Prefer:
 - exact premium/free feature split
 - how strongly to use behavioral attraction signals vs stated preferences
 
-## 10. Decision Rules for Delfa
+## 10. Topic C: What Works Well in Current Dating Apps
+
+This section catalogs evidence-backed features and design patterns from existing dating apps that Delfa should learn from, adapt, or deliberately avoid. Research was conducted across three domains: safety and trust, UX/UI design, and matching algorithms.
+
+### 10.1 Safety and Trust Features
+
+#### 10.1.1 Photo and identity verification
+
+- **Tinder Face Check** (mandatory facial verification) reduced exposure to bad actors by over `60%` and reports of harmful behavior by over `40%` after mandatory rollout in seven countries. Uses video selfie to create an encrypted, non-reversible "FaceMap" compared against profile photos. As of late 2025, mandatory for all new users in those regions.
+- **Bumble Photo Verification** uses pose-matching (from 100 options) reviewed by AI and human moderators. Mandatory in the U.S. AI liveness detection analyzes micro-movements, eye blinking, and facial expressions, reportedly blocking `60%` of catfishing attempts.
+- **Hinge** rolling out Face Check (shared Match Group technology) as of February 2026.
+- **Key finding**: Mandatory verification (not optional) is what produces measurable results. Optional badges do not meaningfully change ecosystem trust.
+
+#### Delfa implication
+
+- Verification must be mandatory at signup, not optional.
+- Multi-factor approach (biometric + document) is strongest, but progressive gating can ease onboarding friction.
+- Verification should be treated as core product infrastructure, not a premium feature.
+
+#### 10.1.2 AI nudges for behavior change
+
+- **Tinder "Are You Sure?" (AYS)**: AI detects potentially offensive language before sending and prompts user to reconsider. Reduced inappropriate language by over `10%`, and users who saw the prompt were less likely to be reported for inappropriate messages over the following month — indicating lasting behavior change. Endorsed by RAINN.
+- **Tinder "Does This Bother You?"**: Checks in with recipients about flagged messages. Reports of inappropriate messages increased `46%` (more empowered reporting, not more harassment).
+- **Bumble Private Detector**: AI detects and blurs unsolicited nude images with `98%` accuracy. Users choose to view or block. Bumble open-sourced this technology.
+
+#### Delfa implication
+
+- Pre-send nudges change behavior upstream — more effective than post-hoc moderation alone.
+- Recipient check-ins empower reporting without creating a surveillance atmosphere.
+- Image scanning should be built in from day one, not retrofitted.
+
+#### 10.1.3 Real-time date safety
+
+- **Noonlight + Tinder**: Users input date details, share live location, and can trigger a panic button that alerts a certified dispatcher who escalates to police if needed.
+- **Timer-based check-ins** (bSafe model): Auto-alert if user doesn't check in by a set time — arguably more effective than a panic button, since a user in danger may not be able to reach their phone.
+- **Bumble**: Location sharing with trusted contacts during dates.
+
+#### Delfa implication
+
+- Timer-based auto-alerts are preferable to panic buttons alone.
+- Date safety should be integrated, not delegated to a third-party app.
+
+#### 10.1.4 Background checks — failed experiment
+
+- Garbo partnered with Tinder (2022-2023) offering criminal background checks. Partnership ended August 2023.
+- Reasons: sexual violence is rarely reported, criminal records are a poor proxy for safety, and the approach reproduces systemic bias in the justice system.
+- Industry consensus: background checks provide false security with equity concerns.
+
+#### Delfa implication
+
+- Do not pursue criminal background check integrations. Focus verification on identity authenticity, not criminal history.
+
+#### 10.1.5 LGBTQ+ safety features
+
+- **Grindr**: Discreet app icons, automatic distance-feature disabling in hostile countries, distance obfuscation.
+- **Tinder Traveler Alert**: Warns LGBTQ+ users entering countries with anti-LGBTQ laws.
+- **Privacy risk**: Research found Tinder, Grindr, and OkCupid share location data with advertising platforms — a significant safety risk for LGBTQ+ users in hostile environments.
+
+#### Delfa implication
+
+- Discreet mode and location obfuscation are non-negotiable for LGBTQ+ safety.
+- Minimize data sharing with third parties, especially location data.
+
+#### 10.1.6 Safety features women value most
+
+- Survey: `91%` of single women in America worried about safety when dating; `44%` had felt unsafe on a recent date; `75%` believe dating apps must do more.
+- Most valued features: unmatch mechanism, location sharing with friends, women-first messaging model, unsolicited image protection, check-in/timer features.
+- **Key finding**: Safety warnings alone do NOT change behavior. Structural/technological features are what matter, not advisory text.
+
+### 10.2 UX/UI Design Features
+
+#### 10.2.1 Onboarding
+
+- **Tinder**: Limits initial registration choices strategically — shows Facebook and phone number first, hides email behind "Trouble Logging In?". Reduces decision paralysis.
+- **Bumble**: Embeds a background video tutorial showing swiping/chatting, teaching new users without an explicit tutorial.
+- **Key principles**: Design onboarding like a conversation, not an interrogation. Start with the lightest step (name + one photo), then progressively add details. Users should reach core value within 30 seconds.
+
+#### Delfa implication
+
+- Progressive onboarding aligned with Delfa's progressive profiling model.
+- Front-load emotional payoff (e.g., showing potential match quality early), not lengthy questionnaires.
+
+#### 10.2.2 Profile creation
+
+- **Hinge**: 6 photos + 3 prompts + demographics. 150+ unique prompts rotated to prevent repetitive responses. Provides enough personality insight without overwhelming choice paralysis.
+- **Coffee Meets Bagel (CMB)**: Redesigned to emphasize text over big action buttons. Members who sent comments had `25%` higher chance of getting liked back, and comments that led to conversations produced `60%` more messages exchanged.
+- **Key stat**: `52%` of users report having trouble selecting profile images; users 18-24 spend an average of `33 minutes` choosing a profile photo.
+
+#### Delfa implication
+
+- AI-assisted photo selection could remove a major friction point.
+- Prompts should be specific enough to spark genuine conversation, not generic.
+- Progressive profile building (add prompts over time) aligns with Delfa's philosophy.
+
+#### 10.2.3 Matching beyond swiping
+
+- **Hinge comment system**: Users respond to specific prompts or photos instead of binary swipe. Engagement increases when users comment on specifics vs. sending generic likes.
+- **CMB curated daily matches**: Limited daily "Bagels" using a deep neural network with 9 separate models. `86%` of users cite quality-over-quantity as their reason for choosing CMB. Fights decision fatigue.
+- **Bumble women-first**: Women must message first within 24 hours. Yellow timer ring shows remaining time. Reduces unwanted messages and flips power dynamic.
+- **Known**: AI-based chat interface interviews users about interests/values, then pairs them with one person — completely eliminating swipe.
+
+#### Delfa implication
+
+- One-at-a-time matching is evidence-aligned with CMB's quality-over-quantity finding.
+- Guided interaction (Hinge-style prompts) produces measurably better conversations.
+- Eliminating the swipe paradigm entirely is viable and being done by new entrants.
+
+#### 10.2.4 Notification and engagement design
+
+- Personalized notifications: `52%` of consumers would switch apps if notifications aren't personalized. Push notifications can increase 90-day retention by `190%`.
+- **Hinge's ethical approach**: Measures success by "great dates" (number of users who delete the app because they found someone), not time-in-app.
+
+#### Delfa implication
+
+- Metric should be "successful match completion" or "dates generated", not DAU or session length.
+- Notifications should advance match progress, not drive re-engagement for its own sake.
+
+#### 10.2.5 Ethical gamification
+
+- **Hinge anti-gamification model**: No rules, timers, or games. No streaks. Revenue jumped `35%` in 2024 despite explicitly trying to get users off the app.
+- **Anti-patterns**: Highly gamified apps (Tinder, Badoo) drive `90 minutes` daily across `10-11` separate log-ins. Match streaks and time-sensitive visibility boosts transform emotional interaction into competitive tasks.
+
+#### Delfa implication
+
+- Gamification of dating is explicitly anti-Delfa. No streaks, no competitive mechanics, no virtual currencies.
+- Revenue growth can coexist with user-first design (Hinge proves this).
+
+#### 10.2.6 AI features — what's working and what's not
+
+- **Tinder Photo Selector**: AI curates profile photos from camera roll. `68%` of users said an AI photo selection feature would be helpful.
+- **Hinge Prompt Feedback**: AI nudges users to improve prompt responses.
+- **Critical caveat**: Nearly `50%` of respondents said AI didn't move the needle. Gen Z is especially uncomfortable with AI drafting profile prompts or responding to messages. AI should augment, not replace, human authenticity.
+
+#### Delfa implication
+
+- AI should reduce friction (photo selection, profile coaching) but never speak on behalf of the user.
+- Transparency about where AI is used is critical for trust.
+
+#### 10.2.7 Voice and audio features
+
+- **Hinge voice prompts**: Audio answers on profiles add personality and warmth that text cannot. Audio provides "a richer dating experience without the stresses of video."
+- **Bumble audio notes**: Voice notes in chat add emotional nuance.
+- **Key stat**: `48%` of dating app users said they would feel more comfortable meeting someone offline if they had a video or voice call first.
+- **Note**: Hinge removed in-app video/audio calling post-pandemic, suggesting video dates inside the app may not be as valued as voice prompts and voice notes.
+
+#### Delfa implication
+
+- Voice prompts on profiles and voice notes in chat are high-value, low-friction features.
+- Full in-app video calling may be over-engineered — voice is sufficient.
+
+#### 10.2.8 Accessibility
+
+- **Tinder 2026 update**: Optimized haptic feedback and Alt Text so visually impaired users can hear descriptions of potential matches' photos.
+- **Dateability**: Users select accessibility needs directly on profile, eliminating disclosure anxiety.
+- **Key requirements**: Alternatives to swipe-based interactions (significant obstacle for motor disabilities), screen-reader compatibility, customizable text size and contrast.
+
+#### Delfa implication
+
+- Non-swipe interaction model naturally improves motor accessibility.
+- Photo Alt Text and screen-reader support should be built in from the start, not retrofitted.
+
+### 10.3 Matching Algorithms and Compatibility
+
+#### 10.3.1 Hinge's Most Compatible (Gale-Shapley basis)
+
+- Built on the Nobel Prize-winning **Gale-Shapley stable matching algorithm** (1962). Predicts mutual compatibility — not just who you'll like, but who will like you back.
+- Hinge reports `8x` higher date rate with Most Compatible matches vs. standard browsing.
+- Uses machine learning to build a personal "taste profile" from likes, passes, and engagement patterns, making preference rankings dynamic rather than static.
+
+#### Delfa implication
+
+- Mutual interest prediction is strongly preferable to one-sided attractiveness ranking.
+- Gale-Shapley variant is appropriate for Delfa's one-at-a-time model.
+
+#### 10.3.2 OkCupid's question-based matching
+
+- Match percentage calculated as the geometric mean of both users' satisfaction scores across answered questions. Users assign importance weights (Irrelevant = 0, Mandatory = 250).
+- Most transparent algorithm in the industry.
+- **Critical finding (2014 experiment)**: OkCupid told `30%` matches they were `90%` matches. The mere label of high compatibility increased messaging rates and nearly doubled conversation rates. The placebo effect of believing you're compatible significantly drives behavior.
+- **Academic criticism**: Sociologist Kevin Lewis found no evidence that high match percentage reliably translates to relationship success. The algorithm finds similar people, which isn't necessarily the same as a good partner.
+
+#### Delfa implication
+
+- User confidence in the algorithm matters as much as the algorithm's accuracy. Explain match reasoning transparently.
+- Similarity-based matching alone is insufficient. Process variables (how people interact) matter more.
+
+#### 10.3.3 eHarmony's 32-dimension model
+
+- Created by clinical psychologist Dr. Neil Clark Warren from studying happy couples. Dimensions include emotional temperament, social style, cognitive mode, conflict resolution, etc.
+- **No independent, peer-reviewed validation** of the 32-dimension model has been published.
+- Critics argue results likely reflect the "person effect": agreeable, non-neurotic, optimistic people fare better in any relationship.
+
+#### Delfa implication
+
+- Personality-based compatibility models have face validity but lack rigorous evidence.
+- Delfa should focus on relationship process variables (from Topic B research) rather than static personality dimensions.
+
+#### 10.3.4 Behavioral matching — revealed vs. stated preferences
+
+- Modern algorithms prioritize "revealed preferences" (what you actually do) over stated preferences. Research consistently shows poor match between stated and revealed preferences.
+- Example: people rank "good lover" 12th in stated importance, but it's the #1 predictor of actual attraction in speed-dating studies.
+- Collaborative filtering creates feedback loops that concentrate recommendations on popular profiles, inherently disfavoring minority users.
+
+#### Delfa implication
+
+- Behavioral signals are more reliable than stated preferences, but must include bias guardrails.
+- Collaborative filtering needs fairness constraints (Nash Social Welfare optimization) to avoid concentrating attention on a small set of "popular" users.
+
+#### 10.3.5 Values-based matching — promising but unvalidated
+
+- `65%` of lasting couples cite aligned goals as a key factor (Pew 2023).
+- Hinge reports compatible values reduce conflicts by `30%`.
+- No app has published peer-reviewed evidence that its specific values-matching implementation leads to better relationships.
+
+#### Delfa implication
+
+- Values alignment is theoretically strong and should be a core matching dimension.
+- Delfa can differentiate by actually measuring relationship outcomes tied to values matching.
+
+#### 10.3.6 The meta-evidence on algorithmic matching
+
+- **Finkel et al. (2012) meta-analysis**: No compelling evidence any online dating matching algorithm actually works. The strongest predictors of relationship success (interaction style, conflict navigation, stress coping) cannot be assessed before two people meet.
+- **OkCupid 2014**: The placebo effect of match labels is roughly as powerful as actual algorithmic compatibility.
+- **50-country study (2025)**: Couples who met online reported lower relationship satisfaction and lower love intensity than those who met offline.
+- **What does have evidence**: Constraining choice (CMB model), mutual-interest optimization (Hinge), dealbreaker filtering on genuinely incompatible traits, and user belief in the algorithm.
+
+#### Delfa implication
+
+- Pre-meeting algorithms have a ceiling. Delfa's competitive advantage should be in the interaction stage — guiding how matched people communicate and discover compatibility.
+- The one-at-a-time model with guided prompts addresses the strongest evidence gap: algorithms can't predict chemistry, but they can create better conditions for discovering it.
+- Algorithm transparency builds trust, and trust improves outcomes (placebo effect).
+
+### 10.4 Summary of Delfa-relevant takeaways from Topic C
+
+Features Delfa should adopt or adapt:
+
+- Mandatory identity verification at signup
+- Pre-send AI nudges for messaging behavior
+- Unsolicited image detection and blurring
+- Timer-based date safety check-ins
+- Prompt-based profiles over freeform bios
+- Voice prompts and voice notes
+- AI-assisted photo selection
+- Mutual-interest prediction (Gale-Shapley variant)
+- Values-based matching with behavioral calibration
+- Non-swipe interaction model
+- Accessibility from day one (Alt Text, screen reader, no swipe dependency)
+- Algorithm transparency and match explanation
+
+Features Delfa should explicitly reject:
+
+- Gamification (streaks, virtual currencies, competitive mechanics)
+- Infinite browsing / swipe stacks
+- Paid visibility boosts
+- Background check integrations
+- AI that speaks on behalf of users
+- Full in-app video calling (voice is sufficient)
+- Engagement metrics as success metrics (measure dates, not DAU)
+
+### 10.5 Research gaps — topics requiring follow-up
+
+The following research areas were initiated but did not complete due to rate limits. They should be investigated in a follow-up pass:
+
+- **Tinder-specific feature deep dive**: Detailed analysis of Tinder's full feature set, what users praise, and what Match Group investor materials reveal about feature effectiveness
+- **Bumble-specific feature deep dive**: Detailed analysis of Bumble's full feature set and women-first model effectiveness data
+- **Dating app communication features**: Best practices for in-app messaging, conversation pacing, and chat UX
+- **Niche dating app innovations**: Features from smaller apps (Thursday, Feeld, The League, Raya, etc.) that address specific use cases
+- **Dating app success stories and data**: Quantitative data on app-to-relationship conversion rates, which apps produce the most lasting relationships
+- **IRL events and meetup features**: Whether app-organized events improve outcomes
+
+## 11. Decision Rules for Delfa
 
 Use the evidence above as the default decision framework:
 
@@ -756,8 +1026,10 @@ Use the evidence above as the default decision framework:
 - If a monetization idea rewards addiction mechanics, reject it.
 - If a matching input is relationship-process relevant, prioritize it over low-signal profile cosmetics.
 - If a safety feature reduces ambiguity or predatory behavior, treat it as product value, not overhead.
+- If an algorithm cannot be explained to the user, add transparency before shipping it.
+- If a feature works for accessibility, it likely works better for everyone.
 
-## 11. Sources
+## 12. Sources
 
 ### Dating app complaints and market pain points
 
@@ -803,3 +1075,36 @@ Use the evidence above as the default decision framework:
 - Journal of Family Psychology PDF, 2021: [Responsiveness and relationship satisfaction across the transition to parenthood](https://socialinteractionlab.psych.umn.edu/sites/socialinteractionlab.psych.umn.edu/files/2021-08/Smallen%20et%20al.%2C%202021%20%28JFP%29.pdf)
 - PMC, 2013: [Financial Strain and Stressful Events Predict Newlyweds' Negative Communication Independent of Relationship Satisfaction](https://pmc.ncbi.nlm.nih.gov/articles/PMC3667200/)
 - PMC, 2016: [Longitudinal Associations among Relationship Satisfaction, Sexual Satisfaction, and Frequency of Sex in Early Marriage](https://pmc.ncbi.nlm.nih.gov/articles/PMC4472635/)
+
+### Dating app features, safety, UX, and algorithms (Topic C)
+
+- Tinder Pressroom, 2025: [Tinder to Expand Facial Verification Feature Across the U.S.](https://www.tinderpressroom.com/2025-10-22-Tinder-to-Expand-Facial-Verification-Feature-Across-the-U-S-,-Setting-a-New-Standard-for-Dating-Safety)
+- TechCrunch, 2025: [Tinder will require new users in the US to verify their identity with a selfie](https://techcrunch.com/2025/10/22/tinder-will-require-new-users-in-the-us-to-verify-their-identity-with-a-selfie/)
+- Bumble, 2026: [Request Verification](https://bumble.com/en-us/the-buzz/request-verification)
+- Hinge Newsroom, 2026: [Safer Internet Day 2026](https://hinge.co/newsroom/Safer-Internet-Day-2026)
+- Tinder Pressroom, 2021: [Tinder Introduces Are You Sure?](https://www.tinderpressroom.com/2021-05-20-Tinder-Introduces-Are-You-Sure-,-an-Industry-First-Feature-That-is-Stopping-Harassment-Before-It-Starts)
+- Bumble, 2026: [Private Detector](https://bumble.com/en-us/the-buzz/privatedetector)
+- Bumble, 2026: [Open-Sources Private Detector](https://bumble.com/nb/the-buzz/bumble-open-source-private-detector-ai-cyberflashing-dick-pics)
+- Global Dating Insights, 2026: [91% of women want better dating app safety features](https://www.globaldatinginsights.com/news/91-of-women-want-better-dating-app-safety-features-survey-finds/)
+- CNN, 2020: [Noonlight + Tinder panic button and safety tools](https://www.cnn.com/2020/01/23/tech/tinder-panic-button-safety-tools)
+- TechCrunch, 2023: [Garbo partnership ends](https://techcrunch.com/2023/08/17/match-groups-background-check-partner-garbo-ends-its-partnership/)
+- EFF, 2025: [Dating Apps Need to Learn How Consent Works](https://www.eff.org/deeplinks/2025/07/dating-apps-need-learn-how-consent-works)
+- Match Group, 2026: [Safety](https://mtch.com/safety/)
+- TechCrunch, 2018: [Hinge employs new algorithm to find your Most Compatible match](https://techcrunch.com/2018/07/11/hinge-employs-new-algorithm-to-find-your-most-compatible-match-for-you/)
+- Cornell Blogs, 2021: [Hinge and its Implementation of the Gale-Shapley Algorithm](https://blogs.cornell.edu/info2040/2021/09/30/hinge-and-its-implementation-of-the-gale-shapley-algorithm/)
+- Skeptical Inquirer, 2014: [Evaluating eHarmony](https://skepticalinquirer.org/2014/11/sweet-science-of-seduction-or-scam-evaluating-eharmony/)
+- NPR, 2014: [OkCupid Sometimes Messes A Bit With Love](https://www.npr.org/2014/07/29/336356931/okcupid-sometimes-messes-a-bit-with-love-in-the-name-of-science)
+- Finkel et al., 2012: [Online dating: A critical analysis (Psychological Science in the Public Interest)](https://pubmed.ncbi.nlm.nih.gov/26173279/)
+- CIO Dive, 2019: [Coffee Meets Bagel dating technology AI and data](https://www.ciodive.com/news/coffee-meets-bagel-dating-technology-ai-data/548395/)
+- ScienceDirect, 2025: [50-country study on online vs offline relationship satisfaction](https://www.sciencedirect.com/science/article/pii/S0736585325000711)
+- International Economic Review / Chen, 2023: [Recommendation inequality in two-sided matching](https://onlinelibrary.wiley.com/doi/10.1111/iere.12631)
+- European Journal of Personality / Zhao et al., 2025: [Stated vs. revealed preferences](https://journals.sagepub.com/doi/10.1177/08902070241286254)
+- Creative Review, 2024: [How Hinge Hopes to Resist Gamification of Dating](https://www.creativereview.co.uk/hinge-app-gamification-of-dating/)
+- Fast Company, 2025: [Every dating app has AI now](https://www.fastcompany.com/91484596/every-dating-app-has-ai-now-can-it-help-make-better-matches)
+- TechCrunch, 2024: [Tinder AI Photo Selection Feature Launches](https://techcrunch.com/2024/07/17/tinder-ai-photo-selection-feature-launches/)
+- TechCrunch, 2018: [Coffee Meets Bagel anti-Tinder redesign](https://techcrunch.com/2018/12/11/coffee-meets-bagel-goes-anti-tinder-with-a-redesign-focused-on-profiles-conversations/)
+- Accessibility.com, 2026: [How Accessible Are Dating Apps?](https://www.accessibility.com/blog/how-accessible-are-dating-apps)
+- BusinessWire, 2025: [Dateability Revolutionizes Accessible Online Dating](https://www.businesswire.com/news/home/20250916011570/en/Dateability-Revolutionizes-Accessible-Online-Dating)
+- Pew Research Center, 2024: [48% more comfortable meeting after video/voice call](https://www.pewresearch.org/)
+- Norton, 2025: [Romance scam statistics](https://us.norton.com/blog/online-scams/ncsir-dating-scams-2025)
+- The Drum, 2024: [Hinge CMO on unconventional KPI — dates so great people delete the app](https://www.thedrum.com/news/hinge-s-cmo-her-unconventional-kpi-dates-so-great-people-delete-the-app)
