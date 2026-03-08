@@ -24,3 +24,4 @@ All notable changes to Delfa will be documented in this file.
 - Added implementation-ready profiler schema, data model, scoring, and user-flow drafts
 - Expanded the dating-app-strengths brief with additional mechanics including voice, nudges, safety infrastructure, accessibility, and ethical success metrics
 - Added the canonical profiler question bank with exact question wording, answer options, and conditional display rules
+- Added the first shared TypeScript profiler implementation layer with question definitions, domain types, and API contracts

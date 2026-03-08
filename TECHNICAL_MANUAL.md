@@ -210,6 +210,12 @@ Implementation-ready profiler design artifacts live in:
 - `docs/product/profiler-scoring-v1.md`
 - `docs/product/profiler-user-flows-v1.md`
 
+The first live profiler implementation layer now lives in:
+
+- `packages/shared/src/profiler/types.ts`
+- `packages/shared/src/profiler/question-bank.ts`
+- `packages/shared/src/profiler/contracts.ts`
+
 ## 9. Initial Data Model Domains
 
 - User
@@ -240,6 +246,7 @@ Implementation-ready profiler design artifacts live in:
 - Finalize profiler schema
 - Finalize match lifecycle rules
 - Stand up repo, tooling, and design system foundations
+- Build shared profiler types and contracts
 
 ### Phase 2
 

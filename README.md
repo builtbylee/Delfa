@@ -50,6 +50,13 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `RELEASE_MANIFEST.md`: release scope and version tracking
 - `CLAUDE.md`: project context and recently completed work
 
+## Shared Implementation
+
+- `packages/shared/src/profiler/types.ts`: canonical profiler domain types
+- `packages/shared/src/profiler/question-bank.ts`: shared section/question definitions derived from the profiler docs
+- `packages/shared/src/profiler/contracts.ts`: API request and response contracts for profiler flows
+- `packages/shared/src/index.ts`: shared package export surface
+
 ## Initial Scope
 
-This repository is currently documentation-first. The next implementation phase should use the architectural constraints defined in `TECHNICAL_MANUAL.md`.
+This repository now has a documentation-first foundation plus an initial shared profiler implementation layer. The next implementation phase should wire these shared contracts into `apps/api` and `apps/mobile`.

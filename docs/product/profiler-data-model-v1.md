@@ -8,6 +8,8 @@
 
 This document defines the initial domain model required to persist, score, and evolve the Delfa profiler.
 
+The first implementation pass for these entities now lives in `packages/shared/src/profiler/types.ts` and `packages/shared/src/profiler/contracts.ts`.
+
 ## 2. Core Entities
 
 ## 2.1 `ProfilerSection`
@@ -245,4 +247,3 @@ Initial backend surface should support:
 - Should public profile payload be materialized or assembled dynamically?
 - Should compatibility explanations be cached per match or generated on demand?
 - Should pairwise attraction cards live in content tables or a separate ranking dataset?
-
