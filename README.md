@@ -38,6 +38,7 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `README.md`: repo overview and working conventions
 - `TECHNICAL_MANUAL.md`: product and architecture blueprint
 - `docs/product/profiler-v1.md`: first structured profiler spec and question architecture
+- `docs/product/profiler-question-bank-v1.md`: canonical question wording and answer inventory
 - `docs/product/profiler-schema-v1.md`: canonical profiler question schema and response rules
 - `docs/product/profiler-data-model-v1.md`: profiler persistence and domain-model draft
 - `docs/product/profiler-scoring-v1.md`: compatibility-scoring draft for V1

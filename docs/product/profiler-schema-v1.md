@@ -21,6 +21,8 @@ It defines:
 - scoring hooks
 - completion and versioning rules
 
+The canonical wording and answer inventory live in `docs/product/profiler-question-bank-v1.md`.
+
 ## 2. Core Schema Rules
 
 ### 2.1 Versioning
@@ -281,7 +283,7 @@ Each question may map to one or more of these dimensions:
 
 ## 5. Deeper Section Question Groups
 
-These groups are implementation scope for V1, even if individual prompts are tuned later.
+These groups are implementation scope for V1. Exact wording and answer options are finalized in `docs/product/profiler-question-bank-v1.md`.
 
 ## 5.1 Life Direction question groups
 

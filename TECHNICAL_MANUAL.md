@@ -204,6 +204,7 @@ This section is directional and may be refined once implementation begins.
 
 Implementation-ready profiler design artifacts live in:
 
+- `docs/product/profiler-question-bank-v1.md`
 - `docs/product/profiler-schema-v1.md`
 - `docs/product/profiler-data-model-v1.md`
 - `docs/product/profiler-scoring-v1.md`
@@ -272,3 +273,4 @@ Implementation-ready profiler design artifacts live in:
 - Expanded the relationship research with verified findings on positive-event responsiveness, humor/playfulness, and live interaction signals
 - Added the first structured profiler spec and a research brief on current dating apps' strongest reusable mechanics
 - Added canonical profiler schema, data model, scoring, and UI-flow drafts to move the profiler toward implementation
+- Added the canonical profiler question bank with exact wording, answer sets, and display rules

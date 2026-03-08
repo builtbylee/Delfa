@@ -16,6 +16,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Added profiler schema, data model, scoring, and user-flow drafts to move the profiler toward implementation
 - Expanded the app-strengths brief with additional reusable mechanics around safety, voice, accessibility, and explainable matching
 - Expanded research brief with Topic C: What Works Well in Current Dating Apps — evidence-backed safety features, UX/UI patterns, and matching algorithms from Tinder, Hinge, Bumble, CMB, OkCupid, and others
+- Added the canonical profiler question bank with exact wording and answer inventory
 
 ## Working Conventions
 
@@ -35,6 +36,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Intake profiling alone is insufficient; Delfa should capture interaction-stage relationship signals as well
 - Borrow useful mechanics from current apps only when they improve trust, honesty, focus, or clarity without reintroducing swipe-economy incentives
 - Profiler implementation should stay config-driven, versioned, privacy-tiered, and explainable
+- The question bank is now the source of truth for profiler wording; schema and scoring should reference it instead of inventing new prompts in code
 
 ## Open Questions
 
