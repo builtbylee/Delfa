@@ -1,28 +1,60 @@
-<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Delfa explainer deck preview</title>
-  <desc id="desc">Preview card for the Delfa interactive explainer deck.</desc>
-  <rect width="1280" height="720" fill="#09090B"/>
-  <circle cx="188" cy="120" r="240" fill="#2DD4BF" fill-opacity="0.08"/>
-  <circle cx="1080" cy="620" r="280" fill="#2DD4BF" fill-opacity="0.07"/>
-  <rect x="72" y="64" width="1136" height="592" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"/>
-  <rect x="120" y="118" width="112" height="30" rx="15" fill="#123C37" stroke="#2DD4BF" stroke-opacity="0.4"/>
-  <text x="176" y="138" text-anchor="middle" fill="#7DE7D7" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">INTERACTIVE DECK</text>
-  <text x="120" y="238" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="800">Delfa</text>
-  <text x="120" y="290" fill="rgba(255,255,255,0.65)" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="500">A relationship-first dating app</text>
-  <text x="120" y="364" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">One meaningful match at a time.</text>
-  <text x="120" y="406" fill="rgba(255,255,255,0.72)" font-family="Arial, Helvetica, sans-serif" font-size="24">Progressive profiler. Guided discovery. Graceful disconnect.</text>
-  <rect x="120" y="486" width="420" height="86" rx="18" fill="rgba(45,212,191,0.11)" stroke="rgba(45,212,191,0.28)"/>
-  <text x="152" y="522" fill="#7DE7D7" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">WHAT'S INSIDE</text>
-  <text x="152" y="554" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Features, profiler, match experience,</text>
-  <text x="152" y="585" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">trust model, and architecture</text>
-  <rect x="798" y="166" width="314" height="124" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
-  <text x="838" y="208" fill="#7DE7D7" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">PROGRESSIVE PROFILER</text>
-  <text x="838" y="246" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Basics + 4 deeper sections</text>
-  <text x="838" y="274" fill="rgba(255,255,255,0.6)" font-family="Arial, Helvetica, sans-serif" font-size="18">Confidence improves as users complete more</text>
-  <rect x="722" y="326" width="390" height="134" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
-  <text x="762" y="368" fill="#7DE7D7" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">MATCH STAGE</text>
-  <text x="762" y="406" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Discovery journey + slow reveal +</text>
-  <text x="762" y="436" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">mutual ready-to-meet</text>
-  <rect x="882" y="498" width="230" height="72" rx="16" fill="#2DD4BF"/>
-  <text x="997" y="543" text-anchor="middle" fill="#041B18" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800">Open Interactive Deck</text>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Delfa interactive deck preview</title>
+  <desc id="desc">A hero preview styled to closely match the first slide of the Delfa explainer deck.</desc>
+  <defs>
+    <radialGradient id="glowLeft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(330 470) rotate(90) scale(580 860)">
+      <stop stop-color="#D0A06E" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#D0A06E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1290 520) rotate(90) scale(520 760)">
+      <stop stop-color="#8E6341" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#8E6341" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.05"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="vignette" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000000" stop-opacity="0.04"/>
+      <stop offset="0.45" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#06070A"/>
+  <rect width="1600" height="900" fill="url(#glowLeft)"/>
+  <rect width="1600" height="900" fill="url(#glowRight)"/>
+  <rect width="1600" height="900" fill="url(#vignette)"/>
+  <rect width="1600" height="900" filter="url(#grain)" opacity="0.9"/>
+
+  <text x="800" y="220" text-anchor="middle" fill="#CFA170" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="500" letter-spacing="4">INTRODUCING</text>
+
+  <text x="800" y="390" text-anchor="middle" fill="#FAFAFA" font-family="Arial, Helvetica, sans-serif" font-size="140" font-weight="800">Delfa</text>
+
+  <text x="800" y="490" text-anchor="middle" fill="rgba(255,255,255,0.68)" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="400">A relationship-first dating app</text>
+
+  <rect x="745" y="542" width="110" height="4" rx="2" fill="#CFA170"/>
+
+  <text x="800" y="645" text-anchor="middle" fill="rgba(255,255,255,0.42)" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="500">One meaningful match at a time.</text>
+  <text x="800" y="700" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="400">Built to replace swipe fatigue with depth, honesty, and follow-through.</text>
+
+  <text x="1460" y="74" text-anchor="end" fill="rgba(255,255,255,0.28)" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="500">01 / 16</text>
+
+  <circle cx="1504" cy="252" r="8" fill="#CFA170"/>
+  <circle cx="1504" cy="290" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="328" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="366" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="404" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="442" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="480" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="518" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="556" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="594" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="632" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="670" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="708" r="6" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="1504" cy="746" r="6" fill="rgba(255,255,255,0.14)"/>
 </svg>
