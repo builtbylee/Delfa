@@ -262,8 +262,8 @@ Backend stack:
 - `pg-boss` worker model
 - `Redis` for cache, presence, and rate support
 - `Clerk` for auth
-- `Cloudflare` for DNS, WAF, rate limiting, and Turnstile
-- `Cloudflare R2` for object storage
+- `HTTPS ingress` for public API entry
+- `managed object storage` for media and verification assets
 - `OneSignal` for push notifications
 - `Sentry + OpenTelemetry` for observability
 

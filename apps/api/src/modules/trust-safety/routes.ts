@@ -9,7 +9,6 @@ export async function registerTrustRoutes(app: FastifyInstance) {
         response: {
           200: Type.Object({
             service: Type.Literal("trust_safety"),
-            edgeSecurity: Type.String(),
             pushProvider: Type.String(),
             trustSafetyVersion: Type.String(),
             status: Type.Literal("scaffolded"),
@@ -19,7 +18,6 @@ export async function registerTrustRoutes(app: FastifyInstance) {
     },
     async () => ({
       service: "trust_safety" as const,
-      edgeSecurity: app.delfa.stack.edgeSecurity,
       pushProvider: app.delfa.stack.push,
       trustSafetyVersion: app.delfa.schemaVersions.trustSafety,
       status: "scaffolded" as const,

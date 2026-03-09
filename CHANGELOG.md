@@ -37,5 +37,5 @@ All notable changes to Delfa will be documented in this file.
 - Added a recommended launch strategy centered on one-city density, founding cohorts, insight-led waitlists, and activation-driven expansion
 - Added implementation-ready specs for the attraction engine, live ranking, post-date learning, trust and safety operations, and the measurement system
 - Added implementation-ready backend architecture docs for service boundaries, database schema, API surface, async jobs/events, and infrastructure/deployment
-- Added the concrete backend stack decision and initial `apps/api` scaffold for Fastify, Drizzle, pg-boss, Clerk, Fly.io, Cloudflare, and OneSignal
+- Added the concrete backend stack decision and initial `apps/api` scaffold for Fastify, Drizzle, pg-boss, Clerk, Fly.io, managed object storage, and OneSignal
 - Corrected the explainer deck architecture slides to match the concrete backend stack and modular backend layout

@@ -16,8 +16,7 @@ export type AppContext = {
   stack: {
     auth: "clerk";
     hosting: "fly.io";
-    objectStorage: "cloudflare-r2";
-    edgeSecurity: "cloudflare";
+    objectStorage: "managed-object-storage";
     push: "onesignal";
     queue: "pg-boss";
     cache: "redis";
@@ -43,8 +42,7 @@ export function buildAppContext(role: RuntimeRole): AppContext {
     stack: {
       auth: "clerk",
       hosting: "fly.io",
-      objectStorage: "cloudflare-r2",
-      edgeSecurity: "cloudflare",
+      objectStorage: "managed-object-storage",
       push: "onesignal",
       queue: "pg-boss",
       cache: "redis",

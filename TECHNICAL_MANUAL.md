@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.6.1`
+- Version: `0.6.2`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -363,7 +363,7 @@ This section is directional and may be refined once implementation begins.
 - Database: PostgreSQL
 - Cache and coordination: Redis
 - Auth: Clerk
-- File storage: Cloudflare R2
+- File storage: managed object storage
 - Payments: Stripe or equivalent
 - Queueing: pg-boss
 - HTTP framework: Fastify
@@ -371,7 +371,6 @@ This section is directional and may be refined once implementation begins.
 - ORM and migrations: Drizzle ORM + drizzle-kit
 - Push notifications: OneSignal
 - Hosting: Fly.io
-- Edge security: Cloudflare DNS, WAF, rate limiting, and Turnstile
 - Observability: OpenTelemetry + Sentry
 
 Implementation-ready profiler design artifacts live in:

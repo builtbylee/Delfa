@@ -65,7 +65,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Delfa should optimize for first-match plausibility, date conversion, second-date intent, and trust, not time-on-app
 - Backend should launch as a modular monolith with separate API, worker, and realtime runtimes, not microservices
 - Use a transactional outbox plus worker model before introducing a dedicated event bus
-- Concrete backend stack is now Fastify + TypeBox + Drizzle + pg-boss + Clerk + Fly.io + Cloudflare + OneSignal
+- Concrete backend stack is now Fastify + TypeBox + Drizzle + pg-boss + Clerk + Fly.io + managed object storage + OneSignal
 
 ## Open Questions
 
