@@ -30,6 +30,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Locked the concrete backend stack and scaffolded the initial `apps/api` Fastify workspace with separate API, worker, and realtime entrypoints
 - Updated the explainer deck so its architecture slides match the current backend stack and module boundaries
 - Implemented the first persisted backend slice in `apps/api` with Clerk auth, Drizzle-backed PostgreSQL access, identity provisioning, and profiler persistence
+- Added a canonical implementation-status matrix so the repo explicitly separates implemented systems from scaffolded and spec-only systems
 
 ## Working Conventions
 
@@ -68,6 +69,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Use a transactional outbox plus worker model before introducing a dedicated event bus
 - Concrete backend stack is now Fastify + TypeBox + Drizzle + pg-boss + Clerk + Fly.io + managed object storage + OneSignal
 - Development may use `x-dev-user-id` only outside production when Clerk is not configured locally
+- `docs/product/implementation-status-v1.md` is the source of truth for what is implemented vs partial vs spec-only
 
 ## Open Questions
 

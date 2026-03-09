@@ -52,6 +52,7 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `docs/product/profiler-data-model-v1.md`: profiler persistence and domain-model draft
 - `docs/product/profiler-scoring-v1.md`: compatibility-scoring draft for V1
 - `docs/product/profiler-user-flows-v1.md`: implementation-ready profiler UX flows
+- `docs/product/implementation-status-v1.md`: canonical matrix of implemented vs partial vs spec-only systems
 - `docs/product/match-experience-v1.md`: core match-stage differentiators and interaction design direction
 - `docs/product/match-lifecycle-v1.md`: canonical state machine for active matches, exits, timeouts, and next-match unlock rules
 - `docs/product/match-delivery-policy-v1.md`: first-match quality floor, cold-start priors, and launch-mode human review rules
@@ -100,6 +101,13 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `apps/api/src/modules`: module boundaries aligned to the backend architecture plan
 - `apps/api/drizzle.config.ts`: Drizzle migration/config scaffold
 
-## Initial Scope
+## Current State
 
-This repository now has a documentation-first foundation plus shared profiler, matching, trust/safety, outcome-learning, backend architecture definitions, and an initial `apps/api` scaffold aligned to the chosen stack.
+This repository now has:
+
+- a complete product and backend architecture definition
+- shared contracts for profiler and matching systems
+- a real first backend slice in `apps/api` for auth, identity, database access, and persisted profiler APIs
+- scaffold-only module surfaces for matching, trust/safety, billing, realtime, and worker systems
+
+See `docs/product/implementation-status-v1.md` for the canonical implementation matrix.

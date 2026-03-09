@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.6.3`
+- Version: `0.6.4`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -50,6 +50,8 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 - Help users get to know each other through a small number of guided shared prompts rather than relying on an empty chat box
 
 ## 3. Product Architecture
+
+The canonical implementation matrix lives in `docs/product/implementation-status-v1.md`.
 
 ### 3.1 Primary User Flows
 
@@ -498,6 +500,25 @@ The first real backend slice is now live in `apps/api`:
 - automatic identity-user provisioning on first authenticated request
 - persisted profiler endpoints for sections, responses, completion, mirror moments, preview, and recompute
 - centralized HTTP error handling for route-level domain errors
+
+### 9.7 Current implementation boundary
+
+Implemented in runtime code today:
+
+- auth foundation
+- database foundation
+- identity provisioning
+- profiler persistence API
+
+Not yet implemented in runtime code:
+
+- matching engine
+- trust and safety operations
+- guided match interaction runtime
+- post-date learning runtime
+- worker job orchestration
+- realtime chat/presence/prompt delivery
+- billing runtime
 
 ## 10. Initial Data Model Domains
 
