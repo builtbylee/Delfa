@@ -1,7 +1,7 @@
 # Delfa Profiler Question Bank V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
+- Version: `0.2.0`
+- Date: `2026-03-09`
 - Status: `Canonical content draft`
 - Depends on:
   - `docs/product/profiler-v1.md`
@@ -123,17 +123,17 @@ It defines:
   - `reliability`: "Reliability"
   - `physical_chemistry`: "Physical chemistry"
 
-## B7 `basics_positive_event_response`
+## B7 `basics_vulnerability_response`
 
 - Type: `scenario_select`
 - Privacy: `MATCHING_PRIVATE`
 - Prompt:
-  - "Someone you are dating shares exciting news. What do you naturally do first?"
+  - "Someone you are dating opens up about something they feel insecure about. What do you naturally do first?"
 - Options:
-  - `ask_questions_and_lean_in`: "Ask questions and lean in"
-  - `celebrate_and_move_on`: "Celebrate quickly and move on"
-  - `compare_to_own_experience`: "Compare it to my own experience"
-  - `hold_back_until_context_clear`: "Hold back until I know how big it is to them"
+  - `listen_and_help_them_feel_understood`: "Listen closely and help them feel understood"
+  - `reframe_or_try_to_make_it_better`: "Try to make it feel lighter or easier"
+  - `share_a_similar_story`: "Share something similar from my own life"
+  - `feel_unsure_and_shift_the_conversation`: "Feel unsure what to do and shift the conversation a bit"
 
 ## B8 `basics_uncertainty_response`
 
@@ -249,6 +249,31 @@ It defines:
   - `shared_values`
   - `shared_adventure`
 
+## L7 `life_direction_religion_salience`
+
+- Type: `single_select`
+- Privacy: `MATCHING_PRIVATE`
+- Prompt:
+  - "How much does religion or spirituality shape your day-to-day life?"
+- Options:
+  - `central_to_my_life`: "It is central to my life"
+  - `important_but_not_everything`: "It matters, but it is not everything"
+  - `private_but_meaningful`: "It is private, but meaningful"
+  - `not_a_big_part_of_my_life`: "It is not a big part of my life"
+  - `not_part_of_my_life`: "It is not part of my life"
+
+## L8 `life_direction_investment_style`
+
+- Type: `scenario_select`
+- Privacy: `MATCHING_PRIVATE`
+- Prompt:
+  - "When dating starts to feel real, what do you most naturally do?"
+- Options:
+  - `lean_in_and_make_time_for_it`: "Lean in and make time for it"
+  - `stay_steady_and_let_it_build`: "Stay steady and let it build"
+  - `keep_some_distance_until_i_am_sure`: "Keep some distance until I am sure"
+  - `pull_back_a_bit_to_protect_myself`: "Pull back a bit to protect myself"
+
 ## 4. Communication and Repair
 
 ## C1 `comm_repair_after_tension`
@@ -294,10 +319,10 @@ It defines:
 - Prompt:
   - "You are distracted and someone you are dating tries to connect in a small way. What do you most often do?"
 - Options:
-  - `pause_and_engage`
-  - `acknowledge_then_finish_task`
-  - `respond_briefly_without_really_shifting`
-  - `miss_it_until_they_ask_again`
+  - `pause_and_shift_fully`: "Pause what I am doing and shift fully"
+  - `acknowledge_warmly_then_finish_task`: "Acknowledge them warmly, then finish my task"
+  - `respond_on_autopilot_then_reconnect_later`: "Respond on autopilot and reconnect properly later"
+  - `often_notice_after_the_fact`: "Often notice after the fact that I was too absorbed"
 
 ## C5 `comm_repair_positive_news_under_stress`
 
@@ -334,6 +359,18 @@ It defines:
   - `steady_thoughtful_messages`
   - `low_volume_but_high_substance`
   - `voice_notes_or_calls_over_text`
+
+## C8 `comm_repair_stress_communication`
+
+- Type: `scenario_select`
+- Privacy: `MATCHING_PRIVATE`
+- Prompt:
+  - "When money or work stress builds up, what usually happens to how you communicate with a partner?"
+- Options:
+  - `i_get_quieter_and_more_withdrawn`: "I get quieter and more withdrawn"
+  - `i_get_shorter_or_more_irritable`: "I get shorter or more irritable"
+  - `i_lean_on_them_more_for_support`: "I lean on them more for support"
+  - `i_try_to_compartmentalize_and_carry_on`: "I try to compartmentalize and carry on"
 
 ## 5. Emotional Style and Security
 
@@ -408,6 +445,18 @@ It defines:
   - `after_consistency_builds`
   - `only_after_clear_commitment`
   - `slowly_even_when_i_like_someone`
+
+## E7 `emo_security_disappointment_reactivity`
+
+- Type: `scenario_select`
+- Privacy: `MATCHING_PRIVATE`
+- Prompt:
+  - "When something disappointing happens in dating, what is your first internal reaction?"
+- Options:
+  - `sharp_frustration_that_fades_quickly`: "A sharp reaction that fades fairly quickly"
+  - `quiet_disappointment_i_sit_with`: "Quiet disappointment that I sit with"
+  - `i_spiral_before_i_can_think_clearly`: "I spiral a bit before I can think clearly"
+  - `i_move_past_it_without_much_reaction`: "I move past it without much reaction"
 
 ## 6. Lifestyle, Intimacy and Chemistry
 
@@ -503,6 +552,18 @@ It defines:
 - Rule:
   - private only
 
+## I9 `life_intimacy_touch_style`
+
+- Type: `single_select`
+- Privacy: `SENSITIVE_PRIVATE`
+- Prompt:
+  - "What kind of physical affection feels most connecting to you?"
+- Options:
+  - `casual_touch_throughout_the_day`: "Casual touch throughout the day"
+  - `longer_closeness_like_cuddling`: "Longer closeness like cuddling"
+  - `stronger_sexual_chemistry_and_passion`: "Stronger sexual chemistry and passion"
+  - `physical_affection_is_not_my_main_way_of_connecting`: "Physical affection is not my main way of connecting"
+
 ## 7. Conditional Display Rules
 
 - `I2` and `I8` should only appear after the user has completed Basics.
@@ -514,4 +575,3 @@ It defines:
 - All questions remain editable.
 - Changes to `B1`, `B2`, `B4`, or `I4` should trigger immediate match recompute.
 - Changes to sensitive-private questions should recompute ranking but not public profile data.
-

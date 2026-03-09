@@ -292,26 +292,29 @@ export const profilerQuestions: readonly ProfilerQuestionDefinition[] = [
     ],
   }),
   singleSelectQuestion({
-    id: "basics_positive_event_response",
+    id: "basics_vulnerability_response",
     sectionId: "basics",
-    title: "Positive event response",
+    title: "Vulnerability response",
     type: "scenario_select",
     privacy: "MATCHING_PRIVATE",
     required: true,
     prompt: [
-      "Someone you are dating shares exciting news. What do you naturally do first?",
+      "Someone you are dating opens up about something they feel insecure about. What do you naturally do first?",
     ],
     scoringDimensions: ["responsiveness"],
     options: [
-      option("ask_questions_and_lean_in", "Ask questions and lean in"),
-      option("celebrate_and_move_on", "Celebrate quickly and move on"),
       option(
-        "compare_to_own_experience",
-        "Compare it to my own experience",
+        "listen_and_help_them_feel_understood",
+        "Listen closely and help them feel understood",
       ),
       option(
-        "hold_back_until_context_clear",
-        "Hold back until I know how big it is to them",
+        "reframe_or_try_to_make_it_better",
+        "Try to make it feel lighter or easier",
+      ),
+      option("share_a_similar_story", "Share something similar from my own life"),
+      option(
+        "feel_unsure_and_shift_the_conversation",
+        "Feel unsure what to do and shift the conversation a bit",
       ),
     ],
   }),
@@ -490,6 +493,51 @@ export const profilerQuestions: readonly ProfilerQuestionDefinition[] = [
     ],
   }),
   singleSelectQuestion({
+    id: "life_direction_religion_salience",
+    sectionId: "life_direction",
+    title: "Religion or spirituality salience",
+    type: "single_select",
+    privacy: "MATCHING_PRIVATE",
+    required: true,
+    prompt: ["How much does religion or spirituality shape your day-to-day life?"],
+    scoringDimensions: ["values", "life_direction"],
+    options: [
+      option("central_to_my_life", "It is central to my life"),
+      option(
+        "important_but_not_everything",
+        "It matters, but it is not everything",
+      ),
+      option("private_but_meaningful", "It is private, but meaningful"),
+      option(
+        "not_a_big_part_of_my_life",
+        "It is not a big part of my life",
+      ),
+      option("not_part_of_my_life", "It is not part of my life"),
+    ],
+  }),
+  singleSelectQuestion({
+    id: "life_direction_investment_style",
+    sectionId: "life_direction",
+    title: "Investment style",
+    type: "scenario_select",
+    privacy: "MATCHING_PRIVATE",
+    required: true,
+    prompt: ["When dating starts to feel real, what do you most naturally do?"],
+    scoringDimensions: ["intent", "attachment", "life_direction"],
+    options: [
+      option("lean_in_and_make_time_for_it", "Lean in and make time for it"),
+      option("stay_steady_and_let_it_build", "Stay steady and let it build"),
+      option(
+        "keep_some_distance_until_i_am_sure",
+        "Keep some distance until I am sure",
+      ),
+      option(
+        "pull_back_a_bit_to_protect_myself",
+        "Pull back a bit to protect myself",
+      ),
+    ],
+  }),
+  singleSelectQuestion({
     id: "comm_repair_after_tension",
     sectionId: "communication_repair",
     title: "After tension",
@@ -560,13 +608,19 @@ export const profilerQuestions: readonly ProfilerQuestionDefinition[] = [
     ],
     scoringDimensions: ["responsiveness", "conflict_repair"],
     options: [
-      option("pause_and_engage", "Pause and engage"),
-      option("acknowledge_then_finish_task", "Acknowledge, then finish my task"),
+      option("pause_and_shift_fully", "Pause what I am doing and shift fully"),
       option(
-        "respond_briefly_without_really_shifting",
-        "Respond briefly without really shifting",
+        "acknowledge_warmly_then_finish_task",
+        "Acknowledge them warmly, then finish my task",
       ),
-      option("miss_it_until_they_ask_again", "Miss it until they ask again"),
+      option(
+        "respond_on_autopilot_then_reconnect_later",
+        "Respond on autopilot and reconnect properly later",
+      ),
+      option(
+        "often_notice_after_the_fact",
+        "Often notice after the fact that I was too absorbed",
+      ),
     ],
   }),
   singleSelectQuestion({
@@ -620,6 +674,36 @@ export const profilerQuestions: readonly ProfilerQuestionDefinition[] = [
       option("steady_thoughtful_messages", "Steady thoughtful messages"),
       option("low_volume_but_high_substance", "Low volume but high substance"),
       option("voice_notes_or_calls_over_text", "Voice notes or calls over text"),
+    ],
+  }),
+  singleSelectQuestion({
+    id: "comm_repair_stress_communication",
+    sectionId: "communication_repair",
+    title: "Stress communication",
+    type: "scenario_select",
+    privacy: "MATCHING_PRIVATE",
+    required: true,
+    prompt: [
+      "When money or work stress builds up, what usually happens to how you communicate with a partner?",
+    ],
+    scoringDimensions: ["stress_finance", "conflict_repair", "attachment"],
+    options: [
+      option(
+        "i_get_quieter_and_more_withdrawn",
+        "I get quieter and more withdrawn",
+      ),
+      option(
+        "i_get_shorter_or_more_irritable",
+        "I get shorter or more irritable",
+      ),
+      option(
+        "i_lean_on_them_more_for_support",
+        "I lean on them more for support",
+      ),
+      option(
+        "i_try_to_compartmentalize_and_carry_on",
+        "I try to compartmentalize and carry on",
+      ),
     ],
   }),
   singleSelectQuestion({
@@ -723,6 +807,36 @@ export const profilerQuestions: readonly ProfilerQuestionDefinition[] = [
       option("after_consistency_builds", "After consistency builds"),
       option("only_after_clear_commitment", "Only after clear commitment"),
       option("slowly_even_when_i_like_someone", "Slowly, even when I like someone"),
+    ],
+  }),
+  singleSelectQuestion({
+    id: "emo_security_disappointment_reactivity",
+    sectionId: "emotional_security",
+    title: "Disappointment reactivity",
+    type: "scenario_select",
+    privacy: "MATCHING_PRIVATE",
+    required: true,
+    prompt: [
+      "When something disappointing happens in dating, what is your first internal reaction?",
+    ],
+    scoringDimensions: ["attachment", "stress_finance"],
+    options: [
+      option(
+        "sharp_frustration_that_fades_quickly",
+        "A sharp reaction that fades fairly quickly",
+      ),
+      option(
+        "quiet_disappointment_i_sit_with",
+        "Quiet disappointment that I sit with",
+      ),
+      option(
+        "i_spiral_before_i_can_think_clearly",
+        "I spiral a bit before I can think clearly",
+      ),
+      option(
+        "i_move_past_it_without_much_reaction",
+        "I move past it without much reaction",
+      ),
     ],
   }),
   rangeSelectQuestion({
@@ -873,6 +987,34 @@ export const profilerQuestions: readonly ProfilerQuestionDefinition[] = [
     recomputeBehavior: "ranking_only",
     minPairs: 8,
     maxPairs: 12,
+  }),
+  singleSelectQuestion({
+    id: "life_intimacy_touch_style",
+    sectionId: "lifestyle_intimacy_chemistry",
+    title: "Touch style",
+    type: "single_select",
+    privacy: "SENSITIVE_PRIVATE",
+    required: true,
+    prompt: ["What kind of physical affection feels most connecting to you?"],
+    scoringDimensions: ["intimacy", "chemistry"],
+    options: [
+      option(
+        "casual_touch_throughout_the_day",
+        "Casual touch throughout the day",
+      ),
+      option(
+        "longer_closeness_like_cuddling",
+        "Longer closeness like cuddling",
+      ),
+      option(
+        "stronger_sexual_chemistry_and_passion",
+        "Stronger sexual chemistry and passion",
+      ),
+      option(
+        "physical_affection_is_not_my_main_way_of_connecting",
+        "Physical affection is not my main way of connecting",
+      ),
+    ],
   }),
 ] as const;
 

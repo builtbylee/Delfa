@@ -1,7 +1,7 @@
 # Delfa Profiler Schema V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
+- Version: `0.2.0`
+- Date: `2026-03-09`
 - Status: `Implementation-ready draft`
 - Depends on:
   - `docs/product/profiler-v1.md`
@@ -54,6 +54,7 @@ Allowed types for V1:
 - `scenario_select`
 - `tile_select`
 - `compound`
+- `forced_tradeoff`
 
 ### 2.4 Scoring hooks
 
@@ -223,19 +224,19 @@ Each question may map to one or more of these dimensions:
   - `reliability`
   - `physical_chemistry`
 
-## 4.7 `basics_positive_event_response`
+## 4.7 `basics_vulnerability_response`
 
-- `question_id`: `basics_positive_event_response`
+- `question_id`: `basics_vulnerability_response`
 - `type`: `scenario_select`
 - `privacy`: `MATCHING_PRIVATE`
 - `required`: `true`
 - `dimension`:
   - `responsiveness`
 - `options`:
-  - `ask_questions_and_lean_in`
-  - `celebrate_and_move_on`
-  - `compare_to_own_experience`
-  - `hold_back_until_context_clear`
+  - `listen_and_help_them_feel_understood`
+  - `reframe_or_try_to_make_it_better`
+  - `share_a_similar_story`
+  - `feel_unsure_and_shift_the_conversation`
 
 ## 4.8 `basics_uncertainty_response`
 
@@ -288,6 +289,7 @@ These groups are implementation scope for V1. Exact wording and answer options a
 ## 5.1 Life Direction question groups
 
 - `life_direction_non_negotiables`
+- `life_direction_commitment_behavior`
 - `life_direction_money_style`
 - `life_direction_work_ambition`
 - `life_direction_children_parenting`
@@ -300,7 +302,8 @@ These groups are implementation scope for V1. Exact wording and answer options a
 - `comm_repair_space_vs_reassurance`
 - `comm_repair_apology_style`
 - `comm_repair_bids_for_connection`
-- `comm_repair_positive_event_response`
+- `comm_repair_stress_response`
+- `comm_repair_positive_event_response_under_stress`
 - `comm_repair_humor_playfulness`
 
 ## 5.3 Emotional Style and Security question groups
@@ -315,6 +318,7 @@ These groups are implementation scope for V1. Exact wording and answer options a
 ## 5.4 Lifestyle, Intimacy and Chemistry question groups
 
 - `life_intimacy_affection_style`
+- `life_intimacy_touch_language`
 - `life_intimacy_exclusivity_norms`
 - `life_intimacy_libido_range`
 - `life_intimacy_boundaries`

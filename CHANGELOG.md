@@ -30,3 +30,4 @@ All notable changes to Delfa will be documented in this file.
 - Added an explainer deck source summarizing Delfa's agreed product direction, feature set, and architecture
 - Added a GitHub Pages-ready HTML explainer deck and README hero preview
 - Simplified V1 by removing slow reveal, conversation nudges, operating-manual concepts, and private pattern-engine features from the core product direction
+- Strengthened the profiler with new questions on vulnerability response, stress communication, commitment behavior, religion/spirituality salience, disappointment reactivity, and touch-style intimacy fit

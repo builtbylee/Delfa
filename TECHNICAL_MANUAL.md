@@ -108,6 +108,7 @@ Prefer:
 - Ranking and prioritization
 - Repeated signals over time
 - Behavioral learning from likes, skips, response quality, and disconnect reasons
+- Questions on stress behavior, commitment behavior, and intimacy style where the research shows they materially affect long-term fit
 
 ### 5.2 Progressive Profiling
 
@@ -119,6 +120,14 @@ The profiler should be modular:
 - Phase 4: ongoing calibration through behavior and reflection
 
 Current working profiler structure and question design live in `docs/product/profiler-v1.md`.
+
+The current profiler now includes stronger direct coverage for:
+
+- stress and communication under pressure
+- commitment and investment style once dating becomes real
+- religion/spirituality salience as a values-alignment input
+- disappointment reactivity as an emotional-stability signal
+- touch-style preferences inside intimacy fit
 
 ### 5.3 Confidence and Progressive Signal
 

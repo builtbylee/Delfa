@@ -1,7 +1,7 @@
 # Delfa Profiler V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
+- Version: `0.2.0`
+- Date: `2026-03-09`
 - Status: `Working product spec`
 - Depends on:
   - `docs/research/market-and-relationship-research.md`
@@ -26,6 +26,8 @@ Each question should capture multiple useful dimensions at once:
 - communication style
 - pacing
 - attachment pattern
+- commitment behavior
+- stress coping
 - lifestyle fit
 - attraction pattern
 
@@ -45,6 +47,7 @@ Prefer:
 - ranking exercises
 - pairwise profile comparisons
 - private calibration questions whose answers are not shown publicly
+- question pairs that assess the same domain from different angles without sounding repetitive
 
 ### 2.3 Progressive profiling
 
@@ -93,6 +96,7 @@ The app should make the value exchange explicit:
 - "You can start matching now."
 - "Each completed section improves match accuracy."
 - "More detail means better fit, fewer dead-end chats, and clearer compatibility explanations."
+- "The profiler gets sharper as Delfa learns how you handle closeness, pressure, and attraction in real life."
 
 ## 4. Basics Segment
 
@@ -105,6 +109,7 @@ Basics must provide enough data to support:
 - first-pass conversation guidance
 - basic intent alignment
 - early attraction calibration
+- first-pass responsiveness and attachment signal
 
 ## 4.2 Basics question set
 
@@ -221,15 +226,15 @@ Basics must provide enough data to support:
 
 - Type: scenario-based single-select
 - Question:
-  - "Someone you are dating shares exciting news. What do you naturally do first?"
+  - "Someone you are dating opens up about something they feel insecure about. What do you naturally do first?"
 - Answer examples:
-  - ask questions and lean in
-  - celebrate quickly and move on
-  - compare it to my own experience
-  - hold back until I know how big it is to them
+  - listen closely and help them feel understood
+  - try to make it feel lighter or easier
+  - share something similar from my own life
+  - feel unsure what to do and shift the conversation a bit
 - Captures:
   - responsiveness
-  - generosity of attention
+  - empathy under vulnerability
   - emotional engagement
 - Honesty design:
   - behavior-first framing
@@ -464,4 +469,3 @@ Recommended UX:
 - do not expose sensitive private calibration answers as public labels
 - do not make attraction capture feel accusatory or shame-based
 - do not treat the profiler as complete without interaction-stage learning
-
