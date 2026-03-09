@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.4.0`
+- Version: `0.5.0`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -359,8 +359,9 @@ This section is directional and may be refined once implementation begins.
 ### 8.2 Recommended Initial Stack
 
 - Mobile: React Native with TypeScript
-- Backend: TypeScript service layer
+- Backend: TypeScript modular monolith with separate API, worker, and realtime runtimes
 - Database: PostgreSQL
+- Cache and coordination: Redis
 - Auth: managed auth provider or secure first-party auth
 - File storage: cloud object storage for media
 - Payments: Stripe or equivalent
@@ -387,7 +388,88 @@ The first live profiler implementation layer now lives in:
 - `packages/shared/src/match/interaction-catalog.ts`
 - `packages/shared/src/match/contracts.ts`
 
-## 9. Initial Data Model Domains
+Implementation-ready backend architecture artifacts now live in:
+
+- `docs/product/backend-architecture-v1.md`
+- `docs/product/database-schema-v1.md`
+- `docs/product/api-surface-v1.md`
+- `docs/product/async-jobs-events-v1.md`
+- `docs/product/infrastructure-deployment-v1.md`
+
+## 9. Backend Architecture Direction
+
+### 9.1 Service boundary model
+
+Start with a modular monolith. Do not split into microservices at launch.
+
+Recommended runtime surfaces:
+
+- API service
+- Worker service
+- Realtime gateway
+
+Recommended backend modules:
+
+- identity
+- profile
+- profiler
+- attraction
+- matching
+- match_lifecycle
+- outcomes
+- trust_safety
+- billing
+- measurement
+- ops_admin
+
+### 9.2 Database direction
+
+Use one PostgreSQL database with logical schemas by domain:
+
+- `identity`
+- `profile`
+- `profiler`
+- `matching`
+- `interaction`
+- `outcomes`
+- `trust`
+- `billing`
+- `measurement`
+- `ops`
+
+Use row-level security as defense in depth on high-sensitivity tables and keep append-heavy tables partitioned only where justified.
+
+### 9.3 API direction
+
+Use:
+
+- REST/JSON for core mobile flows
+- WebSocket for realtime chat, guided prompt reveals, and match-state fanout
+- internal worker and ops endpoints for automation only
+
+### 9.4 Async execution direction
+
+Use a transactional outbox plus worker model at launch.
+
+Why:
+
+- it keeps async work consistent with committed database state
+- it supports lifecycle timers and trust automations
+- it avoids premature broker complexity
+
+### 9.5 Infrastructure direction
+
+Launch in one primary region with:
+
+- API service
+- Worker service
+- Realtime service
+- Managed PostgreSQL
+- Managed Redis
+- Managed object storage
+- OpenTelemetry-based observability
+
+## 10. Initial Data Model Domains
 
 - User
 - Profile
@@ -400,7 +482,7 @@ The first live profiler implementation layer now lives in:
 - TrustSignal
 - PreferenceCalibration
 
-## 10. Security and Privacy Requirements
+## 11. Security and Privacy Requirements
 
 - Minimize collection of sensitive data
 - Treat identity-related data as high-sensitivity
@@ -409,7 +491,7 @@ The first live profiler implementation layer now lives in:
 - Avoid storing unnecessary free-text sensitive explanations
 - Provide auditable controls for moderation and abuse handling
 
-## 11. Build Sequence
+## 12. Build Sequence
 
 ### Phase 1
 

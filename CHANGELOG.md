@@ -36,3 +36,4 @@ All notable changes to Delfa will be documented in this file.
 - Added a first-match delivery policy covering quality floors, cold-start priors, and launch-mode human review
 - Added a recommended launch strategy centered on one-city density, founding cohorts, insight-led waitlists, and activation-driven expansion
 - Added implementation-ready specs for the attraction engine, live ranking, post-date learning, trust and safety operations, and the measurement system
+- Added implementation-ready backend architecture docs for service boundaries, database schema, API surface, async jobs/events, and infrastructure/deployment

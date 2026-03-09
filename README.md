@@ -57,6 +57,11 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `docs/product/post-date-learning-v1.md`: private post-date reflection and learning loop
 - `docs/product/trust-safety-v1.md`: trust, verification, reporting, and safety operations
 - `docs/product/measurement-system-v1.md`: activation, outcome, trust, and launch metrics
+- `docs/product/backend-architecture-v1.md`: backend runtime shape, module boundaries, and persistence strategy
+- `docs/product/database-schema-v1.md`: initial PostgreSQL schema ownership and indexing plan
+- `docs/product/api-surface-v1.md`: public and internal API surface plan
+- `docs/product/async-jobs-events-v1.md`: transactional outbox, worker jobs, and domain event design
+- `docs/product/infrastructure-deployment-v1.md`: launch infrastructure, observability, and deployment plan
 - `docs/presentations/delfa-explainer-deck-v1.md`: explainer deck source covering Delfa's product direction and architecture
 - [`docs/presentations/delfa-explainer-deck.html`](docs/presentations/delfa-explainer-deck.html): GitHub Pages-ready interactive explainer deck
 - `docs/research/market-and-relationship-research.md`: evidence base for product and profiler decisions
@@ -85,4 +90,4 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 
 ## Initial Scope
 
-This repository now has a documentation-first foundation plus shared profiler, matching, trust/safety, and outcome-learning definitions. The next implementation phase should wire these shared contracts into `apps/api` and `apps/mobile`.
+This repository now has a documentation-first foundation plus shared profiler, matching, trust/safety, outcome-learning, and backend architecture definitions. The next implementation phase should wire these contracts and backend plans into `apps/api` and `apps/mobile`.
