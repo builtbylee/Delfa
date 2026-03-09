@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.5.0`
+- Version: `0.6.0`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -359,12 +359,20 @@ This section is directional and may be refined once implementation begins.
 ### 8.2 Recommended Initial Stack
 
 - Mobile: React Native with TypeScript
-- Backend: TypeScript modular monolith with separate API, worker, and realtime runtimes
+- Backend: Node.js 22 + TypeScript modular monolith with separate API, worker, and realtime runtimes
 - Database: PostgreSQL
 - Cache and coordination: Redis
-- Auth: managed auth provider or secure first-party auth
-- File storage: cloud object storage for media
+- Auth: Clerk
+- File storage: Cloudflare R2
 - Payments: Stripe or equivalent
+- Queueing: pg-boss
+- HTTP framework: Fastify
+- Validation: TypeBox
+- ORM and migrations: Drizzle ORM + drizzle-kit
+- Push notifications: OneSignal
+- Hosting: Fly.io
+- Edge security: Cloudflare DNS, WAF, rate limiting, and Turnstile
+- Observability: OpenTelemetry + Sentry
 
 Implementation-ready profiler design artifacts live in:
 
@@ -395,6 +403,16 @@ Implementation-ready backend architecture artifacts now live in:
 - `docs/product/api-surface-v1.md`
 - `docs/product/async-jobs-events-v1.md`
 - `docs/product/infrastructure-deployment-v1.md`
+
+The initial `apps/api` scaffold now lives in:
+
+- `apps/api/package.json`
+- `apps/api/src/app.ts`
+- `apps/api/src/bin/api.ts`
+- `apps/api/src/bin/worker.ts`
+- `apps/api/src/bin/realtime.ts`
+- `apps/api/src/modules`
+- `apps/api/drizzle.config.ts`
 
 ## 9. Backend Architecture Direction
 

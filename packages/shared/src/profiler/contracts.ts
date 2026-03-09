@@ -6,12 +6,12 @@ import type {
   ProfilerResponsePayload,
   UserCompatibilityProfile,
   UserProfilerResponse,
-} from "./types";
+} from "./types.js";
 import type {
   CompatibilityPreview,
   MirrorMomentPayload,
   ProfilerSectionJourneyFrame,
-} from "./experience";
+} from "./experience.js";
 
 export interface GetProfilerSectionsResponse {
   schemaVersion: string;

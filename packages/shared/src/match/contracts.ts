@@ -12,15 +12,15 @@ import type {
   MatchSurfaceReason,
   MatchPriorSourceDefinition,
   PromptResponseRecord,
-} from "./types";
+} from "./types.js";
 import type {
   PostDateLearningPolicyDefinition,
   PostDateReflectionPayload,
-} from "./outcomes";
+} from "./outcomes.js";
 import type {
   ReportCategoryId,
   TrustSafetyPolicyDefinition,
-} from "./trust-safety";
+} from "./trust-safety.js";
 
 export interface GetActiveMatchExperienceResponse {
   schemaVersion: string;

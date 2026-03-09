@@ -1,4 +1,4 @@
-import type { MatchInteractionPlanDefinition } from "./types";
+import type { MatchInteractionPlanDefinition } from "./types.js";
 
 export const defaultMatchInteractionPlan: MatchInteractionPlanDefinition = {
   id: "delfa_v1_interaction_plan",

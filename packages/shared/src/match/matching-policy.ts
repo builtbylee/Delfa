@@ -2,7 +2,7 @@ import type {
   FirstMatchQualityPolicyDefinition,
   HumanAssistedReviewPolicyDefinition,
   LaunchCohortPolicyDefinition,
-} from "./types";
+} from "./types.js";
 
 export const defaultFirstMatchQualityPolicy: FirstMatchQualityPolicyDefinition =
   {

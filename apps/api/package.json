@@ -1,0 +1,34 @@
+{
+  "name": "@delfa/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:api": "tsx watch src/bin/api.ts",
+    "dev:worker": "tsx watch src/bin/worker.ts",
+    "dev:realtime": "tsx watch src/bin/realtime.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@clerk/backend": "^2.18.0",
+    "@delfa/shared": "file:../../packages/shared",
+    "@fastify/cors": "^10.0.2",
+    "@fastify/type-provider-typebox": "^5.1.0",
+    "@fastify/websocket": "^11.0.2",
+    "@sinclair/typebox": "^0.34.28",
+    "drizzle-orm": "^0.40.0",
+    "fastify": "^5.2.1",
+    "ioredis": "^5.5.0",
+    "pg": "^8.14.1",
+    "pg-boss": "^10.1.6",
+    "pino": "^9.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "drizzle-kit": "^0.30.4",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  }
+}

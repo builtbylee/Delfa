@@ -27,6 +27,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Added first-match delivery policy, launch-mode human review, and a recommended launch strategy centered on density, cohort quality, and outcome-driven growth
 - Added implementation-ready attraction-engine, live-ranking, post-date learning, trust/safety, and measurement-system specs plus shared matching contracts
 - Added the backend architecture pack covering service boundaries, PostgreSQL schema design, API surface, async jobs/events, and infrastructure/deployment
+- Locked the concrete backend stack and scaffolded the initial `apps/api` Fastify workspace with separate API, worker, and realtime entrypoints
 
 ## Working Conventions
 
@@ -63,9 +64,10 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Delfa should optimize for first-match plausibility, date conversion, second-date intent, and trust, not time-on-app
 - Backend should launch as a modular monolith with separate API, worker, and realtime runtimes, not microservices
 - Use a transactional outbox plus worker model before introducing a dedicated event bus
+- Concrete backend stack is now Fastify + TypeBox + Drizzle + pg-boss + Clerk + Fly.io + Cloudflare + OneSignal
 
 ## Open Questions
 
-- Exact mobile and backend framework choices
+- Exact mobile framework choices
 - Final profiler schema and question bank
 - Sensitive-preference calibration rules and fairness constraints

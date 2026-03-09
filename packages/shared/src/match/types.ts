@@ -1,4 +1,4 @@
-import type { CompatibilityDimension } from "../profiler/types";
+import type { CompatibilityDimension } from "../profiler/types.js";
 
 export const MATCH_INTERACTION_SCHEMA_VERSION = "0.2.0";
 

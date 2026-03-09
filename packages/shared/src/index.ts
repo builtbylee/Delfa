@@ -1,2 +1,2 @@
-export * from "./match";
-export * from "./profiler";
+export * from "./match/index.js";
+export * from "./profiler/index.js";

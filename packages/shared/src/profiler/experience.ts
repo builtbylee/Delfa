@@ -1,4 +1,4 @@
-import type { CompatibilityDimension, ProfilerSectionId } from "./types";
+import type { CompatibilityDimension, ProfilerSectionId } from "./types.js";
 
 export const PROFILER_EXPERIENCE_VERSION = "0.1.0";
 

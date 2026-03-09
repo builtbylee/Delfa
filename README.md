@@ -35,13 +35,17 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 ├── ISSUES.md
 ├── README.md
 ├── RELEASE_MANIFEST.md
-└── TECHNICAL_MANUAL.md
+├── TECHNICAL_MANUAL.md
+├── package.json
+└── tsconfig.base.json
 ```
 
 ## Documentation
 
 - `README.md`: repo overview and working conventions
 - `TECHNICAL_MANUAL.md`: product and architecture blueprint
+- `package.json`: root workspace scripts and npm workspace boundaries
+- `tsconfig.base.json`: shared TypeScript compiler baseline
 - `docs/product/profiler-v1.md`: first structured profiler spec and question architecture
 - `docs/product/profiler-question-bank-v1.md`: canonical question wording and answer inventory
 - `docs/product/profiler-schema-v1.md`: canonical profiler question schema and response rules
@@ -87,7 +91,15 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `packages/shared/src/match/measurement.ts`: shared product event and metric definitions
 - `packages/shared/src/match/contracts.ts`: API request and response contracts for guided match interactions
 - `packages/shared/src/index.ts`: shared package export surface
+- `packages/shared/package.json`: shared package manifest
+- `apps/api/package.json`: Fastify, Drizzle, pg-boss, Clerk, and Fly-aligned API package manifest
+- `apps/api/src/app.ts`: primary Fastify API bootstrap
+- `apps/api/src/bin/api.ts`: API runtime entrypoint
+- `apps/api/src/bin/worker.ts`: worker runtime entrypoint
+- `apps/api/src/bin/realtime.ts`: realtime runtime entrypoint
+- `apps/api/src/modules`: module boundaries aligned to the backend architecture plan
+- `apps/api/drizzle.config.ts`: Drizzle migration/config scaffold
 
 ## Initial Scope
 
-This repository now has a documentation-first foundation plus shared profiler, matching, trust/safety, outcome-learning, and backend architecture definitions. The next implementation phase should wire these contracts and backend plans into `apps/api` and `apps/mobile`.
+This repository now has a documentation-first foundation plus shared profiler, matching, trust/safety, outcome-learning, backend architecture definitions, and an initial `apps/api` scaffold aligned to the chosen stack.

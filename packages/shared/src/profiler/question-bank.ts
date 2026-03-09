@@ -9,7 +9,7 @@ import {
   type RankedSelectQuestionDefinition,
   type SingleSelectQuestionDefinition,
   type MultiSelectQuestionDefinition,
-} from "./types";
+} from "./types.js";
 
 const option = (id: string, label: string): ProfilerOptionDefinition => ({
   id,

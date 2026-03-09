@@ -1,0 +1,19 @@
+{
+  "name": "delfa",
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev:api": "npm run dev:api --workspace @delfa/api",
+    "dev:worker": "npm run dev:worker --workspace @delfa/api",
+    "dev:realtime": "npm run dev:realtime --workspace @delfa/api",
+    "build": "npm run build --workspace @delfa/shared && npm run build --workspace @delfa/api",
+    "typecheck": "npm run typecheck --workspace @delfa/shared && npm run typecheck --workspace @delfa/api"
+  }
+}
