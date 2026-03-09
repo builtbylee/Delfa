@@ -168,7 +168,7 @@ It defines:
 - Prompt:
   - "Which profile would you be more curious to explore?"
 - Format:
-  - `6-10` fast pairwise choices
+  - `6-8` fast pairwise choices
 - Rule:
   - private only
   - no public labels

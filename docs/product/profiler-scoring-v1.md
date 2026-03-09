@@ -1,7 +1,7 @@
 # Delfa Profiler Scoring V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
+- Version: `0.2.0`
+- Date: `2026-03-09`
 - Status: `Implementation-ready draft`
 
 ## 1. Goal
@@ -19,6 +19,7 @@ Translate profiler responses into:
 2. `Relationship process variables` should outweigh low-signal cosmetics.
 3. `Behavioral signals` should gradually refine stated preferences.
 4. Scoring must remain explainable to users and operators.
+5. Attraction should be learned through revealed preferences and match behavior, not only stated type language.
 
 ## 3. Matching Layers
 
@@ -65,6 +66,24 @@ Deeper-section data should increase both:
 - match precision
 - scoring confidence
 
+## 3.4 Attraction calibration model
+
+Attraction should be treated as its own private calibration layer.
+
+Primary inputs:
+
+- Basics pairwise attraction calibration
+- extended attraction calibration
+- match open rate on surfaced profiles
+- early engagement depth after matching
+- graceful disconnect outcomes where users indicate `chemistry` or `attraction` did not grow
+
+Rules:
+
+- pairwise cards should vary by `presentation`, `energy`, `style`, and `setting`
+- the model should learn from revealed choices, not ask users to describe a type in words
+- attraction mismatch should down-rank matches even when broader compatibility is strong
+
 ## 4. Confidence Model
 
 Match confidence should depend on:
@@ -86,6 +105,12 @@ Confidence should be shown by dimension, not as a single headline compatibility 
 
 The UI should also map low-confidence dimensions to the profiler section that would improve them.
 
+The Basics completion experience should show:
+
+- strong-signal dimensions
+- low-confidence dimensions
+- the next profiler section that would improve each weak area
+
 Example:
 
 - `communication_repair` confidence is low
@@ -102,6 +127,8 @@ Behavior should refine, not instantly override, stated preferences.
 - response speed consistency
 - message effort
 - voice note usage
+- guided prompt completion
+- shared micro-experience choices
 - graceful disconnect reasons
 
 ### Guardrails

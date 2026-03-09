@@ -1,6 +1,6 @@
 # Delfa Match Lifecycle V1
 
-- Version: `0.2.0`
+- Version: `0.3.0`
 - Date: `2026-03-09`
 - Status: `Canonical revised V1 lifecycle spec`
 
@@ -33,7 +33,7 @@ Core rules:
    Users should always be able to leave immediately. Higher-quality closure is encouraged, not required.
 
 3. `Interaction over static profiles`
-   The match should become clearer through lightweight getting-to-know-you prompts, normal conversation, and reflection.
+   The match should become clearer through a short guided interaction path, normal conversation, and reflection.
 
 4. `No limbo by default`
    Matches should not drift indefinitely. The lifecycle should nudge toward progression, closure, or timeout.
@@ -54,7 +54,7 @@ User-facing meaning:
 
 - the match exists
 - Basics and immediate profile data are visible
-- guided getting-to-know-you prompts are available
+- round 1 of the guided interaction path is available
 
 ## 3.2 `discovery_active`
 
@@ -63,7 +63,7 @@ The match is in the guided exploration phase.
 User-facing meaning:
 
 - both users can chat
-- both users can complete discovery prompts
+- both users can complete a short three-round interaction path
 - compatibility confidence can improve
 
 ## 3.3 `ready_to_meet_pending`
@@ -215,11 +215,13 @@ Exit triggers:
 Entry:
 
 - either user sends an opening message
-- either user answers a getting-to-know-you prompt
+- either user answers the first guided prompt
 
 Allowed actions:
 
-- complete getting-to-know-you prompts
+- complete round 1 voice prompt
+- complete round 2 shared micro-experience
+- complete round 3 deeper disclosure prompt
 - chat
 - use voice notes if enabled
 - signal ready to meet
@@ -333,7 +335,7 @@ Exit triggers:
 
 - either user ends the connection -> `closed_gracefully`
 
-## 6. Getting-To-Know-You Threshold Rules
+## 6. Guided Interaction Threshold Rules
 
 ## 6.1 Full graceful disconnect threshold
 
@@ -344,8 +346,8 @@ Default threshold:
 - match active for at least `24 hours`
 - and at least one mutual exchange in each direction
 - and one of:
-  - both completed at least `2` shared prompts each
-  - both completed at least `1` shared prompt each and exchanged meaningful chat replies
+  - both completed `round 1`
+  - both completed one guided phase and exchanged meaningful chat replies
 
 Rationale:
 
@@ -368,7 +370,7 @@ Behavior:
 
 Optional prompt:
 
-- Delfa may offer `Try one more shared prompt before closing`
+- Delfa may offer `Try one more guided interaction before closing`
 - this must be skippable with one tap
 
 ## 7. Timeout Rules
@@ -406,8 +408,13 @@ If `post_date_reflection` receives no response from either user for `4 days`:
 
 The `I'm ready to meet` control should appear only after:
 
-- both users complete at least `2` shared prompts
-- or the system has at least `medium confidence` in intent, pace, and lifestyle fit
+- both users complete `round 2`
+- or both users complete `round 1` and the system has at least `medium confidence` in:
+  - `intent`
+  - `life_direction`
+  - `lifestyle`
+
+After both users complete `round 3`, Delfa should nudge more directly toward deciding whether to meet.
 
 ## 8.2 Privacy
 
@@ -541,7 +548,9 @@ Safety logic always supersedes:
 Every match should record:
 
 - state transitions
-- shared-prompt completion counts
+- guided-phase completion counts
+- voice-prompt completion counts
+- shared micro-experience outcomes
 - mutual exchange counts
 - inactivity events
 - nudges sent
@@ -557,11 +566,15 @@ Every match should record:
 These are the decisions locked for V1:
 
 - one active match at a time
-- getting-to-know-you prompts should stay lightweight
+- guided interaction should stay limited to `3` rounds
+- round 1 should be voice-preferred with text fallback
+- round 2 should be a shared micro-experience
+- round 3 should be a slightly deeper reciprocal disclosure prompt
 - graceful disconnect is encouraged, not forced
 - users may always leave immediately
 - full graceful disconnect unlocks after minimum meaningful interaction
 - ready-to-meet is private until mutual
+- ready-to-meet should appear as soon as there is enough signal, not only after long chat history
 - matches should not sit in limbo for more than roughly one week without nudges and expiry
 - the next match unlocks when the current one is properly resolved
 - safety overrides all other lifecycle logic
@@ -571,7 +584,7 @@ These are the decisions locked for V1:
 These are intentionally left adjustable during testing:
 
 - exact timeout durations
-- exact shared-prompt threshold values
+- exact guided-phase threshold values
 - exact nudge timing
 - exact cadence impact of repeated early exits
 - exact conditions for readiness prompt appearance

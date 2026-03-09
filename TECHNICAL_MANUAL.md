@@ -1,7 +1,7 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
+- Version: `0.2.0`
+- Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
 ## 1. Product Definition
@@ -18,7 +18,9 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 
 - One meaningful match at a time
 - Progressive profiler that grows over time
+- Scenario-framed profiler sections with mirror moments and compatibility preview
 - Guided getting-to-know-you prompts after matching
+- Voice-first guided interaction and shared micro-experiences inside the match flow
 - Graceful disconnects with structured feedback
 - Mutual ready-to-meet and a guided pre-date protocol
 - Compatibility confidence tied to profiler depth
@@ -70,6 +72,7 @@ The canonical lifecycle state machine lives in `docs/product/match-lifecycle-v1.
 - Matching engine
 - Match lifecycle management
 - Chat and guided prompts
+- Match interaction plan orchestration
 - Graceful disconnect workflow
 - Trust and safety controls
 - Subscription and entitlements
@@ -118,6 +121,13 @@ The profiler should be modular:
 - Phase 2: values, lifestyle, and communication patterns
 - Phase 3: attachment, conflict, stress, and intimacy
 - Phase 4: ongoing calibration through behavior and reflection
+
+The profiler experience should also include:
+
+- section journey framing
+- section-complete mirror moments
+- compatibility preview immediately after Basics
+- richer attraction calibration through adaptive pairwise cards
 
 Current working profiler structure and question design live in `docs/product/profiler-v1.md`.
 
@@ -173,6 +183,10 @@ Recommended approach:
 - No infinite feed or swipe stack in the core experience
 - Premium should improve insight quality, not volume
 - Each match should include a lightweight guided getting-to-know-you flow with shared prompts
+- The first active-match experience should be a three-round chemistry path:
+  - round 1: voice-first warmth prompt
+  - round 2: shared micro-experience
+  - round 3: deeper reciprocal disclosure
 
 ### 6.3 Match Experience Differentiators
 
@@ -180,6 +194,7 @@ Recommended approach:
 - mutual ready-to-meet signal
 - before-we-meet protocol
 - graceful disconnect
+- faster ready-to-meet availability once enough real interaction signal is present
 
 ### 6.4 Feedback Loop
 
@@ -259,6 +274,10 @@ The first live profiler implementation layer now lives in:
 - `packages/shared/src/profiler/types.ts`
 - `packages/shared/src/profiler/question-bank.ts`
 - `packages/shared/src/profiler/contracts.ts`
+- `packages/shared/src/profiler/experience.ts`
+- `packages/shared/src/match/types.ts`
+- `packages/shared/src/match/interaction-catalog.ts`
+- `packages/shared/src/match/contracts.ts`
 
 ## 9. Initial Data Model Domains
 

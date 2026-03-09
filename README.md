@@ -63,6 +63,10 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `packages/shared/src/profiler/types.ts`: canonical profiler domain types
 - `packages/shared/src/profiler/question-bank.ts`: shared section/question definitions derived from the profiler docs
 - `packages/shared/src/profiler/contracts.ts`: API request and response contracts for profiler flows
+- `packages/shared/src/profiler/experience.ts`: shared profiler experience definitions for section framing, mirror moments, compatibility preview, and attraction calibration
+- `packages/shared/src/match/types.ts`: canonical match-interaction domain types
+- `packages/shared/src/match/interaction-catalog.ts`: default three-round chemistry path and ready-to-meet gating rules
+- `packages/shared/src/match/contracts.ts`: API request and response contracts for guided match interactions
 - `packages/shared/src/index.ts`: shared package export surface
 
 ## Initial Scope

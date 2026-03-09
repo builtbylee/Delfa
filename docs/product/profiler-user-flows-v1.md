@@ -1,30 +1,55 @@
 # Delfa Profiler User Flows V1
 
-- Version: `0.2.0`
+- Version: `0.3.0`
 - Date: `2026-03-09`
-- Status: `Implementation-ready draft`
+- Status: `Implementation-ready experience spec`
 
 ## 1. Goal
 
-Define the primary UI flows needed to turn the profiler into a real product experience.
+Define how the profiler should feel in use, not just how questions are stored.
 
-## 2. Flow 1: New User Onboarding Into Basics
+The profiler should:
+
+- feel lighter than a questionnaire
+- return value as the user goes
+- make section completion feel rewarding
+- improve match confidence in ways the user can understand
+
+## 2. Experience Principles
+
+1. `Frame each section like a relationship moment`
+   Users should feel like they are moving through a short scenario journey, not a survey block.
+
+2. `Give something back after every section`
+   Every completed section should end with a `Mirror Moment` and, when relevant, a confidence update.
+
+3. `Show progress as clarity, not as homework`
+   The UI should emphasize what Delfa now understands and what still needs more depth.
+
+4. `Keep attraction calibration fast and premium`
+   The pairwise experience should feel more like intuitive curation than deliberate form filling.
+
+## 3. Flow 1: New User Onboarding Into Basics
 
 1. User signs up.
-2. User sees the profiler promise:
-   - one line on why Delfa asks these questions
-   - one line on how it improves match quality
-   - one line that Basics is short and they can deepen later
-3. User enters Basics.
-4. User sees one question per screen.
-5. User sees lightweight progress.
-6. User completes Basics.
-7. User sees:
-   - "You can start matching now"
-   - a short explanation of what was learned
-   - a prompt to complete another section later
+2. User sees a short profiler promise:
+   - "Delfa uses this to match for real compatibility, not just surface preferences."
+   - "Basics is short. You can deepen the profile later."
+3. User enters a `Basics` intro frame:
+   - eyebrow: `Start here`
+   - headline: "Let’s begin with what you already know about yourself."
+   - body: short explanation that Delfa will use this to start matching and identify what it still needs to learn
+4. User moves through one question per screen.
+5. The progress UI should show:
+   - how far through Basics they are
+   - one line that signals what kind of clarity this question adds
+6. After the final Basics question, Delfa shows:
+   - `Compatibility Preview`
+   - one private `Mirror Moment`
+   - a clear "You can start matching now" CTA
+   - a gentle nudge to deepen the profile over time
 
-## 3. Flow 2: Save and Resume
+## 4. Flow 2: Save and Resume
 
 Rules:
 
@@ -32,29 +57,40 @@ Rules:
 - user can exit at any time
 - resume should reopen on the last unanswered question
 - deeper sections can be completed in any order
+- the section intro frame should not repeat once the user is already in progress
 
-## 4. Flow 3: Section Unlock and Motivation
+## 5. Flow 3: Section Journey Framing
 
-After Basics, show four cards:
+Each section should open with a short section-specific frame so the user enters a context, not a blank form.
 
-- Life Direction
-- Communication and Repair
-- Emotional Style and Security
-- Lifestyle, Intimacy and Chemistry
+Examples:
 
-Each card should show:
+- `Life Direction`
+  - "Fast-forward a few years. What kind of life are you actually building?"
 
-- estimated time
-- what match quality improves
-- progress state
+- `Communication and Repair`
+  - "Imagine things are going well with someone, and then real life happens."
 
-## 5. Flow 4: Question Component Patterns
+- `Emotional Style and Security`
+  - "When a connection starts to matter, something shifts inside."
+
+- `Lifestyle, Intimacy and Chemistry`
+  - "Attraction is not one thing. It is vibe, closeness, rhythm, and physical pull."
+
+Design rules:
+
+- intro copy should fit on one screen
+- no more than `2-3` short text blocks
+- each section should have a distinct tone
+- the framing should help users answer honestly by imagining a real situation
+
+## 6. Flow 4: Question Component Patterns
 
 ### Pattern A: single-select scenario
 
 - prompt
 - optional helper text
-- 4 plausible options
+- `4` plausible options
 - continue button only after selection
 
 ### Pattern B: ranked-choice priorities
@@ -66,9 +102,11 @@ Each card should show:
 ### Pattern C: pairwise attraction cards
 
 - two cards
-- choose one
+- choose one with one tap
+- subtle haptic feedback
 - quick progress indicator
-- no labels that moralize the decision
+- no moralizing labels
+- cards should vary by `presentation`, `energy`, `style`, and `setting`, not just face alone
 
 ### Pattern D: compound setup screen
 
@@ -77,20 +115,33 @@ Each card should show:
   - match scope
   - family and relationship structure
 
-## 6. Flow 5: Section Completion Summary
+## 7. Flow 5: Mirror Moments
 
-At the end of each section, show:
+At the end of each section, Delfa should show a short private insight that reflects back an honest pattern from the user’s answers.
 
-- a short "what this improves" summary
-- one or two compatibility dimensions strengthened
-- prompt to return to matching or continue profiling
-- if relevant, a confidence callout showing which compatibility area improved
+This is a `Mirror Moment`.
 
-Example:
+Design rules:
 
-- "Your next matches will be better tuned for communication pace and conflict style."
+- `1` insight only
+- `2` short lines maximum
+- no personality labels
+- no flattery
+- no clinical language
+- should sound like observation, not diagnosis
 
-## 7. Flow 6: Profile Preview and Privacy
+Examples:
+
+- "You seem to prefer steadiness over intensity."
+- "You appear to orient toward emotional safety quickly."
+- "Chemistry seems to grow for you through feel, not just visuals."
+
+The Mirror Moment screen should also show:
+
+- `1-2` compatibility dimensions strengthened
+- CTA to continue profiling or return to matching
+
+## 8. Flow 6: Profile Preview and Privacy
 
 The user must understand:
 
@@ -104,38 +155,64 @@ Recommended UI:
 - `Used privately for better matching`
 - `Private and never shown`
 
-## 8. Flow 7: Compatibility Confidence
+## 9. Flow 7: Compatibility Preview After Basics
 
-Once Basics is complete, Delfa should show confidence by dimension.
+After Basics, Delfa should show a short preview of what it already knows and what it still needs.
+
+This is not a score.
+
+It should show:
+
+- `2-3` strong-signal dimensions
+- `2-3` low-confidence dimensions
+- the specific section that would improve each low-confidence area
+
+Example:
+
+- "Relationship direction: strong signal"
+- "Conflict and repair: needs more depth"
+- "Complete Communication and Repair to sharpen this"
+
+Purpose:
+
+- make Basics feel immediately useful
+- motivate deeper sections without nagging
+- build trust by being explicit about what Delfa knows and does not yet know
+
+## 10. Flow 8: Attraction Calibration Experience
+
+The attraction calibration should feel premium and fast.
 
 Rules:
 
-- no headline percentage
-- show high, medium, or low confidence per dimension
-- explain what data source the confidence comes from
-- recommend the next profiler section when a dimension is low-confidence
+- Basics attraction calibration should use `6-8` fast pairwise cards
+- extended calibration should use `8-12` cards later
+- cards should use synthetic or licensed assets, not real user media
+- each pair should vary by no more than `1-2` big dimensions at a time
+- the experience should optimize for instinctive choices, not overthinking
 
-## 9. Flow 8: Match-Stage Calibration
+After calibration, Delfa may show one optional private line such as:
 
-After a match is live, Delfa should continue gathering signal:
+- "You tend to respond more to warmth than polish."
 
-- guided prompts
+Constraint:
+
+- this must remain private
+- no public type labels
+- no visible attraction score
+
+## 11. Flow 9: Match-Stage Calibration
+
+After a match is live, Delfa should continue gathering signal from:
+
+- guided prompt responses
+- voice participation
+- shared micro-experience choices
 - graceful disconnect feedback
 
-This should feed calibration without forcing obvious "rate this person" forms too early.
+This should refine compatibility and attraction confidence without forcing obvious rating forms.
 
-## 10. Flow 9: Guided Getting-To-Know-You Prompts
-
-Each active match should include a small number of shared prompts to help both users get to know each other more naturally.
-
-Rules:
-
-- prompt sets should be asynchronous
-- both users answer privately first
-- responses reveal only after both have answered
-- prompts should feed real conversation, not replace it
-
-## 11. Flow 10: Answer Editing
+## 12. Flow 10: Answer Editing
 
 Rules:
 
@@ -145,7 +222,7 @@ Rules:
 - explanation if it affects future matches
 - some changes may not affect an already active match until that match ends
 
-## 12. Flow 11: Ready-to-Meet Transition
+## 13. Flow 11: Ready-to-Meet Transition
 
 Once both users privately indicate readiness to meet, Delfa should:
 
@@ -153,23 +230,26 @@ Once both users privately indicate readiness to meet, Delfa should:
 - offer the before-we-meet protocol
 - support planning the first date
 
-## 13. Key Screen List
+## 14. Key Screen List
 
 Minimum screens for MVP:
 
 - profiler intro
+- Basics intro frame
 - Basics question screens
-- Basics completion screen
+- Basics compatibility preview
+- Basics mirror moment
 - deeper-section hub
-- compatibility confidence view
+- section intro frames
 - section question screens
-- section completion screens
+- section mirror moment screens
+- compatibility confidence view
 - privacy explanation screen
 - profile preview screen
-- guided prompt screens
+- attraction calibration screens
 - ready-to-meet state and before-we-meet screens
 
-## 14. UX Constraints
+## 15. UX Constraints
 
 - no long scroll forms
 - no giant matrix questionnaires
@@ -177,11 +257,11 @@ Minimum screens for MVP:
 - no moralizing answer labels
 - no hidden save behavior
 - no single headline match score
-- no conversation score that feels like judgment
+- no gimmicky personality archetypes
 - no feature that makes users feel trapped in a match
 
-## 15. Open Questions
+## 16. Open Questions
 
-- Should Basics completion show a short confidence summary immediately or wait until first matches?
-- Should deeper sections be recommended adaptively based on weak-confidence dimensions?
-- Should the attraction calibration exercise appear in Basics or immediately after Basics as a near-required follow-up?
+- Should Mirror Moments be generated only from answered questions or also from early behavioral calibration?
+- Should the Basics compatibility preview appear before or after the attraction-calibration insight?
+- Should extended attraction calibration be recommended adaptively when attraction confidence is weak?

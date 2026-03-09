@@ -367,7 +367,7 @@ export const profilerQuestions: readonly ProfilerQuestionDefinition[] = [
     prompt: ["Which profile would you be more curious to explore?"],
     scoringDimensions: ["chemistry"],
     minPairs: 6,
-    maxPairs: 10,
+    maxPairs: 8,
   }),
   singleSelectQuestion({
     id: "life_direction_future_mismatch",

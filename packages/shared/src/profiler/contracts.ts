@@ -7,6 +7,11 @@ import type {
   UserCompatibilityProfile,
   UserProfilerResponse,
 } from "./types";
+import type {
+  CompatibilityPreview,
+  MirrorMomentPayload,
+  ProfilerSectionJourneyFrame,
+} from "./experience";
 
 export interface GetProfilerSectionsResponse {
   schemaVersion: string;
@@ -19,6 +24,7 @@ export interface GetProfilerSectionResponse {
   section: ProfilerSectionDefinition;
   questions: readonly ProfilerQuestionDefinition[];
   progress: ProfilerSectionProgress;
+  journeyFrame?: ProfilerSectionJourneyFrame;
 }
 
 export interface UpsertProfilerResponseRequest {
@@ -39,6 +45,9 @@ export interface CompleteProfilerSectionRequest {
 export interface CompleteProfilerSectionResponse {
   sectionProgress: ProfilerSectionProgress;
   unlockedSectionIds: readonly ProfilerSectionId[];
+  mirrorMoment?: MirrorMomentPayload;
+  compatibilityPreview?: CompatibilityPreview;
+  recommendedNextSectionIds?: readonly ProfilerSectionId[];
 }
 
 export interface GetProfilerProgressResponse {
@@ -50,6 +59,7 @@ export interface GetProfilerSummaryResponse {
   schemaVersion: string;
   completionPercent: number;
   compatibilityProfile?: UserCompatibilityProfile;
+  compatibilityPreview?: CompatibilityPreview;
 }
 
 export interface PostProfilerRecomputeResponse {
