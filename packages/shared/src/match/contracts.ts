@@ -13,6 +13,14 @@ import type {
   MatchPriorSourceDefinition,
   PromptResponseRecord,
 } from "./types";
+import type {
+  PostDateLearningPolicyDefinition,
+  PostDateReflectionPayload,
+} from "./outcomes";
+import type {
+  ReportCategoryId,
+  TrustSafetyPolicyDefinition,
+} from "./trust-safety";
 
 export interface GetActiveMatchExperienceResponse {
   schemaVersion: string;
@@ -66,4 +74,39 @@ export interface SetReadyToMeetIntentResponse {
   schemaVersion: string;
   state: MatchInteractionState;
   mutualReadyRevealed: boolean;
+}
+
+export interface GetPostDateReflectionConfigResponse {
+  schemaVersion: string;
+  policy: PostDateLearningPolicyDefinition;
+}
+
+export interface SubmitPostDateReflectionRequest {
+  matchId: string;
+  payload: PostDateReflectionPayload;
+}
+
+export interface SubmitPostDateReflectionResponse {
+  schemaVersion: string;
+  nextState: "continuing" | "closed_gracefully" | "post_date_reflection";
+  learningApplied: readonly string[];
+}
+
+export interface GetTrustSafetyOverviewResponse {
+  schemaVersion: string;
+  policy: TrustSafetyPolicyDefinition;
+}
+
+export interface SubmitSafetyReportRequest {
+  matchId: string;
+  categoryId: ReportCategoryId;
+  details?: string;
+  blockUser: boolean;
+}
+
+export interface SubmitSafetyReportResponse {
+  schemaVersion: string;
+  reportQueued: boolean;
+  matchClosed: boolean;
+  reviewPath: "human_review" | "auto_limit_and_review";
 }

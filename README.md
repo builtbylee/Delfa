@@ -52,6 +52,11 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `docs/product/match-lifecycle-v1.md`: canonical state machine for active matches, exits, timeouts, and next-match unlock rules
 - `docs/product/match-delivery-policy-v1.md`: first-match quality floor, cold-start priors, and launch-mode human review rules
 - `docs/product/launch-strategy-v1.md`: recommended launch and growth strategy once Delfa is ready
+- `docs/product/attraction-engine-v1.md`: implementation-ready attraction engine design and guardrails
+- `docs/product/live-ranking-v1.md`: implementation-ready live ranking and queueing policy
+- `docs/product/post-date-learning-v1.md`: private post-date reflection and learning loop
+- `docs/product/trust-safety-v1.md`: trust, verification, reporting, and safety operations
+- `docs/product/measurement-system-v1.md`: activation, outcome, trust, and launch metrics
 - `docs/presentations/delfa-explainer-deck-v1.md`: explainer deck source covering Delfa's product direction and architecture
 - [`docs/presentations/delfa-explainer-deck.html`](docs/presentations/delfa-explainer-deck.html): GitHub Pages-ready interactive explainer deck
 - `docs/research/market-and-relationship-research.md`: evidence base for product and profiler decisions
@@ -69,10 +74,15 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `packages/shared/src/profiler/experience.ts`: shared profiler experience definitions for section framing, mirror moments, compatibility preview, and attraction calibration
 - `packages/shared/src/match/types.ts`: canonical match-interaction domain types
 - `packages/shared/src/match/matching-policy.ts`: shared first-match quality floor and launch cohort policy definitions
+- `packages/shared/src/match/attraction.ts`: shared attraction-engine policy and signal definitions
 - `packages/shared/src/match/interaction-catalog.ts`: default three-round chemistry path and ready-to-meet gating rules
+- `packages/shared/src/match/ranking.ts`: shared live-ranking stage and weight definitions
+- `packages/shared/src/match/outcomes.ts`: shared post-date reflection payloads and learning policy
+- `packages/shared/src/match/trust-safety.ts`: shared verification, reporting, and enforcement policy definitions
+- `packages/shared/src/match/measurement.ts`: shared product event and metric definitions
 - `packages/shared/src/match/contracts.ts`: API request and response contracts for guided match interactions
 - `packages/shared/src/index.ts`: shared package export surface
 
 ## Initial Scope
 
-This repository now has a documentation-first foundation plus an initial shared profiler implementation layer. The next implementation phase should wire these shared contracts into `apps/api` and `apps/mobile`.
+This repository now has a documentation-first foundation plus shared profiler, matching, trust/safety, and outcome-learning definitions. The next implementation phase should wire these shared contracts into `apps/api` and `apps/mobile`.

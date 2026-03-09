@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.3.0`
+- Version: `0.4.0`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -77,6 +77,9 @@ The canonical lifecycle state machine lives in `docs/product/match-lifecycle-v1.
 - Match lifecycle management
 - Chat and guided prompts
 - Match interaction plan orchestration
+- Attraction engine
+- Live ranking engine
+- Post-date learning loop
 - Graceful disconnect workflow
 - Trust and safety controls
 - Subscription and entitlements
@@ -243,6 +246,67 @@ In launch mode:
 - allow founder or ops review before first-match surfacing
 
 Detailed rules live in `docs/product/match-delivery-policy-v1.md`.
+
+### 6.6 Attraction Engine
+
+The attraction engine should:
+
+- use controlled pairwise calibration cards
+- create a strong cold-start attraction prior
+- learn from real match behavior and post-date outcomes
+- stay private and avoid public type labels
+
+Detailed rules live in `docs/product/attraction-engine-v1.md`.
+
+### 6.7 Live Ranking
+
+The ranking engine should:
+
+- filter eligibility first
+- enforce the quality floor before ranking
+- use strong cold-start priors
+- refine from similar successful pairings
+- improve further with behavioral and post-date learning
+
+Detailed rules live in `docs/product/live-ranking-v1.md`.
+
+### 6.8 Post-Date Learning
+
+The strongest learning loop in Delfa should come from real date outcomes.
+
+The post-date system should:
+
+- ask a short private reflection
+- distinguish logistics failure from chemistry failure
+- learn whether attraction strengthened, held, or weakened
+- use second-date intent as a critical outcome signal
+
+Detailed rules live in `docs/product/post-date-learning-v1.md`.
+
+### 6.9 Trust and Safety Operations
+
+Trust and safety should include:
+
+- staged verification
+- trust tiers
+- simple report and block flows
+- repeat-offender prevention
+- integrated date safety tools
+
+Detailed rules live in `docs/product/trust-safety-v1.md`.
+
+### 6.10 Measurement System
+
+Delfa should measure:
+
+- first-match plausibility
+- guided interaction completion
+- mutual ready-to-meet
+- date conversion
+- second-date continuation
+- trust and safety incident rates
+
+Detailed rules live in `docs/product/measurement-system-v1.md`.
 
 ## 7. Monetization
 
