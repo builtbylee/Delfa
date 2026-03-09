@@ -13,6 +13,10 @@ export type RuntimeRole = "api" | "realtime" | "worker";
 
 export type AppContext = {
   role: RuntimeRole;
+  auth: {
+    provider: "clerk";
+    usesDevFallback: boolean;
+  };
   stack: {
     auth: "clerk";
     hosting: "fly.io";
@@ -39,6 +43,10 @@ export type AppContext = {
 export function buildAppContext(role: RuntimeRole): AppContext {
   return {
     role,
+    auth: {
+      provider: "clerk",
+      usesDevFallback: process.env.NODE_ENV !== "production",
+    },
     stack: {
       auth: "clerk",
       hosting: "fly.io",

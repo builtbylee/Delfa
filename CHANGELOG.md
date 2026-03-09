@@ -39,3 +39,4 @@ All notable changes to Delfa will be documented in this file.
 - Added implementation-ready backend architecture docs for service boundaries, database schema, API surface, async jobs/events, and infrastructure/deployment
 - Added the concrete backend stack decision and initial `apps/api` scaffold for Fastify, Drizzle, pg-boss, Clerk, Fly.io, managed object storage, and OneSignal
 - Corrected the explainer deck architecture slides to match the concrete backend stack and modular backend layout
+- Implemented the first persisted backend slice in `apps/api`, including Clerk-backed auth, PostgreSQL/Drizzle access, identity-user provisioning, and database-backed profiler endpoints

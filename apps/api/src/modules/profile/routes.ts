@@ -1,6 +1,9 @@
 import { Type } from "@sinclair/typebox";
 import type { FastifyInstance } from "fastify";
 
+import { requireAuthenticatedUser } from "../../auth/clerk.js";
+import { ensureIdentityUser } from "../identity/service.js";
+
 export async function registerProfileRoutes(app: FastifyInstance) {
   app.get(
     "/v1/profile/me",
@@ -15,10 +18,15 @@ export async function registerProfileRoutes(app: FastifyInstance) {
         },
       },
     },
-    async () => ({
-      service: "profile" as const,
-      mediaStorage: app.delfa.stack.objectStorage,
-      status: "scaffolded" as const,
-    }),
+    async (request, reply) => {
+      const authUser = await requireAuthenticatedUser(request, reply);
+      if (!authUser) return;
+      await ensureIdentityUser(authUser);
+      return {
+        service: "profile" as const,
+        mediaStorage: app.delfa.stack.objectStorage,
+        status: "scaffolded" as const,
+      };
+    },
   );
 }

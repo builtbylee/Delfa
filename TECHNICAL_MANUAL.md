@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.6.2`
+- Version: `0.6.3`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -488,6 +488,17 @@ Launch in one primary region with:
 - Managed object storage
 - OpenTelemetry-based observability
 
+### 9.6 Implemented backend slice
+
+The first real backend slice is now live in `apps/api`:
+
+- Clerk-backed request authentication
+- development-only `x-dev-user-id` fallback outside production
+- Drizzle-backed PostgreSQL client and initial `identity`, `profile`, and `profiler` schemas
+- automatic identity-user provisioning on first authenticated request
+- persisted profiler endpoints for sections, responses, completion, mirror moments, preview, and recompute
+- centralized HTTP error handling for route-level domain errors
+
 ## 10. Initial Data Model Domains
 
 - User
@@ -522,9 +533,9 @@ Launch in one primary region with:
 
 ### Phase 2
 
-- Build authentication
-- Build onboarding and profile core
-- Build profiler modules
+- Extend authentication beyond the current Clerk-backed slice
+- Build onboarding and profile core on top of the existing identity/profile tables
+- Extend profiler modules beyond the current persisted API slice
 - Build matching service and data model
 
 ### Phase 3
@@ -553,3 +564,4 @@ Launch in one primary region with:
 - Added the first structured profiler spec and a research brief on current dating apps' strongest reusable mechanics
 - Added canonical profiler schema, data model, scoring, and UI-flow drafts to move the profiler toward implementation
 - Added the canonical profiler question bank with exact wording, answer sets, and display rules
+- Implemented the first persisted backend slice with Clerk auth, PostgreSQL/Drizzle access, identity-user provisioning, and live profiler endpoints

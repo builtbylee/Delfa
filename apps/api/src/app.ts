@@ -4,6 +4,7 @@ import websocket from "@fastify/websocket";
 import type { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
 
 import { registerApiRoutes } from "./modules/index.js";
+import { registerErrorHandler } from "./plugins/error-handler.js";
 import { buildAppContext } from "./runtime/context.js";
 
 export async function buildApiApp() {
@@ -22,6 +23,7 @@ export async function buildApiApp() {
 
   app.decorate("delfa", buildAppContext("api"));
 
+  await registerErrorHandler(app);
   await registerApiRoutes(app);
 
   return app;
