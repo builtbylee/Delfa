@@ -10,6 +10,7 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 
 - One active match at a time
 - Progressive profiling instead of a long upfront questionnaire
+- No weak first match; Delfa waits until quality clears a bar
 - Data-backed compatibility focused on long-term relationship outcomes
 - Graceful disconnects instead of ghosting
 - Incentives for effort, honesty, and follow-through
@@ -49,6 +50,8 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `docs/product/profiler-user-flows-v1.md`: implementation-ready profiler UX flows
 - `docs/product/match-experience-v1.md`: core match-stage differentiators and interaction design direction
 - `docs/product/match-lifecycle-v1.md`: canonical state machine for active matches, exits, timeouts, and next-match unlock rules
+- `docs/product/match-delivery-policy-v1.md`: first-match quality floor, cold-start priors, and launch-mode human review rules
+- `docs/product/launch-strategy-v1.md`: recommended launch and growth strategy once Delfa is ready
 - `docs/presentations/delfa-explainer-deck-v1.md`: explainer deck source covering Delfa's product direction and architecture
 - [`docs/presentations/delfa-explainer-deck.html`](docs/presentations/delfa-explainer-deck.html): GitHub Pages-ready interactive explainer deck
 - `docs/research/market-and-relationship-research.md`: evidence base for product and profiler decisions
@@ -65,6 +68,7 @@ Delfa is a relationship-first dating app designed to replace swipe fatigue with 
 - `packages/shared/src/profiler/contracts.ts`: API request and response contracts for profiler flows
 - `packages/shared/src/profiler/experience.ts`: shared profiler experience definitions for section framing, mirror moments, compatibility preview, and attraction calibration
 - `packages/shared/src/match/types.ts`: canonical match-interaction domain types
+- `packages/shared/src/match/matching-policy.ts`: shared first-match quality floor and launch cohort policy definitions
 - `packages/shared/src/match/interaction-catalog.ts`: default three-round chemistry path and ready-to-meet gating rules
 - `packages/shared/src/match/contracts.ts`: API request and response contracts for guided match interactions
 - `packages/shared/src/index.ts`: shared package export surface

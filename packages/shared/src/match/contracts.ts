@@ -1,8 +1,16 @@
 import type {
+  FirstMatchQualityPolicyDefinition,
   GuidedResponseModality,
+  HumanAssistedReviewPolicyDefinition,
+  HumanAssistedReviewState,
+  LaunchCohortPolicyDefinition,
+  MatchDeliveryDecisionState,
   MatchInteractionPlanDefinition,
   MatchInteractionPhaseId,
   MatchInteractionState,
+  MatchQualityGateEvaluation,
+  MatchSurfaceReason,
+  MatchPriorSourceDefinition,
   PromptResponseRecord,
 } from "./types";
 
@@ -10,6 +18,18 @@ export interface GetActiveMatchExperienceResponse {
   schemaVersion: string;
   plan: MatchInteractionPlanDefinition;
   state: MatchInteractionState;
+  surfaceReasons: readonly MatchSurfaceReason[];
+  qualityEvaluation?: readonly MatchQualityGateEvaluation[];
+  humanReview?: HumanAssistedReviewState;
+}
+
+export interface GetMatchDeliveryStatusResponse {
+  schemaVersion: string;
+  qualityPolicy: FirstMatchQualityPolicyDefinition;
+  launchCohortPolicy: LaunchCohortPolicyDefinition;
+  humanReviewPolicy: HumanAssistedReviewPolicyDefinition;
+  activePriorSources: readonly MatchPriorSourceDefinition[];
+  status: MatchDeliveryDecisionState;
 }
 
 export interface SubmitGuidedPromptResponseRequest {

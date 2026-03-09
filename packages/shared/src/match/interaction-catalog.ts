@@ -130,6 +130,7 @@ export const defaultMatchInteractionPlan: MatchInteractionPlanDefinition = {
     acceleratedVisibilityRule: {
       requiresPhaseIds: ["round_1_warmth"],
       minimumConfidenceDimensions: ["intent", "life_direction", "lifestyle"],
+      requiresPassedQualityGateIds: ["attraction_likelihood"],
     },
     nudgeAfterPhaseIds: ["round_3_deeper_disclosure"],
     rationale:

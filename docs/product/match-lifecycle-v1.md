@@ -1,6 +1,6 @@
 # Delfa Match Lifecycle V1
 
-- Version: `0.3.0`
+- Version: `0.4.0`
 - Date: `2026-03-09`
 - Status: `Canonical revised V1 lifecycle spec`
 
@@ -194,7 +194,8 @@ Any active state may transition immediately to:
 
 Entry:
 
-- compatibility engine creates one active match for each user
+- compatibility engine creates one active match only after the candidate clears Delfa's first-match quality floor
+- during launch mode, optional founder or ops review can approve the first surfaced match
 
 Allowed actions:
 

@@ -1,6 +1,6 @@
 # Delfa Profiler Scoring V1
 
-- Version: `0.2.0`
+- Version: `0.3.0`
 - Date: `2026-03-09`
 - Status: `Implementation-ready draft`
 
@@ -20,6 +20,7 @@ Translate profiler responses into:
 3. `Behavioral signals` should gradually refine stated preferences.
 4. Scoring must remain explainable to users and operators.
 5. Attraction should be learned through revealed preferences and match behavior, not only stated type language.
+6. A first match should not be surfaced unless it clears Delfa's quality floor.
 
 ## 3. Matching Layers
 
@@ -84,6 +85,35 @@ Rules:
 - the model should learn from revealed choices, not ask users to describe a type in words
 - attraction mismatch should down-rank matches even when broader compatibility is strong
 
+## 3.5 First-match quality floor
+
+Before a first match is surfaced, the candidate must clear all of these:
+
+- `attraction_likelihood`: minimum `medium confidence`
+- `intent_alignment`: hard pass
+- `life_goal_compatibility`: minimum `medium confidence`
+- `date_viability`: hard pass
+- `activity_readiness`: hard pass
+
+Product rule:
+
+- if any gate fails, hold the user in match search rather than surface a weak first match
+- prefer a `24-72` hour wait over an obviously wrong first match
+
+Detailed delivery policy lives in `docs/product/match-delivery-policy-v1.md`.
+
+## 3.6 Strong priors before behavioral learning
+
+Cold-start ranking should rely on:
+
+- profiler signal
+- hard incompatibility filters
+- richer attraction calibration
+- local cohort quality
+- population-level pattern matching from similar users
+
+Behavioral learning should improve the prior later. It should not be required to make the first match feel credible.
+
 ## 4. Confidence Model
 
 Match confidence should depend on:
@@ -129,6 +159,8 @@ Behavior should refine, not instantly override, stated preferences.
 - voice note usage
 - guided prompt completion
 - shared micro-experience choices
+- mutual ready-to-meet
+- post-date reflection outcomes
 - graceful disconnect reasons
 
 ### Guardrails
@@ -165,6 +197,7 @@ Recompute compatibility when:
 - a public or matching-private answer changes
 - a deeper section is completed
 - a meaningful behavioral threshold is crossed
+- a post-date reflection is submitted
 - a graceful disconnect is submitted
 
 ## 8. Open Questions

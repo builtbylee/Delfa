@@ -33,3 +33,5 @@ All notable changes to Delfa will be documented in this file.
 - Strengthened the profiler with new questions on vulnerability response, stress communication, commitment behavior, religion/spirituality salience, disappointment reactivity, and touch-style intimacy fit
 - Added detailed profiler-experience specs for scenario journey framing, mirror moments, compatibility preview, and richer attraction calibration
 - Added shared contracts for a three-round match interaction system with voice-first prompts, shared micro-experiences, reciprocal disclosure, and faster ready-to-meet gating
+- Added a first-match delivery policy covering quality floors, cold-start priors, and launch-mode human review
+- Added a recommended launch strategy centered on one-city density, founding cohorts, insight-led waitlists, and activation-driven expansion

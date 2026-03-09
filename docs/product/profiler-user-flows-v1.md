@@ -1,6 +1,6 @@
 # Delfa Profiler User Flows V1
 
-- Version: `0.3.0`
+- Version: `0.4.0`
 - Date: `2026-03-09`
 - Status: `Implementation-ready experience spec`
 
@@ -29,12 +29,16 @@ The profiler should:
 4. `Keep attraction calibration fast and premium`
    The pairwise experience should feel more like intuitive curation than deliberate form filling.
 
+5. `Basics must earn a plausible first match`
+   The first session should gather enough signal for Delfa to hold a quality bar on day one.
+
 ## 3. Flow 1: New User Onboarding Into Basics
 
 1. User signs up.
 2. User sees a short profiler promise:
    - "Delfa uses this to match for real compatibility, not just surface preferences."
    - "Basics is short. You can deepen the profile later."
+   - "We'd rather wait a little than send you someone obviously wrong."
 3. User enters a `Basics` intro frame:
    - eyebrow: `Start here`
    - headline: "Let’s begin with what you already know about yourself."
@@ -43,11 +47,27 @@ The profiler should:
 5. The progress UI should show:
    - how far through Basics they are
    - one line that signals what kind of clarity this question adds
+   - the specific core area being improved:
+     - relationship direction
+     - life goals
+     - attraction fit
+     - communication under pressure
+     - practical date viability
 6. After the final Basics question, Delfa shows:
    - `Compatibility Preview`
    - one private `Mirror Moment`
+   - first-match search status
    - a clear "You can start matching now" CTA
-   - a gentle nudge to deepen the profile over time
+    - a gentle nudge to deepen the profile over time
+
+Basics should be strong enough to establish initial signal on:
+
+- serious relationship intent
+- children/family direction
+- values/life anchors
+- stress/communication style
+- attraction calibration
+- practical dating viability
 
 ## 4. Flow 2: Save and Resume
 
@@ -179,7 +199,29 @@ Purpose:
 - motivate deeper sections without nagging
 - build trust by being explicit about what Delfa knows and does not yet know
 
-## 10. Flow 8: Attraction Calibration Experience
+## 10. Flow 8: First-Match Search State
+
+After Basics, if no candidate clears Delfa's first-match quality floor, the user should enter a visible `quality hold` state.
+
+The screen should explain:
+
+- Delfa is still looking for a match that clears the user's quality bar
+- the app is deliberately protecting the first-match experience
+- completing a deeper section can improve specific low-confidence areas
+
+Recommended copy shape:
+
+- headline: "We’re being picky on purpose."
+- body: "We only surface your first match when attraction, intent, life fit, and date viability are strong enough to feel plausible."
+
+Rules:
+
+- do not present delay as a bug
+- do not present a weak fallback match
+- do not force deeper sections just to unlock matching
+- if the search window extends, suggest the section most likely to improve a missing confidence area
+
+## 11. Flow 9: Attraction Calibration Experience
 
 The attraction calibration should feel premium and fast.
 
@@ -201,7 +243,7 @@ Constraint:
 - no public type labels
 - no visible attraction score
 
-## 11. Flow 9: Match-Stage Calibration
+## 12. Flow 10: Match-Stage Calibration
 
 After a match is live, Delfa should continue gathering signal from:
 
@@ -212,7 +254,7 @@ After a match is live, Delfa should continue gathering signal from:
 
 This should refine compatibility and attraction confidence without forcing obvious rating forms.
 
-## 12. Flow 10: Answer Editing
+## 13. Flow 11: Answer Editing
 
 Rules:
 
@@ -222,7 +264,7 @@ Rules:
 - explanation if it affects future matches
 - some changes may not affect an already active match until that match ends
 
-## 13. Flow 11: Ready-to-Meet Transition
+## 14. Flow 12: Ready-to-Meet Transition
 
 Once both users privately indicate readiness to meet, Delfa should:
 
@@ -239,6 +281,7 @@ Minimum screens for MVP:
 - Basics question screens
 - Basics compatibility preview
 - Basics mirror moment
+- first-match quality-hold screen
 - deeper-section hub
 - section intro frames
 - section question screens

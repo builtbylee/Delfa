@@ -1,6 +1,6 @@
 # Delfa Match Experience V1
 
-- Version: `0.3.0`
+- Version: `0.4.0`
 - Date: `2026-03-09`
 - Status: `Detailed match interaction spec`
 
@@ -12,6 +12,7 @@ The core idea is:
 
 - one active match
 - a short guided interaction path
+- immediate plausibility about why the match was surfaced
 - faster clarity on whether the connection is promising
 - quicker movement toward meeting when the signal is there
 
@@ -28,8 +29,27 @@ These are the match-stage features that remain in V1:
 - private readiness check-in
 - mutual ready-to-meet
 - basic before-we-meet flow
+- plain-language explanation of why the match was surfaced
 
-## 3. Core Interaction Model
+## 3. Match Start Should Feel Credible
+
+When the match first appears, Delfa should show `2-4` clear reasons it was surfaced.
+
+These reasons should be drawn from:
+
+- relationship direction
+- life-goal compatibility
+- attraction fit
+- local/date viability
+- communication or lifestyle fit
+
+The opening experience should make the user think:
+
+- this person is in range
+- the app had a reason to show them
+- I can see what Delfa is betting on here
+
+## 4. Core Interaction Model
 
 Every active match should move through a lightweight `three-round chemistry path`.
 
@@ -44,7 +64,7 @@ The path is designed to surface:
 
 It should not feel like homework.
 
-## 4. Round 1: Warmth and Voice
+## 5. Round 1: Warmth and Voice
 
 Purpose:
 
@@ -74,7 +94,7 @@ Product rule:
 - voice should be encouraged, not required
 - text fallback must exist for accessibility and comfort
 
-## 5. Round 2: Shared Micro-Experience
+## 6. Round 2: Shared Micro-Experience
 
 Purpose:
 
@@ -110,7 +130,7 @@ Why this round exists:
 - agreement is naturally energizing
 - difference is still useful because it becomes real conversation material
 
-## 6. Round 3: Deeper Disclosure
+## 7. Round 3: Deeper Disclosure
 
 Purpose:
 
@@ -133,7 +153,7 @@ Design rule:
 
 - round 3 should feel more personal than round 1, but still safe enough for early dating
 
-## 7. Reciprocal Escalation Rules
+## 8. Reciprocal Escalation Rules
 
 The interaction path should escalate gently.
 
@@ -150,7 +170,7 @@ Rules:
 - no round should require oversharing
 - the whole sequence should still feel optional enough that users do not feel managed by the app
 
-## 8. Faster Movement Toward Mutual Ready-To-Meet
+## 9. Faster Movement Toward Mutual Ready-To-Meet
 
 Delfa should not make promising matches wait too long to move toward meeting.
 
@@ -161,6 +181,7 @@ The `I'm open to meeting` control should appear when either of these is true:
    - intent
    - life direction
    - lifestyle fit
+   - attraction likelihood already in range from pre-match evaluation
 
 After `Round 3`, Delfa should nudge more directly:
 
@@ -172,7 +193,7 @@ Why:
 - the app should help convert promising momentum into a real date
 - users should not need endless messaging before a simple meeting signal is available
 
-## 9. Compatibility Confidence in the Match Stage
+## 10. Compatibility Confidence in the Match Stage
 
 Confidence should update from:
 
@@ -193,7 +214,7 @@ What the system uses privately:
 
 - interaction-stage reinforcement on chemistry, responsiveness, pace, and lifestyle fit
 
-## 10. Graceful Disconnect in This System
+## 11. Graceful Disconnect in This System
 
 Graceful disconnect remains essential.
 
@@ -210,7 +231,7 @@ However:
 - completing one or more interaction rounds should unlock richer graceful-disconnect feedback
 - that feedback should improve future matching and attraction calibration
 
-## 11. Before-We-Meet Flow
+## 12. Before-We-Meet Flow
 
 Once readiness is mutual, Delfa should offer a lightweight three-part handoff:
 
@@ -220,7 +241,7 @@ Once readiness is mutual, Delfa should offer a lightweight three-part handoff:
 
 No more than that in V1.
 
-## 12. V1 Interaction Rules
+## 13. V1 Interaction Rules
 
 - no more than `3` guided rounds
 - each round should have only `1` core prompt
@@ -228,8 +249,10 @@ No more than that in V1.
 - each reveal should create real conversation, not replace it
 - the system should privilege chemistry clarity over time-on-app
 - faster movement to ready-to-meet is a feature, not a loophole
+- the app should remove extra ceremony once enough signal exists
+- the app should never add rounds beyond what helps users decide whether they want to meet
 
-## 13. Features Deliberately Not Included
+## 14. Features Deliberately Not Included
 
 These remain out of V1:
 
@@ -239,8 +262,9 @@ These remain out of V1:
 - conversation scoring
 - pattern-engine summaries
 - relationship operating manual
+- filler interactions that delay a real meeting without adding signal
 
-## 14. MVP Priority Order
+## 15. MVP Priority Order
 
 1. one active match at a time
 2. round 1 voice-based guided prompt

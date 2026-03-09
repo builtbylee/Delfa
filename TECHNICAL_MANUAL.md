@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.2.0`
+- Version: `0.3.0`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -19,12 +19,14 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 - One meaningful match at a time
 - Progressive profiler that grows over time
 - Scenario-framed profiler sections with mirror moments and compatibility preview
+- No weak first match; Delfa waits until confidence clears a quality bar
 - Guided getting-to-know-you prompts after matching
 - Voice-first guided interaction and shared micro-experiences inside the match flow
 - Graceful disconnects with structured feedback
 - Mutual ready-to-meet and a guided pre-date protocol
 - Compatibility confidence tied to profiler depth
 - Compatibility modeled on data-backed relationship factors
+- Launch-mode human-assisted first-match review
 - In-app experience only; no events or meetup layer
 
 ## 2. User Problems Delfa Solves
@@ -53,14 +55,15 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 
 1. User signs up and completes lightweight onboarding.
 2. User completes initial profiler modules.
-3. Matching engine produces one active match.
-4. Users enter a guided exploration period.
-5. Match resolves in one of three ways:
+3. Matching engine waits until the first-match quality floor is cleared.
+4. Matching engine produces one active match.
+5. Users enter a guided exploration period.
+6. Match resolves in one of three ways:
    - mutual progression
    - graceful disconnect
    - timeout/inactivity resolution
-6. Feedback updates future ranking and profiler calibration.
-7. If both users are ready, Delfa guides the transition to an in-person date.
+7. Feedback updates future ranking and profiler calibration.
+8. If both users are ready, Delfa guides the transition to an in-person date.
 
 The canonical lifecycle state machine lives in `docs/product/match-lifecycle-v1.md`.
 
@@ -70,6 +73,7 @@ The canonical lifecycle state machine lives in `docs/product/match-lifecycle-v1.
 - User profile and media
 - Progressive profiler
 - Matching engine
+- Match delivery policy and first-match quality floor
 - Match lifecycle management
 - Chat and guided prompts
 - Match interaction plan orchestration
@@ -153,6 +157,8 @@ Example:
 
 The product should explicitly tell users which section completion would improve low-confidence dimensions.
 
+The product should also be explicit when it is holding for a stronger first match instead of surfacing a weak one.
+
 ### 5.4 Sensitive Preference Handling
 
 Delfa should not expose blunt exclusion filters for protected characteristics such as race or ethnicity.
@@ -175,6 +181,8 @@ Recommended approach:
 - Behavioral calibration data
 - Match effort and reliability signals
 - Safety and trust scores
+- Local cohort quality
+- Population-level priors from similar successful pairings
 
 ### 6.2 Match Delivery Model
 
@@ -183,6 +191,7 @@ Recommended approach:
 - No infinite feed or swipe stack in the core experience
 - Premium should improve insight quality, not volume
 - Each match should include a lightweight guided getting-to-know-you flow with shared prompts
+- First-match surfacing should follow the delivery policy in `docs/product/match-delivery-policy-v1.md`
 - The first active-match experience should be a three-round chemistry path:
   - round 1: voice-first warmth prompt
   - round 2: shared micro-experience
@@ -215,6 +224,26 @@ Feedback should be split into:
 
 Detailed match-stage direction lives in `docs/product/match-experience-v1.md`.
 
+### 6.5 First-Match Quality Policy
+
+Delfa should not rely on later behavioral learning to rescue a weak cold start.
+
+The first match should be surfaced only when all of these are true:
+
+- attraction is likely in range
+- relationship intent aligns
+- life-goal compatibility is plausible
+- the users can realistically meet
+- both users are active and ready
+
+In launch mode:
+
+- use a tightly controlled cohort
+- prefer `24-72` hour wait windows over weak first matches
+- allow founder or ops review before first-match surfacing
+
+Detailed rules live in `docs/product/match-delivery-policy-v1.md`.
+
 ## 7. Monetization
 
 ### 7.1 Pricing Direction
@@ -237,6 +266,21 @@ Premium can monetize:
 - richer calibration feedback
 - advanced reflection tools
 - enhanced profile guidance
+
+## 9. Launch Strategy
+
+Recommended launch shape:
+
+- one city
+- one clear relationship-minded wedge
+- controlled founding cohort
+- waitlist led by profiler insight
+- women-first trust strategy in straight markets
+- product-led sharing rather than early broad paid acquisition
+
+Do not expand until the first city proves density and outcomes.
+
+Detailed launch direction lives in `docs/product/launch-strategy-v1.md`.
 
 ## 8. Technical Stack Direction
 

@@ -24,6 +24,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Added a Pages-ready HTML explainer deck plus README hero preview/link
 - Strengthened the profiler to better capture stress communication, commitment behavior, values salience, disappointment reactivity, and touch-style intimacy fit
 - Added implementation-ready profiler-experience and match-interaction specs covering mirror moments, compatibility preview, richer attraction calibration, voice-first prompts, shared micro-experiences, reciprocal disclosure rounds, and faster ready-to-meet gating
+- Added first-match delivery policy, launch-mode human review, and a recommended launch strategy centered on density, cohort quality, and outcome-driven growth
 
 ## Working Conventions
 
@@ -53,6 +54,8 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - The profiler should feel like a short self-discovery experience: section framing in, mirror moment out
 - Attraction should be learned through private pairwise calibration plus real match behavior, not only stated type language
 - The active-match experience should move through three lightweight rounds before users drift into endless chat
+- Delfa should prefer waiting for a strong first match over surfacing a weak one quickly
+- Launch mode should use a tightly controlled cohort plus human-assisted first-match review
 
 ## Open Questions
 
