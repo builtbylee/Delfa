@@ -44,7 +44,8 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - The question bank is now the source of truth for profiler wording; schema and scoring should reference it instead of inventing new prompts in code
 - Shared profiler code should stay config-driven from `packages/shared/src/profiler/question-bank.ts`
 - Delfa should prefer compatibility confidence by dimension over a single match percentage
-- Match-stage product design should prioritize guided discovery, slow reveal depth, mutual ready-to-meet, and graceful disconnect with growth
+- Revised V1 should stay simple: guided getting-to-know-you prompts, graceful disconnect, readiness check-in, mutual ready-to-meet, and a lightweight before-we-meet flow
+- Slow reveal profile, conversation nudges, private pattern engines, and operating-manual features are deferred
 - Lifecycle design should default to soft commitment, anti-limbo timeouts, and always-available immediate exits for user agency
 
 ## Open Questions

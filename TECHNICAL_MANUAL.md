@@ -18,11 +18,10 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 
 - One meaningful match at a time
 - Progressive profiler that grows over time
-- Compatibility discovery through interaction, not a headline match score
+- Guided getting-to-know-you prompts after matching
 - Graceful disconnects with structured feedback
 - Mutual ready-to-meet and a guided pre-date protocol
 - Compatibility confidence tied to profiler depth
-- Slow reveal profile depth inside the match experience
 - Compatibility modeled on data-backed relationship factors
 - In-app experience only; no events or meetup layer
 
@@ -44,7 +43,7 @@ Delfa is a dating app for people seeking a healthy long-term relationship. It di
 - Learn from user behavior and graceful disconnects
 - Make relationship intent and life goals core inputs
 - Reward consistency, responsiveness, and seriousness
-- Help users discover compatibility through guided interaction rather than relying on static profiles alone
+- Help users get to know each other through a small number of guided shared prompts rather than relying on an empty chat box
 
 ## 3. Product Architecture
 
@@ -164,17 +163,14 @@ Recommended approach:
 - Match unlock cadence controlled by lifecycle completion
 - No infinite feed or swipe stack in the core experience
 - Premium should improve insight quality, not volume
-- Each match should include a compatibility discovery journey with shared prompts
-- Profile depth should reveal progressively during the active match
+- Each match should include a lightweight guided getting-to-know-you flow with shared prompts
 
 ### 6.3 Match Experience Differentiators
 
 - private readiness check-ins
-- private conversation nudges
 - mutual ready-to-meet signal
 - before-we-meet protocol
-- relationship operating manual
-- graceful disconnect with growth
+- graceful disconnect
 
 ### 6.4 Feedback Loop
 

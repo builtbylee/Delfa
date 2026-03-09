@@ -1,8 +1,8 @@
 # Delfa Match Lifecycle V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
-- Status: `Canonical lifecycle spec`
+- Version: `0.2.0`
+- Date: `2026-03-09`
+- Status: `Canonical revised V1 lifecycle spec`
 
 ## 1. Purpose
 
@@ -13,7 +13,7 @@ It is the source of truth for:
 - match states
 - state transitions
 - timeouts
-- discovery thresholds
+- getting-to-know-you thresholds
 - exit rules
 - next-match unlock rules
 - ready-to-meet behavior
@@ -33,7 +33,7 @@ Core rules:
    Users should always be able to leave immediately. Higher-quality closure is encouraged, not required.
 
 3. `Interaction over static profiles`
-   The match should become clearer through discovery prompts, guided interaction, and post-match reflection.
+   The match should become clearer through lightweight getting-to-know-you prompts, normal conversation, and reflection.
 
 4. `No limbo by default`
    Matches should not drift indefinitely. The lifecycle should nudge toward progression, closure, or timeout.
@@ -54,7 +54,7 @@ User-facing meaning:
 
 - the match exists
 - Basics and immediate profile data are visible
-- the discovery journey is available
+- guided getting-to-know-you prompts are available
 
 ## 3.2 `discovery_active`
 
@@ -65,7 +65,6 @@ User-facing meaning:
 - both users can chat
 - both users can complete discovery prompts
 - compatibility confidence can improve
-- deeper profile signal can gradually unlock
 
 ## 3.3 `ready_to_meet_pending`
 
@@ -94,7 +93,6 @@ User-facing meaning:
 - mutual expectations check
 - safety setup
 - date logistics
-- final in-person conversation seed
 
 ## 3.6 `post_date_reflection`
 
@@ -202,7 +200,7 @@ Allowed actions:
 
 - open the match
 - begin chat
-- begin discovery
+- begin getting to know each other
 - leave immediately
 - block/report
 
@@ -217,11 +215,11 @@ Exit triggers:
 Entry:
 
 - either user sends an opening message
-- either user answers a discovery prompt
+- either user answers a getting-to-know-you prompt
 
 Allowed actions:
 
-- complete discovery prompts
+- complete getting-to-know-you prompts
 - chat
 - use voice notes if enabled
 - signal ready to meet
@@ -244,7 +242,7 @@ Entry:
 
 Allowed actions:
 
-- continue discovery and chat
+- continue chatting and using the shared prompts
 - other user may also signal ready
 - either user may withdraw interest
 - graceful disconnect
@@ -335,7 +333,7 @@ Exit triggers:
 
 - either user ends the connection -> `closed_gracefully`
 
-## 6. Discovery Threshold Rules
+## 6. Getting-To-Know-You Threshold Rules
 
 ## 6.1 Full graceful disconnect threshold
 
@@ -346,8 +344,8 @@ Default threshold:
 - match active for at least `24 hours`
 - and at least one mutual exchange in each direction
 - and one of:
-  - both completed at least `2` discovery prompts each
-  - both completed at least `1` discovery prompt each and exchanged meaningful chat replies
+  - both completed at least `2` shared prompts each
+  - both completed at least `1` shared prompt each and exchanged meaningful chat replies
 
 Rationale:
 
@@ -370,7 +368,7 @@ Behavior:
 
 Optional prompt:
 
-- Delfa may offer `Try one more discovery step before closing`
+- Delfa may offer `Try one more shared prompt before closing`
 - this must be skippable with one tap
 
 ## 7. Timeout Rules
@@ -402,56 +400,21 @@ If `post_date_reflection` receives no response from either user for `4 days`:
 
 - move to `timed_out`
 
-## 8. Slow Reveal Rules
+## 8. Ready-to-Meet Rules
 
-## 8.1 Layer 1: immediate
-
-Visible on match open:
-
-- photos
-- relationship direction
-- family/structure basics
-- high-level lifestyle markers
-- selected prompt content
-
-## 8.2 Layer 2: earned discovery depth
-
-Unlock after:
-
-- both users complete at least `1` discovery prompt
-
-May include:
-
-- deeper written or voice prompts
-- richer communication and lifestyle signal
-
-## 8.3 Layer 3: higher-confidence insight
-
-Unlock after:
-
-- both users complete at least `3` discovery prompts
-- or mutual ready-to-meet
-
-May include:
-
-- richer compatibility explanation
-- stronger dimension confidence visibility
-
-## 9. Ready-to-Meet Rules
-
-## 9.1 Availability
+## 8.1 Availability
 
 The `I'm ready to meet` control should appear only after:
 
-- both users complete at least `2` discovery prompts
+- both users complete at least `2` shared prompts
 - or the system has at least `medium confidence` in intent, pace, and lifestyle fit
 
-## 9.2 Privacy
+## 8.2 Privacy
 
 - one-sided readiness is private
 - mutual readiness is revealed only when both users opt in
 
-## 9.3 Reversal
+## 8.3 Reversal
 
 Either user may withdraw readiness before a date is confirmed.
 
@@ -459,9 +422,9 @@ This returns the match to:
 
 - `discovery_active`
 
-## 10. Before-We-Meet Protocol
+## 9. Before-We-Meet Protocol
 
-The protocol should contain four parts:
+The protocol should contain three parts:
 
 1. `Mutual expectations check`
    - what each person hopes this date will be
@@ -474,12 +437,9 @@ The protocol should contain four parts:
 3. `Practical planning`
    - time, place, format
 
-4. `Conversation seed`
-   - one shared prompt for the first in-person minutes
+## 10. Exit System
 
-## 11. Exit System
-
-## 11.1 `Leave now`
+## 10.1 `Leave now`
 
 Always available.
 
@@ -497,7 +457,7 @@ Behavior:
 - minimal shared signal
 - never blocked by thresholds
 
-## 11.2 `Graceful disconnect`
+## 10.2 `Graceful disconnect`
 
 Available after minimum meaningful interaction.
 
@@ -513,9 +473,8 @@ Behavior:
 
 - structured shared closure
 - richer private calibration
-- better future pattern learning
 
-## 11.3 `Block / report`
+## 10.3 `Block / report`
 
 Always available.
 
@@ -525,9 +484,9 @@ Behavior:
 - no threshold
 - no further lifecycle checks
 
-## 12. Next-Match Unlock Rules
+## 11. Next-Match Unlock Rules
 
-## 12.1 General rule
+## 11.1 General rule
 
 A user becomes eligible for the next match only when the current match reaches a closed state:
 
@@ -538,7 +497,7 @@ A user becomes eligible for the next match only when the current match reaches a
 
 or when the active connection is no longer continuing.
 
-## 12.2 No punitive hard lock for honest exits
+## 11.2 No punitive hard lock for honest exits
 
 Delfa should not punish occasional early exits.
 
@@ -547,11 +506,11 @@ However:
 - repeated very-early exits should reduce future confidence in the user's readiness and follow-through
 - this should affect ranking cadence softly, not via explicit punishment screens
 
-## 12.3 Better closure, better future matching
+## 11.3 Better closure, better future matching
 
 Users who consistently:
 
-- engage in discovery
+- engage in the shared prompts in good faith
 - close respectfully
 - complete post-date reflection
 
@@ -561,7 +520,7 @@ should benefit through:
 - higher trust in their stated preferences
 - better next-match precision
 
-## 13. Safety Overrides
+## 12. Safety Overrides
 
 At every state, the following actions must bypass normal lifecycle logic:
 
@@ -572,17 +531,17 @@ At every state, the following actions must bypass normal lifecycle logic:
 
 Safety logic always supersedes:
 
-- discovery thresholds
+- getting-to-know-you thresholds
 - ready-to-meet logic
 - timeout timers
 - next-match unlock friction
 
-## 14. Data to Record
+## 13. Data to Record
 
 Every match should record:
 
 - state transitions
-- discovery completion counts
+- shared-prompt completion counts
 - mutual exchange counts
 - inactivity events
 - nudges sent
@@ -593,12 +552,12 @@ Every match should record:
 - closure reasons
 - safety actions
 
-## 15. Default Product Decisions
+## 14. Default Product Decisions
 
 These are the decisions locked for V1:
 
 - one active match at a time
-- discovery is guided but not overbearing
+- getting-to-know-you prompts should stay lightweight
 - graceful disconnect is encouraged, not forced
 - users may always leave immediately
 - full graceful disconnect unlocks after minimum meaningful interaction
@@ -607,12 +566,12 @@ These are the decisions locked for V1:
 - the next match unlocks when the current one is properly resolved
 - safety overrides all other lifecycle logic
 
-## 16. Open Calibration Areas
+## 15. Open Calibration Areas
 
 These are intentionally left adjustable during testing:
 
 - exact timeout durations
-- exact discovery threshold values
+- exact shared-prompt threshold values
 - exact nudge timing
 - exact cadence impact of repeated early exits
 - exact conditions for readiness prompt appearance

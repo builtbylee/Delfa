@@ -29,3 +29,4 @@ All notable changes to Delfa will be documented in this file.
 - Added the canonical match lifecycle spec covering states, transitions, thresholds, timeouts, exit rules, and next-match unlock logic
 - Added an explainer deck source summarizing Delfa's agreed product direction, feature set, and architecture
 - Added a GitHub Pages-ready HTML explainer deck and README hero preview
+- Simplified V1 by removing slow reveal, conversation nudges, operating-manual concepts, and private pattern-engine features from the core product direction

@@ -1,7 +1,7 @@
 # Delfa Profiler User Flows V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
+- Version: `0.2.0`
+- Date: `2026-03-09`
 - Status: `Implementation-ready draft`
 
 ## 1. Goal
@@ -120,23 +120,20 @@ Rules:
 After a match is live, Delfa should continue gathering signal:
 
 - guided prompts
-- response quality
-- pace consistency
-- voice note usage
 - graceful disconnect feedback
 
 This should feed calibration without forcing obvious "rate this person" forms too early.
 
-## 10. Flow 9: Match Discovery Journey
+## 10. Flow 9: Guided Getting-To-Know-You Prompts
 
-Each active match should move through a lightweight discovery path.
+Each active match should include a small number of shared prompts to help both users get to know each other more naturally.
 
 Rules:
 
 - prompt sets should be asynchronous
 - both users answer privately first
 - responses reveal only after both have answered
-- profile depth should unlock progressively through participation
+- prompts should feed real conversation, not replace it
 
 ## 11. Flow 10: Answer Editing
 
@@ -169,7 +166,7 @@ Minimum screens for MVP:
 - section completion screens
 - privacy explanation screen
 - profile preview screen
-- discovery journey screens
+- guided prompt screens
 - ready-to-meet state and before-we-meet screens
 
 ## 14. UX Constraints
@@ -181,9 +178,10 @@ Minimum screens for MVP:
 - no hidden save behavior
 - no single headline match score
 - no conversation score that feels like judgment
+- no feature that makes users feel trapped in a match
 
 ## 15. Open Questions
 
-- Should Basics completion show a compatibility radar immediately or wait until first matches?
+- Should Basics completion show a short confidence summary immediately or wait until first matches?
 - Should deeper sections be recommended adaptively based on weak-confidence dimensions?
 - Should the attraction calibration exercise appear in Basics or immediately after Basics as a near-required follow-up?

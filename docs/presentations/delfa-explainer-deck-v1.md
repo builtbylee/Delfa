@@ -1,9 +1,9 @@
 # Delfa Explainer Deck V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
+- Version: `0.2.0`
+- Date: `2026-03-09`
 - Format: `Markdown slide source`
-- Status: `Investor / product explainer draft`
+- Status: `Investor / product explainer draft aligned to revised V1`
 
 ---
 
@@ -55,7 +55,7 @@ It is designed around:
 
 - one active match at a time
 - progressive profiling
-- guided compatibility discovery
+- guided getting-to-know-you prompts
 - graceful disconnect instead of ghosting
 - transparency over black-box manipulation
 
@@ -86,7 +86,7 @@ What Delfa should optimize for:
 1. User signs up
 2. User completes `Basics`
 3. Delfa surfaces one active match
-4. Match enters a guided discovery phase
+4. Match enters a lightweight getting-to-know-you phase
 5. Both users either:
    - progress
    - signal ready to meet
@@ -166,13 +166,13 @@ If confidence is weak, Delfa should say exactly how to improve it:
 
 # The Match Experience
 
-## Compatibility Discovery Journey
+## Guided getting-to-know-you prompts
 
-Each active match moves through a shared discovery path instead of unstructured chat alone.
+Each active match includes a small number of shared prompts instead of relying on an empty chat box alone.
 
 Design rules:
 
-- `3-5` early discovery prompts
+- `2-3` early prompts
 - asynchronous completion
 - `15-30 seconds` per prompt
 - up to `24 hours` to respond
@@ -180,51 +180,22 @@ Design rules:
 
 Goal:
 
-Compatibility should be experienced, not declared by a score.
-
----
-
-# Slow Reveal Profile
-
-## Discovery in layers
-
-The match experience should reveal depth progressively.
-
-Layer 1:
-
-- photos
-- relationship intent
-- high-level lifestyle
-- voice or written prompts
-
-Layer 2:
-
-- deeper profile signal after discovery participation
-
-Layer 3:
-
-- richer compatibility explanations after sustained mutual effort
-
-Constraint:
-
-This should feel like discovery, not withholding.
+The prompts should create a more natural starting point for real conversation.
 
 ---
 
 # Match Guidance
 
-## Helping users date better without gamifying it
+## Keeping the match experience simple
 
 Key mechanisms:
 
-- private conversation nudges
 - compatibility confidence by dimension
 - mutual ready-to-meet signal
 - optional readiness check-ins
 
 Important:
 
-- no visible conversation score
 - no desirability score
 - no leaderboard or streak mechanics
 
@@ -241,7 +212,6 @@ Protocol components:
 - mutual expectations check
 - safety setup
 - first-date planning assistance
-- one final in-person conversation seed
 
 This is where current apps largely stop helping.  
 Delfa should keep helping.
@@ -250,7 +220,7 @@ Delfa should keep helping.
 
 # Ending Matches Well
 
-## Graceful Disconnect with Growth
+## Graceful Disconnect
 
 Instead of ghosting, users can close a match respectfully and safely.
 
@@ -258,31 +228,8 @@ The system should capture:
 
 - curated shared closure reasons
 - private calibration signals
-- private longitudinal pattern summaries
-
-Examples:
-
-- `Your strongest matches progress when the pace is steady`
-- `Communication energy has been a repeated mismatch`
 
 This becomes one of Delfa's signature systems.
-
----
-
-# Relationship Operating Manual
-
-## Premium long-term value
-
-As profiler and interaction data improve, Delfa can generate a private relationship operating manual.
-
-Examples:
-
-- what helps me feel safe
-- what I need after tension
-- what strengthens chemistry for me
-- what pace works best for me
-
-Later, a match-safe shareable version can be unlocked.
 
 ---
 

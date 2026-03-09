@@ -1,63 +1,68 @@
 # Delfa Match Experience V1
 
-- Version: `0.1.0`
-- Date: `2026-03-08`
-- Status: `Planned product direction`
+- Version: `0.2.0`
+- Date: `2026-03-09`
+- Status: `Revised V1 direction`
 
 ## 1. Purpose
 
-This document defines the strongest match-stage differentiators Delfa should build beyond the profiler.
+This document defines Delfa's simplified V1 match-stage experience.
 
-These features are intended to make Delfa feel structurally different from swipe-first apps by improving:
+The goal is to keep Delfa meaningfully different from swipe-first apps without making the product feel complicated to use.
 
-- trust
-- interaction quality
-- clarity
-- follow-through
-- transition from chat to real-world dating
+## 2. V1 Match Features To Keep
 
-## 2. Core Differentiators
+These are the match-stage features that remain in V1:
 
-## 2.1 Compatibility Discovery Journey
+- one active match at a time
+- guided getting-to-know-you prompts
+- graceful disconnect
+- simple compatibility confidence by dimension
+- private readiness check-in
+- mutual ready-to-meet
+- basic before-we-meet flow
 
-Each active match should move through a lightweight shared discovery path rather than an unstructured chat-only experience.
+## 3. Guided Getting-To-Know-You Prompts
 
-Design rules:
+This is the main post-match feature that helps two people get to know each other more naturally than an empty chat box.
 
-- `3-5` discovery prompts in the early stage
+User-facing idea:
+
+- a small number of lightweight shared prompts appear after matching
+- each person answers privately
+- both responses are revealed after both have answered
+- the prompt then becomes a natural conversation starter
+
+Design rules for V1:
+
+- `2-3` prompts only
 - asynchronous completion
 - each prompt should take roughly `15-30 seconds`
-- users get up to `24 hours` to answer a prompt set
-- responses are revealed only after both users answer
-- no compatibility percentage or score is shown
+- users get up to `24 hours` to answer a prompt
+- no compatibility score is shown
+- no game-like progression language
 
-Goal:
+Purpose:
 
-- let compatibility emerge through interaction instead of being declared by an algorithm
-
-## 2.2 Slow Reveal Profile
-
-The match experience should reveal profile depth in layers rather than front-loading everything at once.
-
-Recommended sequence:
-
-- Layer 1: photos, relationship intent, high-level lifestyle, voice or written prompts
-- Layer 2: deeper profile signal unlocked after both users engage with the discovery journey
-- Layer 3: richer private compatibility explanations unlocked after sustained mutual effort
+- break the ice
+- reveal real signal
+- create a more natural conversation starting point
 
 Constraint:
 
-- this should feel like structured discovery, not artificial withholding
+- this should feel like support for conversation, not homework
 
-## 2.3 Compatibility Confidence Meter
+## 4. Compatibility Confidence By Dimension
 
-Delfa should show confidence by compatibility dimension rather than a single simplistic match score.
+Delfa should show confidence by dimension rather than a single headline match score.
 
-The confidence meter should:
+The confidence view should stay simple.
 
-- show what Delfa has strong evidence on
-- show what remains low-confidence
-- explicitly point users to the profiler section that would improve confidence
+It should:
+
+- show what Delfa already knows with reasonable confidence
+- show where confidence is still low
+- suggest which profiler section would improve low-confidence areas
 
 Example:
 
@@ -65,114 +70,118 @@ Example:
 - `Communication and repair: low confidence`
 - `Improve this by completing Communication and Repair`
 
-## 2.4 Conversation Nudges
-
-Delfa should use private, non-judgmental prompts to improve conversation quality.
-
-Examples:
-
-- suggest asking about something the other person mentioned
-- suggest clarifying intent if the interaction is drifting
-- suggest closing the match respectfully instead of disappearing
-
 Constraint:
 
-- no visible conversation score
-- no leaderboard, streak, or gamified metric
+- no dense analytics
+- no radar chart
+- no fake precision
 
-## 2.5 Graceful Disconnect with Growth
+## 5. Graceful Disconnect
 
-Graceful disconnect should become a signature Delfa system.
+Graceful disconnect remains a signature Delfa feature.
 
-When a match ends, users should be able to:
+Users should always have:
 
-- close the match respectfully in one step
-- choose curated shared feedback for the other person
-- submit private calibration feedback for Delfa
+- `Leave now`
+- `Graceful disconnect`
+- `Block / report`
 
-Over time, Delfa should build a private pattern summary for the user based on repeated structured feedback.
+Rules:
 
-Examples:
-
-- `Your strongest matches tend to progress when the pace is steady`
-- `A repeated mismatch has been communication energy`
-
-Constraint:
-
-- do not expose blunt rejection scoring
-- surface pattern summaries only after there is enough data to be meaningful
-
-## 2.6 Relationship Readiness Check-In
-
-Delfa should include a private readiness check-in before matching starts and then periodically over time.
+- immediate exit is always available
+- full graceful disconnect unlocks after minimum meaningful interaction
+- block/report bypasses everything
 
 Purpose:
 
-- capture emotional availability as a real-world matching signal
-- let users pause or slow down without losing their profile state
+- reduce ghosting
+- preserve user agency
+- create better closure without trapping people
 
-Visibility:
+## 6. Relationship Readiness Check-In
 
-- readiness should not be shown as a numeric score to matches
-- if surfaced at all, it should be a soft self-selected status
+Readiness check-in should remain in V1, but stay lightweight and private.
 
-## 2.7 Mutual Ready-to-Meet Signal
+It should:
 
-Each user should be able to privately indicate when they feel ready to meet.
+- help users reflect on whether they are genuinely available to date right now
+- allow users to slow down or pause without losing their profile
+- optionally inform Delfa's private matching logic
 
-Only when both users indicate readiness should Delfa reveal that it is mutual.
+It should not be:
 
-Benefit:
+- a visible score
+- a diagnostic test
+- a judgment shown to matches
 
-- removes the ask-out asymmetry
-- reduces awkwardness
-- creates a clean transition from in-app discovery to date planning
+## 7. Mutual Ready-To-Meet
 
-## 2.8 Before We Meet Protocol
+Each user can privately indicate:
 
-When both users are ready to meet, Delfa should offer an optional pre-date protocol.
+- `I'm open to meeting`
 
-Recommended components:
+If only one person signals this, the other person is not told.
 
-- mutual expectations check
-- safety setup
-- first-date planning assistance
-- one final shared in-person conversation seed
+If both signal it, Delfa reveals:
 
-Goal:
+- `You're both ready to meet`
 
-- reduce the friction and anxiety of moving from app conversation to a real date
+Purpose:
 
-## 2.9 Relationship Operating Manual
+- remove the awkwardness of one person having to go first
+- create a clean transition from in-app interaction to a real date
 
-As profiler completion and interaction data improve, Delfa should generate a private relationship operating manual for the user.
+## 8. Basic Before-We-Meet Flow
 
-Examples:
+The before-we-meet flow should stay intentionally small.
 
-- what helps me feel safe
-- what I need after tension
-- what pace works best for me
-- what tends to strengthen chemistry for me
+V1 should include only:
 
-Later, a shareable match-safe version can be unlocked.
+1. `Expectations check`
+   - what each person wants the first date to be
 
-## 3. Product Rules
+2. `Safety option`
+   - check-in reminder and simple safety tools
+
+3. `Date planning assist`
+   - lightweight support in choosing format, area, and logistics
+
+Constraint:
+
+- this should feel helpful, not process-heavy
+
+## 9. Features Removed From V1
+
+These are intentionally removed or deferred:
+
+- slow reveal profile
+- conversation nudges / conversation compass
+- private growth summaries / pattern engine
+- relationship operating manual
+- heavy confidence UI
+
+Reason:
+
+- they add complexity faster than they add product clarity
+- Delfa's first version should prove the core behavior model before layering in more intelligence
+
+## 10. V1 Product Rules
 
 - no single headline match percentage
 - no desirability score
 - no visible readiness score
-- no conversation gamification
+- no conversation scoring
+- no profile withholding mechanics
 - no pay-to-unlock better humans
 - no feature that rewards users for keeping matches in limbo
 
-## 4. MVP Priority Order
+## 11. Revised V1 Priority Order
 
-1. Compatibility Discovery Journey
-2. Graceful Disconnect with Growth
-3. Compatibility Confidence Meter
-4. Mutual Ready-to-Meet Signal
-5. Before We Meet Protocol
-6. Relationship Readiness Check-In
-7. Slow Reveal Profile
-8. Conversation Nudges
-9. Relationship Operating Manual
+1. one active match at a time
+2. progressive profiler
+3. guided getting-to-know-you prompts
+4. graceful disconnect
+5. compatibility confidence by dimension
+6. private readiness check-in
+7. mutual ready-to-meet
+8. basic before-we-meet flow
