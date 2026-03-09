@@ -1,6 +1,6 @@
 # TECHNICAL_MANUAL
 
-- Version: `0.6.0`
+- Version: `0.6.1`
 - Date: `2026-03-09`
 - Status: `Foundational blueprint`
 
@@ -413,6 +413,8 @@ The initial `apps/api` scaffold now lives in:
 - `apps/api/src/bin/realtime.ts`
 - `apps/api/src/modules`
 - `apps/api/drizzle.config.ts`
+
+The explainer deck now reflects the concrete backend stack and modular backend boundaries documented in this manual.
 
 ## 9. Backend Architecture Direction
 

@@ -549,7 +549,7 @@
       Built to replace swipe fatigue with depth, honesty, and follow-through.
     </p>
   </div>
-  <div class="slide-number">01 / 16</div>
+  <div class="slide-number">01 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 2: THE PROBLEM ==================== -->
@@ -599,7 +599,7 @@
       </ul>
     </div>
   </div>
-  <div class="slide-number">02 / 16</div>
+  <div class="slide-number">02 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 3: WHY NOW ==================== -->
@@ -632,7 +632,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">03 / 16</div>
+  <div class="slide-number">03 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 4: CORE MODEL ==================== -->
@@ -700,7 +700,7 @@
     </div>
   </div>
 
-  <div class="slide-number">04 / 16</div>
+  <div class="slide-number">04 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 5: PROGRESSIVE PROFILER ==================== -->
@@ -758,7 +758,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">05 / 16</div>
+  <div class="slide-number">05 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 6: COMPATIBILITY CONFIDENCE ==================== -->
@@ -844,7 +844,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">06 / 16</div>
+  <div class="slide-number">06 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 7: GUIDED PROMPTS ==================== -->
@@ -900,7 +900,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">07 / 16</div>
+  <div class="slide-number">07 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 8: READINESS CHECK-IN ==================== -->
@@ -945,7 +945,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">08 / 16</div>
+  <div class="slide-number">08 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 9: SOFT COMMITMENT ==================== -->
@@ -985,7 +985,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">09 / 16</div>
+  <div class="slide-number">09 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 10: GRACEFUL DISCONNECT ==================== -->
@@ -1030,7 +1030,7 @@
     </div>
   </div>
 
-  <div class="slide-number">10 / 16</div>
+  <div class="slide-number">10 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 11: READY TO MEET ==================== -->
@@ -1099,7 +1099,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">11 / 16</div>
+  <div class="slide-number">11 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 12: V1 SIMPLICITY ==================== -->
@@ -1143,7 +1143,7 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">12 / 16</div>
+  <div class="slide-number">12 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 13: TRUST & SAFETY ==================== -->
@@ -1200,7 +1200,7 @@
     </div>
   </div>
 
-  <div class="slide-number">13 / 16</div>
+  <div class="slide-number">13 / 18</div>
 </section>
 
 <!-- ==================== SLIDE 14: GUARDRAILS ==================== -->
@@ -1242,11 +1242,220 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">14 / 16</div>
+  <div class="slide-number">14 / 18</div>
 </section>
 
-<!-- ==================== SLIDE 15: EVIDENCE BASE ==================== -->
+<!-- ==================== SLIDE 15: SYSTEM ARCHITECTURE ==================== -->
 <section class="slide" id="slide-15">
+  <div class="glow-tl"></div>
+  <div style="width: 100%;">
+    <div style="margin-bottom: 36px;">
+      <div class="label">Architecture</div>
+      <h2 style="margin-bottom: 8px;">System architecture</h2>
+      <p style="font-size: 17px; color: var(--text-secondary);">Modular monolith · Three runtimes · One PostgreSQL database</p>
+    </div>
+
+    <!-- Architecture diagram -->
+    <div style="display: grid; grid-template-columns: 1fr 180px; gap: 32px; align-items: start;">
+      <!-- Main vertical stack -->
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
+
+        <!-- Client layer -->
+        <div style="background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; padding: 14px 40px; text-align: center; width: 280px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Client</div>
+          <div style="font-size: 15px; font-weight: 600; color: var(--text-primary);">React Native Mobile</div>
+        </div>
+
+        <!-- Connector -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 2px; height: 20px; background: rgba(255,255,255,0.18);"></div>
+          <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid rgba(255,255,255,0.18);"></div>
+        </div>
+
+        <!-- Edge layer -->
+        <div style="background: var(--surface); border: 1px solid rgba(212,165,116,0.25); border-radius: 12px; padding: 14px 40px; text-align: center; width: 480px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">Edge</div>
+          <div style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Cloudflare</div>
+          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">DNS · WAF · Rate Limiting · Turnstile</div>
+        </div>
+
+        <!-- Connector -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 2px; height: 20px; background: rgba(255,255,255,0.18);"></div>
+          <div style="width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid rgba(255,255,255,0.18);"></div>
+        </div>
+
+        <!-- Three runtimes -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; max-width: 720px;">
+          <div style="background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">API Service</div>
+            <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.4;">Fastify + TypeBox<br><span style="color: var(--text-muted); font-size: 11px;">REST/JSON · Module APIs</span></div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">Worker Service</div>
+            <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.4;">Outbox + pg-boss<br><span style="color: var(--text-muted); font-size: 11px;">Timers · Trust · Rechecks</span></div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border-strong); border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">Realtime Gateway</div>
+            <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.4;">WebSocket fanout<br><span style="color: var(--text-muted); font-size: 11px;">Chat · Presence · Prompts</span></div>
+          </div>
+        </div>
+
+        <!-- N:1 merge connector -->
+        <div style="position: relative; width: 100%; max-width: 720px; height: 28px;">
+          <!-- Three stems up from runtimes -->
+          <div style="position: absolute; left: calc(100% / 6); top: 0; width: 2px; height: 10px; background: rgba(255,255,255,0.18); transform: translateX(-1px);"></div>
+          <div style="position: absolute; left: 50%; top: 0; width: 2px; height: 10px; background: rgba(255,255,255,0.18); transform: translateX(-1px);"></div>
+          <div style="position: absolute; right: calc(100% / 6); top: 0; width: 2px; height: 10px; background: rgba(255,255,255,0.18); transform: translateX(1px);"></div>
+          <!-- Horizontal bar -->
+          <div style="position: absolute; left: calc(100% / 6); top: 10px; right: calc(100% / 6); height: 2px; background: rgba(255,255,255,0.18);"></div>
+          <!-- Single drop -->
+          <div style="position: absolute; left: 50%; top: 10px; width: 2px; height: 12px; background: rgba(255,255,255,0.18); transform: translateX(-1px);"></div>
+          <div style="position: absolute; left: 50%; top: 22px; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid rgba(255,255,255,0.18); transform: translateX(-5px);"></div>
+        </div>
+
+        <!-- Data layer -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; max-width: 720px;">
+          <div style="background: linear-gradient(135deg, rgba(212,165,116,0.06), transparent); border: 1px solid rgba(212,165,116,0.2); border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">PostgreSQL</div>
+            <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.4;">Drizzle ORM<br><span style="color: var(--text-muted); font-size: 11px;">+ pgvector · RLS</span></div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">Redis</div>
+            <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.4;">Cache · Fanout<br><span style="color: var(--text-muted); font-size: 11px;">Rate limits · Presence</span></div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">Cloudflare R2</div>
+            <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.4;">Object Storage<br><span style="color: var(--text-muted); font-size: 11px;">Media · Verification</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- External services sidebar -->
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 120px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px;">External Services</div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px;">
+          <div style="font-size: 13px; font-weight: 600; color: var(--text-primary);">Clerk</div>
+          <div style="font-size: 11px; color: var(--text-muted);">Auth & sessions</div>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px;">
+          <div style="font-size: 13px; font-weight: 600; color: var(--text-primary);">OneSignal</div>
+          <div style="font-size: 11px; color: var(--text-muted);">Push notifications</div>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px;">
+          <div style="font-size: 13px; font-weight: 600; color: var(--text-primary);">Stripe</div>
+          <div style="font-size: 11px; color: var(--text-muted);">Payments</div>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px;">
+          <div style="font-size: 13px; font-weight: 600; color: var(--text-primary);">Sentry</div>
+          <div style="font-size: 11px; color: var(--text-muted);">Errors · traces (OTel)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hosting footer -->
+    <div style="margin-top: 24px; text-align: center;">
+      <div class="tag">Hosted on Fly.io · Single region · Staging + Production</div>
+    </div>
+  </div>
+  <div class="slide-number">15 / 18</div>
+</section>
+
+<!-- ==================== SLIDE 16: BACKEND MODULES ==================== -->
+<section class="slide" id="slide-16">
+  <div class="glow-br"></div>
+  <div style="width: 100%;">
+    <div style="margin-bottom: 32px;">
+      <div class="label">Module Boundaries</div>
+      <h2 style="margin-bottom: 8px;">Backend modules</h2>
+      <p style="font-size: 17px; color: var(--text-secondary);">11 bounded domains inside one codebase</p>
+    </div>
+
+    <!-- Module grid: 4-4-3 layout -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 14px;">
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-fingerprint" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">identity</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Accounts, auth sessions, device registration</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-user-circle" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">profile</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Public data, media, location</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-clipboard-text" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">profiler</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Sections, responses, mirror moments</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-heart" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">attraction</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Pairwise decks, preference vectors</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 14px;">
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-target" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">matching</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Eligibility, ranking, quality floor</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-arrows-clockwise" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">match_lifecycle</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">State machine, guided rounds, disconnect</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-chart-line-up" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">outcomes</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Post-date reflections, learning signals</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-shield-check" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">trust_safety</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Reports, moderation, trust tiers</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 36px;">
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-credit-card" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">billing</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Subscriptions, entitlements, receipts</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-gauge" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">measurement</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Events, activation, quality metrics</div>
+      </div>
+      <div class="card" style="padding: 20px; border-radius: 12px;">
+        <i class="ph ph-wrench" style="font-size: 22px; color: var(--accent); margin-bottom: 8px; display: block;"></i>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">ops_admin</div>
+        <div style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Launch review, trust tools, queues</div>
+      </div>
+      <div style="border-radius: 12px;"></div>
+    </div>
+
+    <!-- Architecture principles -->
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.6; flex-shrink: 0; margin-top: 6px;"></div>
+        <span style="font-size: 15px; color: var(--text-secondary); line-height: 1.5;">Each module owns its tables and write paths — no cross-module writes</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.6; flex-shrink: 0; margin-top: 6px;"></div>
+        <span style="font-size: 15px; color: var(--text-secondary); line-height: 1.5;">Transactional outbox + worker model — no event bus at launch</span>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: 12px;">
+        <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.6; flex-shrink: 0; margin-top: 6px;"></div>
+        <span style="font-size: 15px; color: var(--text-secondary); line-height: 1.5;">Modular monolith first — extract only when scale proves the need</span>
+      </div>
+    </div>
+  </div>
+  <div class="slide-number">16 / 18</div>
+</section>
+
+<!-- ==================== SLIDE 17: EVIDENCE BASE ==================== -->
+<section class="slide" id="slide-17">
   <div class="glow-br"></div>
   <div class="split-left-heavy">
     <div>
@@ -1320,11 +1529,11 @@
       </div>
     </div>
   </div>
-  <div class="slide-number">15 / 16</div>
+  <div class="slide-number">17 / 18</div>
 </section>
 
-<!-- ==================== SLIDE 16: WHAT COMES NEXT ==================== -->
-<section class="slide" id="slide-16">
+<!-- ==================== SLIDE 18: WHAT COMES NEXT ==================== -->
+<section class="slide" id="slide-18">
   <div class="glow-center"></div>
   <div style="max-width: 760px; margin: 0 auto;">
     <div style="text-align: center; margin-bottom: 48px;">
@@ -1367,7 +1576,7 @@
       <div class="tag">Shared profiler code already implemented in packages/shared/</div>
     </div>
   </div>
-  <div class="slide-number">16 / 16</div>
+  <div class="slide-number">18 / 18</div>
 </section>
 
 <script>

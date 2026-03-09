@@ -250,27 +250,51 @@ Trust is part of the product, not just the policy layer.
 
 ---
 
-# Technical Architecture
+# System Architecture
 
-## Current repo direction
+## Modular monolith, three runtimes, one PostgreSQL database
 
-Monorepo structure:
+Backend stack:
 
-- `apps/mobile`
-- `apps/api`
-- `packages/shared`
+- `Fastify + TypeBox`
+- `Drizzle ORM + drizzle-kit`
+- `PostgreSQL + pgvector + RLS`
+- `pg-boss` worker model
+- `Redis` for cache, presence, and rate support
+- `Clerk` for auth
+- `Cloudflare` for DNS, WAF, rate limiting, and Turnstile
+- `Cloudflare R2` for object storage
+- `OneSignal` for push notifications
+- `Sentry + OpenTelemetry` for observability
 
-Current shared implementation foundation:
+Runtime shape:
 
-- profiler types
-- question bank
-- API contracts
+- `apps/api` for synchronous APIs
+- `apps/api` worker runtime for outbox jobs and timers
+- `apps/api` realtime runtime for websocket fanout
+- `packages/shared` for shared contracts and domain models
 
-Primary architecture docs:
+Backend module boundaries:
 
-- `TECHNICAL_MANUAL.md`
-- `docs/product/profiler-*.md`
-- `docs/product/match-experience-v1.md`
+- `identity`
+- `profile`
+- `profiler`
+- `attraction`
+- `matching`
+- `match_lifecycle`
+- `outcomes`
+- `trust_safety`
+- `billing`
+- `measurement`
+- `ops_admin`
+
+Architecture rules:
+
+- modular monolith first
+- transactional outbox + worker model
+- no event bus at launch
+- no microservices at launch
+- extract only when scale proves the need
 
 ---
 
@@ -293,12 +317,12 @@ If a feature increases engagement but reduces honesty, clarity, or trust, it sho
 
 ## Highest-value implementation sequence
 
-1. Match lifecycle spec
-2. Discovery journey schema
-3. Confidence model contract
-4. Graceful disconnect taxonomy
-5. Ready-to-meet and before-we-meet contracts
-6. API and mobile implementation
+1. Build database schema and migrations
+2. Integrate Clerk auth into `apps/api`
+3. Implement core API modules against the shared contracts
+4. Wire transactional outbox and worker jobs
+5. Implement match delivery and ranking pipeline
+6. Add realtime chat, guided rounds, and OneSignal delivery
 
 ## Bottom line
 

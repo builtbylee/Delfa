@@ -28,6 +28,7 @@ Delfa is a relationship-first dating app focused on one high-quality match at a 
 - Added implementation-ready attraction-engine, live-ranking, post-date learning, trust/safety, and measurement-system specs plus shared matching contracts
 - Added the backend architecture pack covering service boundaries, PostgreSQL schema design, API surface, async jobs/events, and infrastructure/deployment
 - Locked the concrete backend stack and scaffolded the initial `apps/api` Fastify workspace with separate API, worker, and realtime entrypoints
+- Updated the explainer deck so its architecture slides match the current backend stack and module boundaries
 
 ## Working Conventions
 
